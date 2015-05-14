@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta char-set="utf-8">
+	<title>Get to Know Chen</title>
+	<style type="text/css">
+		@keyframes blink{
+			0% {visibility: visible;}
+			50%{visibility: hidden;}
+			10%{visibility: visible;}
+		}
+		@-webkit-keyframes blink{
+			0% {opacity: 1;}
+			49%{opacity: 1;}
+			50%{opacity: 0;}
+			99%{opacity: 0;}
+			10%{opacity: 1;}
+		}
+		@-moz-keyframes blink{
+			0% {visibility: visible;}
+			50%{visibility: hidden;}
+			10%{visibility: visible;}
+		}
+		html,body,#warpper,#cmd{
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			height: 100%;
+			font-family: TimesNewRoman,'Times New Roman', Tahoma, Arial, Helvetica, "Microsoft YaHei New", "Microsoft Yahei", "微软雅黑", 宋体, SimSun, STXihei, "华文细黑", sans-serif;
+		}
+		p{
+			margin: 0 0 1em 0;
+			padding: 0;
+		}
+		#cmd{
+			background-color: #272822;
+
+		}
+		#cmdscreen{
+			color: #74e22e; 
+			height: 100%;
+			box-sizing:border-box;
+			border:4px solid #888888;
+			padding: 2em;
+			border-radius: 8px;
+			line-height: 1em;
+			vertical-align: middle;
+		}
+		#hidden{
+			position: absolute;
+			top: -100%;
+			left: -100%;
+			z-index: -1;
+		}
+		#caret{
+			background-color: #74e22e;
+			display: inline;
+			animation:blink 0.5s linear;
+			-webkit-animation:blink 1s linear infinite;
+			-moz-animation:blink 0.5s linear;
+		}
+		#content{
+			word-break:break-all;
+		}
+		.note{
+			font-size: 50%;
+			color: gray;
+			margin-right: 1em;
+			margin-left: 1em;
+		}
+	</style>
+</head>
+<body>
+	<div id="cmd">
+		<div id="cmdscreen" style="border:none;"><p id="content"><span id="caret">a</span></p></div>
+	</div>
+	<div id="hidden">
+		<input type="text" name="inputCatcher" id="ic" autofocus="true" autocomplete="off">
+	</div>
+	<div id="warpper" style="display:none;">
+		<section class="page">
+			<h2>我是谁？</h2>
+			<p>陈庆润：</p>
+			<ul>
+				<li>武汉大学 国际软件学院 软件工程专业 大三学生</li>
+				<li>武汉大学自强学堂网站 web组 前端方向成员</li>
+				<li>A Learner of Front-End Technology</li>
+			</ul>
+		</section>
+		<section class="page">
+			<h2>我掌握的技术？</h2>
+			<p>专注学习<span class="note">I Learned/Praticed A Lot of</span>：</p>
+			<ul>
+				<li>前端基础<span class="note">Front-End Basic Technology</span>：<span>HTML5</span><span>CSS3</span><span>JS</span></li>
+				<li>Functional JavaScript Programming</li>
+				<li>Cross Browser CSS,JS Compatibility</li>
+				<li>Web Technology:<span>ajax</span></li>
+			</ul>
+			<p>略知一二<span class="note">Somehow I Have Learned</span>：</p>
+			<ul>
+				<li>HTTP Protocal</li>
+				<li>Web Page Optimization of Loading and Displaying</li>
+				<li>后端技术<span class="note">Back-End Technology</span>：<span>Java Servlet</span><span>JSP</span><span>node.js</span></li>
+				<li>Basic DataBase Table Operation</li>
+			</ul>
+			<p>尚需学习<span class="note">I am Going to Learn</span>：</p>
+			<ul>
+				<li>Semantic HTML Tags</li>
+				<li>Fancy CSS3 Animation and Fallbacks</li>
+				<li>Polyfills of ECMAScript in older browsers</li>
+				<li>CSS Bugs in older browsers</li>
+			</ul>
+
+		</section>
+		<section class="page">
+			<h2>我写过的东西？</h2>
+			<p><a href="https://www.github.com/godluck">去我的github看看</a></p>
+			<dl>
+				<dt>MultiPlayer</dt><dd>一个用于播放本地音乐、制作并分享歌词web应用（尚未完善）<span class="note">A web music player playing local music which can make and share lyrics (Under Rebuilding)</span></dd>
+				<dt>HeySDK</dt><dd>一个商业网站的前端模板外包项目<span class="note">A front-end template used by a commercial website</span><a href="www.heysdk.com">view the site</a></dd>
+				<dt>国际软件学院官网</dt><dd>学院官网的一个demo（比赛用）<span class="note">A demo for my school's website (Used in Contest)</span></dd>
+			</dl>
+		</section>
+	</div>
+	<script type="text/javascript">
+		+function(w,d){
+			w.$=function (selector, el) {
+				if (!el) {el = document;}
+					return el.querySelector(selector);
+				}
+			w.$$=function (selector, el) {
+				if (!el) {el = document;}
+				return el.querySelectorAll(selector);
+				// Note: the returned object is a NodeList.
+				// If you'd like to convert it to a Array for convenience, use this instead:
+				// return Array.prototype.slice.call(el.querySelectorAll(selector));
+			}
+			function parseValue(value){
+				return value.split('').map(function(letter){
+					return '<span>'+letter+'</span>';
+				}).join('')+'<span id="caret">a</span>';
+			}
+			var input=$('#ic');
+			var c_screen=$('#cmdscreen');
+			var content=$('#content');
+			var cursorPosition=0;
+			d.onclick=function(){
+				input.focus();
+			}
+			input.onfocus=function(){
+				c_screen.removeAttribute('style');
+			}
+			input.onblur=function(){
+				c_screen.style.border='none';
+			}
+			//input.hasOwnProperty('oninput')&&(input.oninput=function(){console.log(this.value);this.value='';})||
+			input.onkeyup=function(e){
+				e=e||window.event;
+				console.log(e.keyCode);
+				if(e.keyCode==13&&input.value!=''){
+					var p=d.createElement('p');
+					p.innerHTML=input.value;
+					input.value='';
+					$('#content').innerHTML='';
+					c_screen.insertBefore(p,content);
+				}else if(e.keyCode==37){
+					if(cursorPosition<input.value.length){
+						(cursorPosition==0)||($$('span',content)[input.value.length-cursorPosition].style.borderBottom='');
+						cursorPosition+=1;
+						$$('span',content)[input.value.length-cursorPosition].style.borderBottom='2px solid #74e22e';
+					}
+					console.log(this.selectionStart);
+				}else if(e.keyCode==39){
+					if(cursorPosition>0){
+						$$('span',content)[input.value.length-cursorPosition].style.borderBottom='';
+						cursorPosition-=1;
+						(cursorPosition==0)||($$('span',content)[input.value.length-cursorPosition].style.borderBottom='2px solid #74e22e');
+					}
+					console.log(this.selectionStart);
+				}else if(e.keyCode==8){
+					console.log(input.value.length+'*'+cursorPosition);
+					var t=$$('span',content)[input.value.length-cursorPosition];
+					t&&t.parentNode.removeChild(t);
+				}else if(e.keyCode==46){
+					console.log(input.value.length+'*'+cursorPosition);
+					var t=$$('span',content)[input.value.length-cursorPosition+1];
+					cursorPosition>0&&(cursorPosition-=1);
+					t&&t.parentNode.removeChild(t);
+				}else{
+					content.innerHTML=parseValue(this.value);
+				}
+				if(cursorPosition!=0){
+					$('#caret').style.display='none';
+				}else{
+					$('#caret').style.display='inline';
+				}
+			}
+		}(window,document);
+	</script>
+</body>
+</html>
