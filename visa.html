@@ -159,9 +159,9 @@
 				console.log(e.keyCode);
 				if(e.keyCode==13&&input.value!=''){
 					var p=d.createElement('p');
-					p.innerHTML='<span id="caret">a</span>';
+					p.innerHTML=input.value;
 					input.value='';
-					$('#content').innerHTML='';
+					$('#content').innerHTML='<span id="caret">a</span>';
 					c_screen.insertBefore(p,content);
 				}else if(e.keyCode==37){
 					if(cursorPosition<input.value.length){
