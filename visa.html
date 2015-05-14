@@ -159,7 +159,7 @@
 				console.log(e.keyCode);
 				if(e.keyCode==13&&input.value!=''){
 					var p=d.createElement('p');
-					p.innerHTML=input.value;
+					p.innerHTML='<span id="caret">a</span>';
 					input.value='';
 					$('#content').innerHTML='';
 					c_screen.insertBefore(p,content);
