@@ -164,16 +164,6 @@
 	</div>
 	<script type="text/javascript">
 		+function(w,d){
-			w.requestAnimFrame = (function(){
-			  return  w.requestAnimationFrame       ||
-			          w.webkitRequestAnimationFrame ||
-			          w.mozRequestAnimationFrame    ||
-			          w.oRequestAnimationFrame      ||
-			          w.msRequestAnimationFrame     ||
-			          function( callback ){
-			            w.setTimeout(callback, 1000 / 60);
-			          };
-			})();
 			w.$=function (selector, el) {
 				if (!el) {el = document;}
 					return el.querySelector(selector);
@@ -205,6 +195,7 @@
 				c_screen.style.border='4px solid #272822';
 				$('#caret').style.display='none';
 			}
+			//bad way here
 			/*input.onkeyup=function(e){
 				e=e||window.event;
 				console.log(e.keyCode);
@@ -255,11 +246,9 @@
 					p.className='cmds';
 					p.innerHTML=input.value;
 					content.innerHTML='<i id="caret">a</i>';
-					requestAnimFrame(function(){
-						c_screen.insertBefore(p,content);
-						run(input.value);
-						input.value='';
-					});
+					c_screen.insertBefore(p,content);
+					run(input.value);
+					input.value='';
 				}else if(this.selectionStart==this.value.length){
 					content.innerHTML=parseValue(this.value);
 				}else{
