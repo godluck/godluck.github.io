@@ -5,9 +5,11 @@
 	<title>Get to Know Chen</title>
 	<style type="text/css">
 		@keyframes blink{
-			0% {visibility: visible;}
-			50%{visibility: hidden;}
-			10%{visibility: visible;}
+			0% {opacity: 1;}
+			49%{opacity: 1;}
+			50%{opacity: 0;}
+			99%{opacity: 0;}
+			10%{opacity: 1;}
 		}
 		@-webkit-keyframes blink{
 			0% {opacity: 1;}
@@ -17,9 +19,11 @@
 			10%{opacity: 1;}
 		}
 		@-moz-keyframes blink{
-			0% {visibility: visible;}
-			50%{visibility: hidden;}
-			10%{visibility: visible;}
+			0% {opacity: 1;}
+			49%{opacity: 1;}
+			50%{opacity: 0;}
+			99%{opacity: 0;}
+			10%{opacity: 1;}
 		}
 		html,body,#warpper,#cmd{
 			margin: 0;
@@ -56,9 +60,9 @@
 		#caret{
 			background-color: #74e22e;
 			display: inline;
-			animation:blink 0.5s linear;
+			animation:blink 1s linear infinite;
 			-webkit-animation:blink 1s linear infinite;
-			-moz-animation:blink 0.5s linear;
+			-moz-animation:blink 1s linear infinite;
 		}
 		#content{
 			word-break:break-all;
@@ -156,8 +160,7 @@
 				c_screen.style.border='4px solid #272822';
 				$('#caret').style.display='none';
 			}
-			//input.hasOwnProperty('oninput')&&(input.oninput=function(){console.log(this.value);this.value='';})||
-			input.onkeyup=function(e){
+			/*input.onkeyup=function(e){
 				e=e||window.event;
 				console.log(e.keyCode);
 				if(e.keyCode==13&&input.value!=''){
@@ -199,6 +202,28 @@
 				}else{
 					$('#caret').style.display='inline';
 				}
+			}*/
+			input.onkeyup=function(e){
+				e=e||window.event;
+				if(e.keyCode==13&&input.value!=''){
+					var p=d.createElement('p');
+					p.innerHTML=input.value;
+					input.value='';
+					content.innerHTML='<i id="caret">a</i>';
+					c_screen.insertBefore(p,content);
+					content.scrollIntoView();
+				}else if(this.selectionStart==this.value.length){
+					content.innerHTML=parseValue(this.value);
+				}else{
+					content.innerHTML=parseValue(this.value);
+					$$('span',content)[this.selectionStart].style.borderBottom='2px solid #74e22e';
+				}
+				if(this.selectionStart!=this.value.length){
+					$('#caret').style.display='none';
+				}else{
+					$('#caret').style.display='inline';
+				}
+				console.log(this.selectionStart);
 			}
 		}(window,document);
 	</script>
