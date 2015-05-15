@@ -164,6 +164,16 @@
 	</div>
 	<script type="text/javascript">
 		+function(w,d){
+			w.requestAnimFrame = (function(){
+			  return  w.requestAnimationFrame       ||
+			          w.webkitRequestAnimationFrame ||
+			          w.mozRequestAnimationFrame    ||
+			          w.oRequestAnimationFrame      ||
+			          w.msRequestAnimationFrame     ||
+			          function( callback ){
+			            w.setTimeout(callback, 1000 / 60);
+			          };
+			})();
 			w.$=function (selector, el) {
 				if (!el) {el = document;}
 					return el.querySelector(selector);
@@ -245,10 +255,11 @@
 					p.className='cmds';
 					p.innerHTML=input.value;
 					content.innerHTML='<i id="caret">a</i>';
-					c_screen.insertBefore(p,content);
-					run(input.value);
-					input.value='';
-					content.scrollIntoView();
+					requestAnimFrame(function(){
+						c_screen.insertBefore(p,content);
+						run(input.value);
+						input.value='';
+					});
 				}else if(this.selectionStart==this.value.length){
 					content.innerHTML=parseValue(this.value);
 				}else{
@@ -260,6 +271,7 @@
 				}else{
 					$('#caret').style.display='inline';
 				}
+				content.scrollIntoView();
 			}
 			function run(cmd){
 				switch(cmd.toLowerCase()){
