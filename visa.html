@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta char-set="utf-8">
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 	<title>Get to Know Chen</title>
 	<style type="text/css">
 		@keyframes blink{
@@ -25,7 +26,7 @@
 			99%{opacity: 0;}
 			10%{opacity: 1;}
 		}
-		html,body,#warpper,#cmd{
+		html,body,#cmd{
 			margin: 0;
 			padding: 0;
 			width: 100%;
@@ -33,12 +34,25 @@
 			font-family: TimesNewRoman,'Times New Roman', Tahoma, Arial, Helvetica, "Microsoft YaHei New", "Microsoft Yahei", "微软雅黑", 宋体, SimSun, STXihei, "华文细黑", sans-serif;
 		}
 		p{
-			margin: 0 0 1em 0;
+			margin: 0 0 0 0;
 			padding: 0;
+		}
+		a,a:hover,a:visited{
+			color: #74e22e;
+		}
+		a:before{
+			content:'+';
+		}
+		a:after{
+			content:'+';
 		}
 		#cmd{
 			background-color: #272822;
 
+		}
+		#content:before,.cmds:before{
+			content:'>';
+			margin-right: 1em;
 		}
 		#cmdscreen{
 			color: #74e22e; 
@@ -47,7 +61,7 @@
 			border:4px solid #888888;
 			padding: 2em;
 			border-radius: 8px;
-			line-height: 1em;
+			line-height: 1.5em;
 			vertical-align: middle;
 			overflow: auto;
 		}
@@ -68,10 +82,19 @@
 			word-break:break-all;
 		}
 		.note{
-			font-size: 50%;
+			font-size: 80%;
 			color: gray;
-			margin-right: 1em;
 			margin-left: 1em;
+		}
+		#skill span{
+			margin-right: 1em;
+		}
+		.menuitem{
+			margin: 0 1em;
+			color:rgb(249,38,114);
+		}
+		.page{
+			line-height: 1.5em;
 		}
 	</style>
 </head>
@@ -83,7 +106,7 @@
 		<input type="text" name="inputCatcher" id="ic" autofocus="true" autocomplete="off">
 	</div>
 	<div id="warpper" style="display:none;">
-		<section class="page">
+		<section class="page" id="about">
 			<h2>我是谁？</h2>
 			<p>陈庆润：</p>
 			<ul>
@@ -92,11 +115,11 @@
 				<li>A Learner of Front-End Technology</li>
 			</ul>
 		</section>
-		<section class="page">
+		<section class="page" id="skill">
 			<h2>我掌握的技术？</h2>
 			<p>专注学习<span class="note">I Learned/Praticed A Lot of</span>：</p>
 			<ul>
-				<li>前端基础<span class="note">Front-End Basic Technology</span>：<span>HTML5</span><span>CSS3</span><span>JS</span></li>
+				<li>前端基础<span class="note">Front-End Basic Technology</span>：<span>HTML5</span> <span>CSS3</span> <span>JS</span></li>
 				<li>Functional JavaScript Programming</li>
 				<li>Cross Browser CSS,JS Compatibility</li>
 				<li>Web Technology:<span>ajax</span></li>
@@ -105,26 +128,38 @@
 			<ul>
 				<li>HTTP Protocal</li>
 				<li>Web Page Optimization of Loading and Displaying</li>
-				<li>后端技术<span class="note">Back-End Technology</span>：<span>Java Servlet</span><span>JSP</span><span>node.js</span></li>
+				<li>后端技术<span class="note">Back-End Technology</span>：<span>Java Servlet</span> <span>JSP</span> <span>node.js</span></li>
 				<li>Basic DataBase Table Operation</li>
 			</ul>
 			<p>尚需学习<span class="note">I am Going to Learn</span>：</p>
 			<ul>
 				<li>Semantic HTML Tags</li>
 				<li>Fancy CSS3 Animation and Fallbacks</li>
-				<li>Polyfills of ECMAScript in older browsers</li>
+				<li>Polyfills of New ECMAScript Functions in older browsers</li>
 				<li>CSS Bugs in older browsers</li>
 			</ul>
 
 		</section>
-		<section class="page">
+		<section class="page" id="project">
 			<h2>我写过的东西？</h2>
-			<p><a href="https://www.github.com/godluck">去我的github看看</a></p>
+			<p><a href="https://www.github.com/godluck" target="_new">去我的github看看</a></p>
 			<dl>
-				<dt>MultiPlayer</dt><dd>一个用于播放本地音乐、制作并分享歌词web应用（尚未完善）<span class="note">A web music player playing local music which can make and share lyrics (Under Rebuilding)</span></dd>
-				<dt>HeySDK</dt><dd>一个商业网站的前端模板外包项目<span class="note">A front-end template used by a commercial website</span><a href="www.heysdk.com">view the site</a></dd>
-				<dt>国际软件学院官网</dt><dd>学院官网的一个demo（比赛用）<span class="note">A demo for my school's website (Used in Contest)</span></dd>
+				<dt><a href="https://www.github.com/godluck/multiplayer" target="_new">MultiPlayer</a></dt><dd>一个用于播放本地音乐、制作并分享歌词的web应用<span class="note">A web music player playing local music which can make and share lyrics</span> <a href="http://120.27.96.128/static/UI.html">view the site online</a><span class="note">please open the page with a phone-sized window</span></dd> 
+				<dt>HeySDK</dt><dd>一个商业网站的前端模板外包项目<span class="note">A front-end template used by a commercial website</span> <a href="www.heysdk.com">view the site online</a></dd>
+				<dt><a href="https://www.github.com/godluck/nekocoin" target="_new">国际软件学院官网</a></dt><dd>学院官网的一个demo（比赛用）<span class="note">A demo for my school's website (Used in Contest)</span></dd>
 			</dl>
+		</section>
+		<section class="page" id="menu">
+			<h2>菜单 <span class="note">Menu List</span>：</h2>
+			<ul>
+				<li><span class="menuitem">menu/菜单</span></li>
+				<li><span class="menuitem">hi</span>or<span class="menuitem">hello</span></li>
+				<li><span class="menuitem">about me/关于我</span>or shortcut <span class="menuitem">about</span></li>
+				<li><span class="menuitem">my skills/我的技术</span>or shortcut <span class="menuitem">skills</span></li>
+				<li><span class="menuitem">my projects/我的项目</span>or shortcut <span class="menuitem">projects</span></li>
+				<li><span class="menuitem">contact me/联系我</span>or shortcut <span class="menuitem">contact</span></li>
+				<li><span class="menuitem">clear/清屏</span></li>
+			</ul>
 		</section>
 	</div>
 	<script type="text/javascript">
@@ -207,10 +242,12 @@
 				e=e||window.event;
 				if(e.keyCode==13&&input.value!=''){
 					var p=d.createElement('p');
+					p.className='cmds';
 					p.innerHTML=input.value;
-					input.value='';
 					content.innerHTML='<i id="caret">a</i>';
 					c_screen.insertBefore(p,content);
+					run(input.value);
+					input.value='';
 					content.scrollIntoView();
 				}else if(this.selectionStart==this.value.length){
 					content.innerHTML=parseValue(this.value);
@@ -223,8 +260,49 @@
 				}else{
 					$('#caret').style.display='inline';
 				}
-				console.log(this.selectionStart);
 			}
+			function run(cmd){
+				switch(cmd.toLowerCase()){
+					case 'about me':
+					case 'about':
+					case '关于我':
+					c_screen.insertBefore($('#about').cloneNode(true),content);
+					break;
+					case 'my skills':
+					case 'skills':
+					case '我的技术':
+					c_screen.insertBefore($('#skill').cloneNode(true),content);
+					break;
+					case 'my projects':
+					case 'projects':
+					case '我的项目':
+					c_screen.insertBefore($('#project').cloneNode(true),content);
+					break;
+					case 'menu':
+					case '菜单':
+					c_screen.insertBefore($('#menu').cloneNode(true),content);
+					break;
+					case 'hi':
+					case 'hello':
+					var p=document.createElement('p');
+					p.innerHTML='Hello World and Hello you~';
+					c_screen.insertBefore(p,content);
+					break;
+					case 'contact me':
+					case 'contact':
+					case '联系我':
+					var p=document.createElement('p');
+					p.innerHTML='This may not be shown here :P';
+					c_screen.insertBefore(p,content);
+					break;
+					case 'clear':
+					case '清屏':
+					c_screen.innerHTML='';
+					c_screen.insertBefore(content,null);
+					break;
+				}
+			}
+			setTimeout(run.bind(this,'menu'),1000);
 		}(window,document);
 	</script>
 </body>
