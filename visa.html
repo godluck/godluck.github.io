@@ -45,6 +45,7 @@
 			border-radius: 8px;
 			line-height: 1em;
 			vertical-align: middle;
+			overflow: auto;
 		}
 		#hidden{
 			position: absolute;
@@ -138,7 +139,7 @@
 			function parseValue(value){
 				return value.split('').map(function(letter){
 					return '<span>'+letter+'</span>';
-				}).join('')+'<span id="caret">a</span>';
+				}).join('')+'<i id="caret">a</i>';
 			}
 			var input=$('#ic');
 			var c_screen=$('#cmdscreen');
@@ -149,9 +150,11 @@
 			}
 			input.onfocus=function(){
 				c_screen.removeAttribute('style');
+				$('#caret').style.display='inline';
 			}
 			input.onblur=function(){
-				c_screen.style.border='none';
+				c_screen.style.border='4px solid #272822';
+				$('#caret').style.display='none';
 			}
 			//input.hasOwnProperty('oninput')&&(input.oninput=function(){console.log(this.value);this.value='';})||
 			input.onkeyup=function(e){
@@ -161,8 +164,9 @@
 					var p=d.createElement('p');
 					p.innerHTML=input.value;
 					input.value='';
-					$('#content').innerHTML='<span id="caret">a</span>';
+					content.innerHTML='<i id="caret">a</i>';
 					c_screen.insertBefore(p,content);
+					content.scrollIntoView();
 				}else if(e.keyCode==37){
 					if(cursorPosition<input.value.length){
 						(cursorPosition==0)||($$('span',content)[input.value.length-cursorPosition].style.borderBottom='');
@@ -174,7 +178,7 @@
 					if(cursorPosition>0){
 						$$('span',content)[input.value.length-cursorPosition].style.borderBottom='';
 						cursorPosition-=1;
-						(cursorPosition==0)||($$('span',content)[input.value.length-cursorPosition].style.borderBottom='2px solid #74e22e');
+						(cursorPosition==0)||($$('span',content)[input.value.length-cursorPosition+1].style.borderBottom='2px solid #74e22e');
 					}
 					console.log(this.selectionStart);
 				}else if(e.keyCode==8){
@@ -182,9 +186,10 @@
 					var t=$$('span',content)[input.value.length-cursorPosition];
 					t&&t.parentNode.removeChild(t);
 				}else if(e.keyCode==46){
-					console.log(input.value.length+'*'+cursorPosition);
-					var t=$$('span',content)[input.value.length-cursorPosition+1];
 					cursorPosition>0&&(cursorPosition-=1);
+					console.log(input.value.length+'*'+cursorPosition);
+					var t=$$('span',content)[input.value.length-cursorPosition];
+					(cursorPosition>0)&&($$('span',content)[input.value.length-cursorPosition+1].style.borderBottom='2px solid #74e22e');
 					t&&t.parentNode.removeChild(t);
 				}else{
 					content.innerHTML=parseValue(this.value);
