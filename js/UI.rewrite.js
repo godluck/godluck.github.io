@@ -6,7 +6,7 @@
 	          w.mozRequestAnimationFrame    ||
 	          w.oRequestAnimationFrame      ||
 	          w.msRequestAnimationFrame     ||
-	          w(callback){
+	          function(callback){
 	            w.setTimeout(callback, 1000 / 60);
 	          };
 	})();
@@ -58,6 +58,9 @@
 		playing:false,
 		order:0,
 		curIndex:0,
+		curPage:'song_list',
+		currentTime:0,
+		tout:null,
 	}
 	//initial event listeners
 	function init(){
@@ -74,13 +77,14 @@
 			},[]);
 			newsongs.forEach(function(newsong){
 				var temp=template.cloneNode(true);
-				temp.getElementsByClassName('song_name')[0].innerHTML=newsong.name;
-				temp.getElementsByClassName('singer')[0].innerHTML=newsong.singer||'未知歌手';
+				$('song_name',temp).innerHTML=newsong.name;
+				$('singer',temp).innerHTML=newsong.singer||'未知歌手';
+				$('to_play',temp).index=data.songs.indexOf(newsong);
 				pnode.appendChild(temp);
 			});
 		}
-		$('.to_song_list_button')[0].onclick=function(){
-			p.click;
+		$('.to_song_list_button').onclick=function(){
+			p.click();
 		}
 		//player
 		var page1=$('#player');
@@ -132,5 +136,172 @@
 			}
 			traceBackLyc();
 		},false);
-	}()
+		$('.songs').addEventListener('click',function(){
+			if(e.target.className=='to_play button'){
+				data.curIndex=e.target.index;
+				play();
+			}
+			e.stopPropagation();
+		},false);
+		$('#play_pause').addEventListener('click',function(){
+			if(this.className=='pause'){
+				pause();
+			}else if(this.className=='play'){
+				resume();
+			}
+		},false);
+		$('#pause').addEventListener('click',function(){
+			if(this.innerHTML=='播放'){
+				resume();
+			}else if(this.className=='暂停'){
+				pause();
+			}
+		},false);
+		$('#player_order').addEventListener('click',function(){
+			data.order=(data.order+1)%3;
+			switch(data.order){
+				case 0:
+				this.className='single';
+				break;
+				case 1:
+				this.className='inorder';
+				break;
+				case 2:
+				this.className='random';
+				break;
+			}
+		},false);
+	}();
+	function toArray(obj){
+		return Array.prototype.slice.call(obj);
+	}
+	function play(){
+		if(data.player.paused){
+			resume();
+		}
+		data.player.src=data.songs[data.curIndex].url;
+		$('.title',$('#player')).innerHTML=data.songs[data.curIndex].name;
+		$('#lyc_box').innerHTML='<p>正在加载歌词...</p>';
+		data.playing=true;
+		if(!data.lycs[data.curIndex]){
+			ajax('/search','get',g.processSearch(data.curIndex),('song_name='+data.songs[data.curIndex].name));
+		}else{
+			bindlyc($('#lyc_box'),data.lycs[data.curIndex]);
+			data.p_words=$$('span',$('#lyc_box'));
+			requestAnimFrame(moveLycBox.bind(data.p_words[0]));
+			playlyc();
+		}
+	}
+	function jumpTo(pageName){
+		$('#'+data.curPage).style.display='none';
+		$('#'+pageName).style.display='block';
+		data.curPage=pageName;
+	}
+	function pause(){
+		data.player.pause();
+		$('play_pause').className='play';
+		$('pause').innerHTML='播放';
+	}
+	function resume(){
+		data.player.play();
+		$('play_pause').className='pause';
+		$('pause').innerHTML='暂停';
+	}
+	function bindlyc(targetDom,olyc){
+		olyc.playTime=olyc.originalTime.reduce(function(pre,cur,index){
+			pre.push((index<1)?cur:pre[index-1]+cur);
+			return pre;
+		},[]);
+		targetDom.innerHTML='<span></span>'+olyc.originalLYC.split('\n').map(function(line){
+			if(line===""){
+				return '<p><span> </span></p>'
+			}else{
+				return '<p>'+line.split('').map(function(letter){
+					return '<span>'+letter+'</span>';
+				}).join('')+'</p>';
+			}
+		}).join('');
+	}
+	function playlyc(){
+		pauselyc();
+		var oindex=null;
+		var clyc=data.lycs[data.curIndex];
+		if(clyc!=null){
+			for(var i in clyc.playTime){
+				if(clyc.playTime[i]>data.currentTime){
+					oindex={index:i,time:clyc.playTime[i]-data.currentTime};
+					break;
+				}
+			}
+			if(oindex){
+				jumpTolyc(oindex.index);
+				if(!data.player.paused){
+					data.tout=setTimeout(next.bind(this,parseInt(oindex.index)+1),oindex.time);
+				}
+			}else{
+				jumpTolyc(clyc.playTime.length);
+			}
+		}
+	}
+	function jumpTolyc(index){
+		for(var i in data.p_words){
+			if(parseInt(i)<parseInt(index)){
+				data.p_words[i].className="read";
+			}else if(i==index){
+				data.p_words[i].className="ontime read";
+				window.requestAnimFrame(moveLycBox.bind(data.p_words[i]));
+			}else{
+				data.p_words[i].className="";
+			}
+		}
+	}
+	function next(index){
+		if(data.p_words[index]){
+			data.p_words[index-1].className="read";
+			data.p_words[index].className="read ontime";
+			window.requestAnimFrame(moveLycBox.bind(data.p_words[index]));
+			data.tout=setTimeout(next.bind(this,parseInt(index)+1),data.lycs[data.curIndex].originalTime[index]);
+		}
+	}
+	function pauselyc(){
+		data.currentTime=data.player.currentTime*1000;
+		clearTimeout(data.tout);
+	}
+	function processSearch(index){
+		return function(){
+			var data=this.response;
+			if(data&&data.status==0){
+				if(data.lyrics.length>0&&dara.curPage.toLowerCase()=='player'){
+					var dataString='id='+data.lyrics[0].id;
+					ajax('/get','get',function(){
+						var data=this.response;
+						if(data&&data.status==0){
+							data.lycs[index]=JSON.parse(data.lyric);
+							bindlyc($('#lyc_box'),JSON.parse(data.lyric));
+							data.p_words=$$('span',$('#lyc_box'));
+							requestAnimFrame(moveLycBox.bind(data.p_words[0]));
+							playlyc();
+						}
+					},dataString);
+				}else if(data.lyrics.length==0&&data.curPage.toLowerCase()=='player'){
+					$('#lyc_box').innerHTML='<p id="no_lyc">无法找到歌词</p>'
+					window.requestAnimFrame(moveLycBox.bind($('#no_lyc')));
+				}else if(data.curPage.toLowerCase()=='search'){
+					var pnode=$('.search_results');
+					Array.prototype.forEach.call($$('.song_box',pnode),function(sb){
+						sb.parentNode.removeChild(sb);
+					});
+					var template=$('.song_box',$('#hidden'));
+					data.lyrics.forEach(function(newsong){
+						var temp=template.cloneNode(true);
+						$('.song_name',temp).innerHTML=newsong.song_name;
+						$('.singer',temp).innerHTML=newsong.singer_name||'未知歌手';
+						$('.to_play',temp).onclick=chooseLyc.bind($('.to_play',temp),newsong.id);
+						pnode.appendChild(temp);
+					});
+					
+				}
+			}
+		}
+	}
 }(window,document)

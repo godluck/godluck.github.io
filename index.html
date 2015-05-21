@@ -1,137 +1,310 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>UI</title>
-	<link rel="stylesheet" type="text/css" href="css/UI.css">
 	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>Get to Know Chen</title>
+	<style type="text/css">
+		@keyframes blink{
+			0% {opacity: 1;}
+			49%{opacity: 1;}
+			50%{opacity: 0;}
+			99%{opacity: 0;}
+			10%{opacity: 1;}
+		}
+		@-webkit-keyframes blink{
+			0% {opacity: 1;}
+			49%{opacity: 1;}
+			50%{opacity: 0;}
+			99%{opacity: 0;}
+			10%{opacity: 1;}
+		}
+		@-moz-keyframes blink{
+			0% {opacity: 1;}
+			49%{opacity: 1;}
+			50%{opacity: 0;}
+			99%{opacity: 0;}
+			10%{opacity: 1;}
+		}
+		html,body,#cmd{
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			height: 100%;
+			font-family: TimesNewRoman,'Times New Roman', Tahoma, Arial, Helvetica, "Microsoft YaHei New", "Microsoft Yahei", "微软雅黑", 宋体, SimSun, STXihei, "华文细黑", sans-serif;
+		}
+		p{
+			margin: 0 0 0 0;
+			padding: 0;
+		}
+		a,a:hover,a:visited{
+			color: #74e22e;
+		}
+		a:before{
+			content:'+';
+		}
+		a:after{
+			content:'+';
+		}
+		#cmd{
+			background-color: #272822;
+
+		}
+		#content:before,.cmds:before{
+			content:'>';
+			margin-right: 1em;
+		}
+		#cmdscreen{
+			color: #74e22e; 
+			height: 100%;
+			box-sizing:border-box;
+			border:4px solid #888888;
+			padding: 2em;
+			border-radius: 8px;
+			line-height: 1.5em;
+			vertical-align: middle;
+			overflow: auto;
+		}
+		#hidden{
+			position: absolute;
+			top: -100%;
+			left: -100%;
+			z-index: -1;
+		}
+		#caret{
+			background-color: #74e22e;
+			display: inline;
+			animation:blink 1s linear infinite;
+			-webkit-animation:blink 1s linear infinite;
+			-moz-animation:blink 1s linear infinite;
+		}
+		#content{
+			word-break:break-all;
+		}
+		.note{
+			font-size: 80%;
+			color: gray;
+			margin-left: 1em;
+		}
+		#skill span{
+			margin-right: 1em;
+		}
+		.menuitem{
+			margin: 0 1em;
+			color:rgb(249,38,114);
+		}
+		.page{
+			line-height: 1.5em;
+		}
+	</style>
 </head>
 <body>
-	<div class="warpper">
-		<div class="page" id="song_list" style="display:block;">
-			<nav class="navbar">
-				<p class="title">本地歌曲</p>
-				<a href="javascript:g.showOrder()" class="order button" style="display:none;"></a>
-				<ul class="order_list">
-					<a href="#">按名称排序</a>
-					<a href="#">按时间排序</a>
-				</ul>
-			</nav>
-			<ul class="songs">
-				
-			</ul>
-			<nav class="footer">
-				<a href="javascript:pageData.song_list.addSong()" class="to_song_list_button button"></a>
-				<a href="javascript:if(labels.playing){g.jumpTo('player');}" class="to_play_button button"></a>
-				<a href="javascript:g.tologin()" class="to_my_lycs button"></a>
-			</nav>
-		</div>
-		<div class="page" id="player" style="display:none;">
-			<nav class="navbar">
-				<a href="javascript:g.jumpTo('song_list')" class="return button"></a>
-				<p class="title">这里是歌名</p>
-			</nav>
-			<div id="lyc_box"><p>正在加载歌词...</p></div>
-			<div class="controls">
-				<div class="progress">
-					<div class="currentTime">00:00</div>
-					<div class="progress_box">
-						<div class="progressbar"></div>
-					</div>
-					<div class="duration">99:99</div>
-				</div>
-				<a href="javascript:g.play(labels.curIndex-1)" class="button" id="pre_song" title="上一首"></a>
-				<a href="javascript:g.pause()" class="button" id="play_pause"></a>
-				<a href="javascript:g.play(labels.curIndex+1)" class="button" id="next_song" title="下一首"></a>
-				<a href="#" class="button" id="share"></a>
-				<a href="javascript:g.changeOrder()" class="button" id="play_order"></a>
-				<a href="javascript:g.jumpTo('search')" class="button" id="change_lyc"></a>
-			</div>
-		</div>
-		<div class="page" id="editer_intro" style="display:none;">
-			<nav class="navbar">
-				<a href="javascript:g.jumpTo('search')" class="return button"></a>
-				<p class="title">创建说明</p>
-			</nav>
-			<p class="intro">
-				1.填写歌曲名、歌手、自定义歌词名称、歌词内容。<br><br>
-				2.请尽量在歌词中适当换行。<br><br>
-				3.空格，标点及空白的一行会被保留在歌词中，并且会被视为一个字来记录时间（你需要自行判断歌词中这些字符的时间哦）<br><br>
-				4.点击“保存并继续”进入歌词编辑页面后，请跟随歌曲节奏点击“下一字”按钮，来确定歌词中的字的唱出时间。<br><br>
-				5.如果歌词编辑出错，可以通过点击歌曲进度条向前回退。被回退的歌词部分将被自动舍弃，等待重新编辑。<br><br>
-				6.可以通过点击“暂停”按钮暂停歌曲。
-			</p>
-			<a href="javascript:g.jumpTo('lyc_info')" class="button Iknow">我知道了</a>
-		</div>
-		<div class="page" id="lyc_info" style="display:none;">
-			<nav class="navbar">
-				<a href="javascript:g.jumpTo('editer_intro')" class="return button"></a>
-				<p class="title">创建歌词</p>
-				<a href="javascript:g.jumpTo('editer_intro')" class="help button"></a>
-			</nav>
-			<div class="line"><label for="iSongName">歌曲名</label><input type="text" name="song_name" id="iSongName"></div>
-			<div class="line"><label for="iSinger">歌手名</label><input type="text" name="singer" id="iSinger"></div>
-			<div class="line"><label for="iLycName">歌词名称</label><input type="text" name="lyc_name" id="iLycName"></div>
-			<label for="iLycContent" class="iline">歌词内容</label>
-			<textarea resize="false" name="lyc_content" id="iLycContent"></textarea>
-			<a href="javascript:g.submitLycContent()" class="button Iknow">保存并编辑</a>
-		</div>
-		<div class="page" id="lyc_editer" style="display:none;">
-			<nav class="navbar">
-				<a href="javascript:g.jumpTo('lyc_info')" class="return button"></a>
-				<p class="title">这里是歌名</p>
-				<a href="javascript:g.tologin()" class="confirm button"></a>
-				<a href="javascript:g.jumpTo('editer_intro')" class="help button"></a>
-			</nav>
-			<div id="lyc_edit_box"></div>
-			<div class="controls">
-				<div class="progress">
-					<div class="currentTime">00:00</div>
-					<div class="progress_box">
-						<div class="progressbar"></div>
-					</div>
-					<div class="duration">99:99</div>
-				</div>
-				<a href="javascript:g.nextLetter()" class="button" id="next_letter">下一字</a>
-				<a href="#" class="button" id="internal">间奏</a>
-				<a href="#" class="button" id="pause">暂停</a>
-			</div>
-		</div>
-		<div class="page" id="search" style="display:none;">
-			<nav class="navbar">
-				<a href="javascript:g.jumpTo('player')" class="return button"></a>
-				<p class="title">搜索歌词</p>
-			</nav>
-			<input type="text" name="searchbox" id="searchbox">
-			<a href="javascript:g.search()" class="button searchb">搜索</a>
-			<ul class="search_results"><a class="create_lyc button" href="javascript:g.jumpTo('editer_intro')">+创建新歌词</a></ul>
-		</div>
-		<div class="page" id="my_lyc" style="display:none;">
-			<nav class="navbar">
-				<a href="javascript:g.jumpTo('song_list')" class="return button"></a>
-				<p class="title">我的歌词</p>
-			</nav>
-			<ul class="my_lycs"></ul>
-		</div>
-		<div class="page" id="login" style="display:none;">
-			<nav class="navbar">
-				<a href="javascript:g.cancellogin()" class="return button"></a>
-				<p class="title">登陆</p>
-			</nav>
-			<div class="line"><label for="iUserName">用户名</label><input type="text" name="username" id="iUserName"></div>
-			<div class="line"><label for="iPassword">密码</label><input type="password" name="password" id="iPassword"></div>
-			<a class="button Iknow" href="javascript:g.login()">登陆/注册</a>
-			<p class="line" id="err"></p>
-		</div>
+	<div id="cmd">
+		<div id="cmdscreen" style="border:none;"><p id="content"><span id="caret">a</span></p></div>
 	</div>
 	<div id="hidden">
-		<li class="song_box"><div class="song_info"><p class="song_name"></p><p class="singer"></p></div><a class="to_play button"></a></li>
-		<audio id="audiobox"></audio>
-		<input type="file" multiple="multiple" id="file" accept="audio/mp3">
+		<input type="text" name="inputCatcher" id="ic" autofocus="true" autocomplete="off">
+	</div>
+	<div id="warpper" style="display:none;">
+		<section class="page" id="about">
+			<h2>我是谁？</h2>
+			<p>陈庆润：</p>
+			<ul>
+				<li>武汉大学 国际软件学院 软件工程专业 大三学生</li>
+				<li>武汉大学自强学堂网站 web组 前端方向成员</li>
+				<li>A Learner of Front-End Technology</li>
+			</ul>
+		</section>
+		<section class="page" id="skill">
+			<h2>我掌握的技术？</h2>
+			<p>专注学习<span class="note">I Learned/Praticed A Lot of</span>：</p>
+			<ul>
+				<li>前端基础<span class="note">Front-End Basic Technology</span>：<span>HTML5</span> <span>CSS3</span> <span>JS</span></li>
+				<li>Functional JavaScript Programming</li>
+				<li>Cross Browser CSS,JS Compatibility</li>
+				<li>Web Technology:<span>ajax</span></li>
+			</ul>
+			<p>略知一二<span class="note">Somehow I Have Learned</span>：</p>
+			<ul>
+				<li>HTTP Protocal</li>
+				<li>Web Page Optimization of Loading and Displaying</li>
+				<li>后端技术<span class="note">Back-End Technology</span>：<span>Java Servlet</span> <span>JSP</span> <span>node.js</span></li>
+				<li>Basic DataBase Table Operation</li>
+			</ul>
+			<p>尚需学习<span class="note">I am Going to Learn</span>：</p>
+			<ul>
+				<li>Semantic HTML Tags</li>
+				<li>Fancy CSS3 Animation and Fallbacks</li>
+				<li>Polyfills of New ECMAScript Functions in older browsers</li>
+				<li>CSS Bugs in older browsers</li>
+			</ul>
+
+		</section>
+		<section class="page" id="project">
+			<h2>我写过的东西？</h2>
+			<p><a href="https://www.github.com/godluck" target="_new">去我的github看看</a></p>
+			<dl>
+				<dt><a href="https://www.github.com/godluck/multiplayer" target="_new">MultiPlayer</a></dt><dd>一个用于播放本地音乐、制作并分享歌词的web应用<span class="note">A web music player playing local music which can make and share lyrics</span> <a href="http://120.27.96.128/static/UI.html">view the site online</a><span class="note">please open the page with a phone-sized window</span></dd> 
+				<dt>HeySDK</dt><dd>一个商业网站的前端模板外包项目<span class="note">A front-end template used by a commercial website</span> <a href="www.heysdk.com">view the site online</a></dd>
+				<dt><a href="https://www.github.com/godluck/nekocoin" target="_new">国际软件学院官网</a></dt><dd>学院官网的一个demo（比赛用）<span class="note">A demo for my school's website (Used in Contest)</span></dd>
+			</dl>
+		</section>
+		<section class="page" id="menu">
+			<h2>菜单 <span class="note">Menu List</span>：</h2>
+			<ul>
+				<li><span class="menuitem">menu/菜单</span></li>
+				<li><span class="menuitem">hi</span>or<span class="menuitem">hello</span></li>
+				<li><span class="menuitem">about me/关于我</span>or shortcut <span class="menuitem">about</span></li>
+				<li><span class="menuitem">my skills/我的技术</span>or shortcut <span class="menuitem">skills</span></li>
+				<li><span class="menuitem">my projects/我的项目</span>or shortcut <span class="menuitem">projects</span></li>
+				<li><span class="menuitem">contact me/联系我</span>or shortcut <span class="menuitem">contact</span></li>
+				<li><span class="menuitem">clear/清屏</span></li>
+			</ul>
+		</section>
 	</div>
 	<script type="text/javascript">
-	document.getElementsByClassName('warpper')[0].style.fontSize=document.body.clientWidth*0.025+'px';
+		+function(w,d){
+			w.$=function (selector, el) {
+				if (!el) {el = document;}
+					return el.querySelector(selector);
+				}
+			w.$$=function (selector, el) {
+				if (!el) {el = document;}
+				return el.querySelectorAll(selector);
+				// Note: the returned object is a NodeList.
+				// If you'd like to convert it to a Array for convenience, use this instead:
+				// return Array.prototype.slice.call(el.querySelectorAll(selector));
+			}
+			function parseValue(value){
+				return value.split('').map(function(letter){
+					return '<span>'+letter+'</span>';
+				}).join('')+'<i id="caret">a</i>';
+			}
+			var input=$('#ic');
+			var c_screen=$('#cmdscreen');
+			var content=$('#content');
+			var cursorPosition=0;
+			d.onclick=function(){
+				input.focus();
+			}
+			input.onfocus=function(){
+				c_screen.removeAttribute('style');
+				$('#caret').style.display='inline';
+			}
+			input.onblur=function(){
+				c_screen.style.border='4px solid #272822';
+				$('#caret').style.display='none';
+			}
+			//bad way here
+			/*input.onkeyup=function(e){
+				e=e||window.event;
+				console.log(e.keyCode);
+				if(e.keyCode==13&&input.value!=''){
+					var p=d.createElement('p');
+					p.innerHTML=input.value;
+					input.value='';
+					content.innerHTML='<i id="caret">a</i>';
+					c_screen.insertBefore(p,content);
+					content.scrollIntoView();
+				}else if(e.keyCode==37){
+					if(cursorPosition<input.value.length){
+						(cursorPosition==0)||($$('span',content)[input.value.length-cursorPosition].style.borderBottom='');
+						cursorPosition+=1;
+						$$('span',content)[input.value.length-cursorPosition].style.borderBottom='2px solid #74e22e';
+					}
+					console.log(this.selectionStart);
+				}else if(e.keyCode==39){
+					if(cursorPosition>0){
+						$$('span',content)[input.value.length-cursorPosition].style.borderBottom='';
+						cursorPosition-=1;
+						(cursorPosition==0)||($$('span',content)[input.value.length-cursorPosition+1].style.borderBottom='2px solid #74e22e');
+					}
+					console.log(this.selectionStart);
+				}else if(e.keyCode==8){
+					console.log(input.value.length+'*'+cursorPosition);
+					var t=$$('span',content)[input.value.length-cursorPosition];
+					t&&t.parentNode.removeChild(t);
+				}else if(e.keyCode==46){
+					cursorPosition>0&&(cursorPosition-=1);
+					console.log(input.value.length+'*'+cursorPosition);
+					var t=$$('span',content)[input.value.length-cursorPosition];
+					(cursorPosition>0)&&($$('span',content)[input.value.length-cursorPosition+1].style.borderBottom='2px solid #74e22e');
+					t&&t.parentNode.removeChild(t);
+				}else{
+					content.innerHTML=parseValue(this.value);
+				}
+				if(cursorPosition!=0){
+					$('#caret').style.display='none';
+				}else{
+					$('#caret').style.display='inline';
+				}
+			}*/
+			input.onkeyup=function(e){
+				e=e||window.event;
+				if(e.keyCode==13&&input.value!=''){
+					var p=d.createElement('p');
+					p.className='cmds';
+					p.innerHTML=input.value;
+					content.innerHTML='<i id="caret">a</i>';
+					c_screen.insertBefore(p,content);
+					run(input.value);
+					input.value='';
+				}else if(this.selectionStart==this.value.length){
+					content.innerHTML=parseValue(this.value);
+				}else{
+					content.innerHTML=parseValue(this.value);
+					$$('span',content)[this.selectionStart].style.borderBottom='2px solid #74e22e';
+				}
+				if(this.selectionStart!=this.value.length){
+					$('#caret').style.display='none';
+				}else{
+					$('#caret').style.display='inline';
+				}
+				content.scrollIntoView();
+			}
+			function run(cmd){
+				switch(cmd.toLowerCase()){
+					case 'about me':
+					case 'about':
+					case '关于我':
+					c_screen.insertBefore($('#about').cloneNode(true),content);
+					break;
+					case 'my skills':
+					case 'skills':
+					case '我的技术':
+					c_screen.insertBefore($('#skill').cloneNode(true),content);
+					break;
+					case 'my projects':
+					case 'projects':
+					case '我的项目':
+					c_screen.insertBefore($('#project').cloneNode(true),content);
+					break;
+					case 'menu':
+					case '菜单':
+					c_screen.insertBefore($('#menu').cloneNode(true),content);
+					break;
+					case 'hi':
+					case 'hello':
+					var p=document.createElement('p');
+					p.innerHTML='Hello World and Hello you~';
+					c_screen.insertBefore(p,content);
+					break;
+					case 'contact me':
+					case 'contact':
+					case '联系我':
+					var p=document.createElement('p');
+					p.innerHTML='This may not be shown here :P';
+					c_screen.insertBefore(p,content);
+					break;
+					case 'clear':
+					case '清屏':
+					c_screen.innerHTML='';
+					c_screen.insertBefore(content,null);
+					break;
+				}
+			}
+			setTimeout(run.bind(this,'menu'),1000);
+		}(window,document);
 	</script>
-	<script type="text/javascript" src="js/sha1.js"></script>
-	<script type="text/javascript" src="js/UI.js"></script>
 </body>
 </html>
