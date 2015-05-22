@@ -85,7 +85,7 @@
 					box.height=i.height/scale;
 					preview.style.width=box.width+'px';
 					preview.style.height=box.height+'px';
-					ctx.drawImage(i/*img*/,0,0/*start point in img*/,100*scale,100*scale/*slice width & height*/,0,0/*start point in canvas*/,100,100/*display width & height*/);
+					ctx.drawImage(i/*img*/,X*scale,Y*scale/*start point in img*/,size*scale,size*scale/*slice width & height*/,0,0/*start point in canvas*/,100,100/*display width & height*/);
 					console.log(box);
 				};
 			}
