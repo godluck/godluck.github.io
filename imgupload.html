@@ -3,121 +3,117 @@
 <head>
 	<title>test</title>
 	<style type="text/css">
-	body{background-color: black;}
-	#buttonList{width:300px;float: right;}
-	#buttonList>button{width:280px;float: left;}
-	#cover{position:absolute;left: 0;top: 0;width: 200px;height: 200px;background-color: red;mix-blend-mode:color;}
-	#bgp_test{background-size: contain ;background-image:url(14442691_min.jpg) ;width: 200px;height: 100px;background-position:50% 50%;background-repeat: no-repeat; }
+		#preview{
+			border: 1px solid gray;
+			width: 400px;
+			height: 400px;
+			overflow: hidden;
+			background-repeat: no-repeat;
+			background-size: contain;
+			position: relative;
+		}
+		#selector{
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			border: 2px dashed orange;
+			box-sizing:border-box;
+		}
 	</style>
 </head>
 <body>
-<canvas id="c" width="200px" height="200px"></canvas>
-<div id="cover"></div>
-<div id="buttonList"></div>
-<div id="bgp_test"></div>
-
+<canvas id="canvas" width="100px" height="100px"></canvas>
+<div id="preview"><div id="selector"></div></div>
+<input id="file" type="file">
+<button onclick="upload()">上传图片</button>
 <script type="text/javascript">
-	function tests(){
-		var ctx=document.getElementById("c").getContext?document.getElementById("c").getContext("2d"):null;
-		var tests={
-			buildButton:function(title,callee){
-				var b=document.createElement("button");
-				b.innerHTML=title;
-				b.onclick=callee;
-				document.getElementById("buttonList").appendChild(b);
-			},
-			buildButtonList:function(){
-				for(var i in this){
-					if(i.match("ex")){
-						this.buildButton(i.substr(2),this[i]);
-					}
-				}
-			},
-			exDrawRect:function(){
-				ctx.fillStyle = "rgb(200,0,0)";
-				ctx.fillRect (10, 10, 55, 50);
-			},
-			exDrawRectWithAlpha:function(){
-				ctx.fillStyle = "rgba(200,0,0,0.5)";
-				ctx.fillRect (30, 30, 55, 50);
-			},
-			exStrokeRect:function(){
-				ctx.strokeStyle="rgba(255,0,255,0.6)";
-				ctx.strokeRect(20, 20, 55, 50);
-			},
-			exClearRect:function(){
-				ctx.clearRect(15, 15, 65, 60);
-			},
-			exDrawPath:function(){
-				ctx.beginPath();
-				ctx.moveTo(10,80);
-				ctx.lineTo(85,10);
-				ctx.strokeStyle="rgb(255,255,0)";
-				ctx.lineWidth=2;
-				ctx.lineCap="round";//butt*,round,square
-				ctx.lineJoin="round";//round,bevel,miter*
-				ctx.miterLimit=2;
-				ctx.stroke();
-			},
-			exDrawArc:function(){
-				ctx.beginPath();
-				ctx.arc(10/*x*/, 80/*y*/,5 /*radius*/, 0/*startAngle*/, Math.PI*2/*endAngle*/,false/*anticlockwise*/);
-				ctx.moveTo(90,10);
-				ctx.arc(85,10,5,0,Math.PI*2,false);
-				ctx.strokeStyle="rgb(255,0,0)";
-				ctx.stroke();
-			},
-			exDrawRoundAngleRect1:function(){
-				ctx.beginPath();
-				ctx.moveTo(10,150);//start point
-				ctx.quadraticCurveTo(10,100/*control point*/,60,100/*end point*/);
-				ctx.quadraticCurveTo(110,100,110,150);
-				ctx.quadraticCurveTo(110,200,60,200);
-				ctx.quadraticCurveTo(10,200,10,150);
-				ctx.fillStyle="rgba(0,255,0,0.2)";
-				ctx.fill();
-			},
-			exDrawRoundAngleRect2:function(){
-				ctx.beginPath();
-				ctx.moveTo(10,110);//start point
-				ctx.quadraticCurveTo(10,100/*control point*/,20,100/*end point*/);
-				ctx.lineTo(100,100);
-				ctx.quadraticCurveTo(110,100,110,110);
-				ctx.lineTo(110,190);
-				ctx.quadraticCurveTo(110,200,100,200);
-				ctx.lineTo(20,200);
-				ctx.quadraticCurveTo(10,200,10,190);
-				ctx.lineTo(10,110);
-				ctx.fillStyle="rgba(0,0,255,0.2)";
-				ctx.fill();
-			},
-			exDrawHeart:function(){
-				ctx.beginPath();
-				ctx.moveTo(220,220);
-				ctx.bezierCurveTo(100,140/*ctrl p1*/,220,100/*ctrl p2*/,220,160);
-				ctx.bezierCurveTo(220,100/*ctrl p1*/,340,140/*ctrl p2*/,220,220);
-				ctx.fillStyle="rgba(255,0,0,1)";
-				ctx.fill();
-			},
-			exDrawImage:function(){
-				var i=new Image();
-				i.onload=function(){
-					ctx.drawImage(i/*img*/,0,0/*start point*/,500,470/*display width & height*/);
+	var upload=function(w,d){
+		w.requestAnimFrame = (function(){
+		  return  w.requestAnimationFrame       ||
+		          w.webkitRequestAnimationFrame ||
+		          w.mozRequestAnimationFrame    ||
+		          w.oRequestAnimationFrame      ||
+		          w.msRequestAnimationFrame     ||
+		          function(callback){
+		            w.setTimeout(callback, 1000 / 60);
+		          };
+		})();
+		w.createObjectURL=(function(){
+			return w.createObjectURL||
+			w.URL.createObjectURL||
+			w.webkitURL.createObjectURL||
+			(function(){
+				console.error('Your browser can not load file from your hard disk!');
+				return function(){
+					return null;
 				};
-				i.src="14442691.jpg";
-			},
-			exSliceImage:function(){
-				var i=new Image();
-				i.onload=function(){
-					ctx.drawImage(i/*img*/,350,100/*start point in img*/,300,300/*slice width & height*/,50,50/*start point in canvas*/,150,150/*display width & height*/);
-				};
-				i.src="14442691.jpg";
+			})()
+		})();
+		//from  https://developer.mozilla.org/en-US/Add-ons/Code_snippets/QuerySelector
+		w.$=function (selector, el) {
+			if (!el) {el = document;}
+				return el.querySelector(selector);
 			}
-		};
-		return tests;
-	};
-	var test1=tests();
-	test1.buildButtonList();
+		w.$$=function (selector, el) {
+			if (!el) {el = document;}
+			return el.querySelectorAll(selector);
+			// Note: the returned object is a NodeList.
+			// If you'd like to convert it to a Array for convenience, use this instead:
+			// return Array.prototype.slice.call(el.querySelectorAll(selector));
+		}
+		var canvas=$('#canvas');
+		var drag=false;
+		var preview=$('#preview');
+		var selector=$('#selector');
+		var X=0, Y=0;
+		var i=null;
+		$('#file').onchange=function(){
+			if(this.files.length>0){
+				i=new Image();
+				i.src=createObjectURL(this.files[0]);
+				preview.style.backgroundImage='url('+createObjectURL(this.files[0])+')';
+			}
+		}
+		preview.onmousedown=function(e){
+			try{
+				e.X=(e.offsetX||e.layerX);
+				e.Y=(e.offsetY||e.layerY);
+				e.preventDefault();
+			}catch(a){
+				e.returnValue=false;
+			}
+			if(e.target==this){
+				X=((e.X-50)>0?((e.X-50)<300?(e.X-50):300):0);
+				Y=((e.Y-50)>0?((e.Y-50)<300?(e.Y-50):300):0);
+				selector.style.left=X+'px';
+				selector.style.top=Y+'px';
+			}else if(e.target==selector){
+				var tx=selector.offsetLeft+e.X-50;
+				var ty=selector.offsetTop+e.Y-50;
+				X=(tx>0?(tx<300?tx:300):0);
+				Y=(ty>0?(ty<300?ty:300):0);
+				selector.style.left=X+'px';
+				selector.style.top=Y+'px';
+			}
+			var scale=(i.width>400)?(i.width>i.height?i.width/400:i.height/400):(i.height>400?i.height/400:1);
+			console.log(scale,X,Y,i.width,i.height);
+			ctx.clearRect(0, 0, 100, 100);
+			ctx.drawImage(i/*img*/,X*scale,Y*scale/*start point in img*/,100*scale,100*scale/*slice width & height*/,0,0/*start point in canvas*/,100,100/*display width & height*/);
+		}
+		var ctx=canvas.getContext("2d");
+		return function(){
+			var s=canvas.toDataURL("image/png");
+			console.log(s);
+			s=s.replace(/data:image\/(png|jpg);base64,/,'');
+			var xhr=new XMLHttpRequest();
+			xhr.onload=function(){
+				alert('上传成功');
+			};
+			xhr.open('post','url_to_post_img');
+			xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+			xhr.send(s);	
+		}
+	}(window,document);
 </script>
 </body>
 </html>
