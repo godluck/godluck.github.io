@@ -99,8 +99,17 @@
 					box.height=i.height/scale;
 					preview.style.width=box.width+'px';
 					preview.style.height=box.height+'px';
+					size=size>Math.min(box.width,box.height)?Math.min(box.width,box.height):size;
+					size=size<100?100:size;
+					selector.style.width=size+'px';
+					selector.style.height=size+'px';
+					var tx=selector.offsetLeft;
+					var ty=selector.offsetTop;
+					X=(tx>0?(tx<(box.width-size)?tx:(box.width-size)):0);
+					Y=(ty>0?(ty<(box.height-size)?ty:(box.height-size)):0);
+					selector.style.left=X+'px';
+					selector.style.top=Y+'px';
 					ctx.drawImage(i/*img*/,X*scale,Y*scale/*start point in img*/,size*scale,size*scale/*slice width & height*/,0,0/*start point in canvas*/,100,100/*display width & height*/);
-					console.log(box);
 				};
 			}
 		}
