@@ -19,11 +19,24 @@
 			border: 2px dashed orange;
 			box-sizing:border-box;
 		}
+		#extend{
+			width: 6px;
+			height: 6px;
+			background-color: orange;
+			position: absolute;
+			right: -2px;
+			bottom: -2px;
+			box-sizing:border-box;
+		}
+		#extend:hover{
+			border: 2px solid white;
+			outline: orange solid 2px;
+		}
 	</style>
 </head>
 <body>
 <canvas id="canvas" width="100px" height="100px"></canvas>
-<div id="preview"><div id="selector"></div></div>
+<div id="preview"><div id="selector"><div id="extend"></div></div></div>
 <input id="file" type="file">
 <button onclick="upload()">上传图片</button>
 <button onclick="extend()">扩大选区</button>
@@ -64,9 +77,10 @@
 			// return Array.prototype.slice.call(el.querySelectorAll(selector));
 		}
 		var canvas=$('#canvas');
-		var drag=false, pic=false;
+		var drag=false, pic=false, extending=false;
 		var preview=$('#preview');
 		var selector=$('#selector');
+		var extend=$('#extend');
 		var X=0, Y=0;
 		var size=100;
 		var scale=1;
@@ -90,18 +104,35 @@
 				};
 			}
 		}
-		preview.onmousedown=function(){
+		preview.onmousedown=function(e){
 			drag=true;
+			e.X=(e.offsetX||e.layerX);
+			e.Y=(e.offsetY||e.layerY);
+			if(e.target==this){
+				X=((e.X-size/2)>0?((e.X-size/2)<(box.width-size)?(e.X-size/2):(box.width-size)):0);
+				Y=((e.Y-size/2)>0?((e.Y-size/2)<(box.height-size)?(e.Y-size/2):(box.height-size)):0);
+				selector.style.left=X+'px';
+				selector.style.top=Y+'px';
+			}else if(e.target==selector){
+				var tx=selector.offsetLeft+e.X-size/2;
+				var ty=selector.offsetTop+e.Y-size/2;
+				X=(tx>0?(tx<(box.width-size)?tx:(box.width-size)):0);
+				Y=(ty>0?(ty<(box.height-size)?ty:(box.height-size)):0);
+				selector.style.left=X+'px';
+				selector.style.top=Y+'px';
+			}
+			ctx.clearRect(0, 0, 100, 100);
+			ctx.drawImage(i/*img*/,X*scale,Y*scale/*start point in img*/,size*scale,size*scale/*slice width & height*/,0,0/*start point in canvas*/,100,100/*display width & height*/);
 		}
 		preview.onmousemove=function(e){
+			try{
+				e.X=(e.offsetX||e.layerX);
+				e.Y=(e.offsetY||e.layerY);
+				e.preventDefault();
+			}catch(a){
+				e.returnValue=false;
+			}
 			if(drag&&pic){
-				try{
-					e.X=(e.offsetX||e.layerX);
-					e.Y=(e.offsetY||e.layerY);
-					e.preventDefault();
-				}catch(a){
-					e.returnValue=false;
-				}
 				if(e.target==this){
 					X=((e.X-size/2)>0?((e.X-size/2)<(box.width-size)?(e.X-size/2):(box.width-size)):0);
 					Y=((e.Y-size/2)>0?((e.Y-size/2)<(box.height-size)?(e.Y-size/2):(box.height-size)):0);
@@ -115,13 +146,41 @@
 					selector.style.left=X+'px';
 					selector.style.top=Y+'px';
 				}
-				console.log(scale,X,Y,i.width,i.height);
 				ctx.clearRect(0, 0, 100, 100);
+				ctx.drawImage(i/*img*/,X*scale,Y*scale/*start point in img*/,size*scale,size*scale/*slice width & height*/,0,0/*start point in canvas*/,100,100/*display width & height*/);
+			}
+			if(extending&&pic){
+				if(e.target==this){
+					size=Math.min((e.offsetX||e.layerX)-X,(e.offsetY||e.layerY)-Y);
+				}else if(e.target==selector){
+					size=Math.min((e.offsetX||e.layerX),(e.offsetY||e.layerY));
+				}
+				size=size>Math.min(box.width,box.height)?Math.min(box.width,box.height):size;
+				size=size<100?100:size;
+				selector.style.width=size+'px';
+				selector.style.height=size+'px';
+				var tx=selector.offsetLeft;
+				var ty=selector.offsetTop;
+				X=(tx>0?(tx<(box.width-size)?tx:(box.width-size)):0);
+				Y=(ty>0?(ty<(box.height-size)?ty:(box.height-size)):0);
+				selector.style.left=X+'px';
+				selector.style.top=Y+'px';
 				ctx.drawImage(i/*img*/,X*scale,Y*scale/*start point in img*/,size*scale,size*scale/*slice width & height*/,0,0/*start point in canvas*/,100,100/*display width & height*/);
 			}
 		}
 		preview.onmouseup=function(){
 			drag=false;
+			extending=false;
+		}
+		preview.onmouseout=function(e){
+			if(e.target==this&&e.relatedTarget!==selector&&e.relatedTarget!==extend){
+				drag=false;
+				extending=false;
+			}
+		}
+		extend.onmousedown=function(e){
+			e.stopPropagation();
+			extending=true;
 		}
 		w.upload=function(){
 			var s=canvas.toDataURL("image/png");
@@ -134,31 +193,6 @@
 			xhr.open('post','url_to_post_img');
 			xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
 			xhr.send(s);	
-		}
-		w.extend=function(){
-			size+=10;
-			size=size>Math.min(box.width,box.height)?Math.min(box.width,box.height):size;
-			selector.style.width=size+'px';
-			selector.style.height=size+'px';
-			var tx=selector.offsetLeft;
-			var ty=selector.offsetTop;
-			X=(tx>0?(tx<(box.width-size)?tx:(box.width-size)):0);
-			Y=(ty>0?(ty<(box.height-size)?ty:(box.height-size)):0);
-			selector.style.left=X+'px';
-			selector.style.top=Y+'px';
-			ctx.drawImage(i/*img*/,X*scale,Y*scale/*start point in img*/,size*scale,size*scale/*slice width & height*/,0,0/*start point in canvas*/,100,100/*display width & height*/);
-		}
-		w.narrow=function(){
-			size=size<110?100:(size-10);
-			selector.style.width=size+'px';
-			selector.style.height=size+'px';
-			var tx=selector.offsetLeft;
-			var ty=selector.offsetTop;
-			X=(tx>0?(tx<(box.width-size)?tx:(box.width-size)):0);
-			Y=(ty>0?(ty<(box.height-size)?ty:(box.height-size)):0);
-			selector.style.left=X+'px';
-			selector.style.top=Y+'px';
-			ctx.drawImage(i/*img*/,X*scale,Y*scale/*start point in img*/,size*scale,size*scale/*slice width & height*/,0,0/*start point in canvas*/,100,100/*display width & height*/);
 		}
 	}(window,document);
 </script>
