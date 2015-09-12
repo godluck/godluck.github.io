@@ -1,106 +1,314 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name=author content=陈庆润>
-	<meta name=description content=个人简历>
-	<meta charset="utf-8">
-	<title>个人简历</title>
-	<style type="text/css">
-	body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, button, p, blockquote, th, td {margin: 0;padding: 0;}
-	body{background-color:#e1e0d9; font-family: microsoft yahei;font-size: 14px;}
-	a{color:#4d8775;text-decoration: none;}
-	.head{width:100%;background-color: #1688cc;padding-bottom: 20px;height: 100px;line-height:100px;text-align: center;font-size: 20px;margin-bottom: 10px;color: white;}
-	.frame{width:800px;margin: 0 auto;position:relative;background-color:white;padding: 10px;box-shadow:  2px 0 3px 0 rgba(180,180,180,.4);margin-bottom: 80px;}
-	.section{border-top:1px solid #4589c8; margin-bottom: 10px;padding-top: 10px;padding-left: 20px;}
-	.personalInfo{position: absolute;right: 0;top: 0;background-color:white;border-bottom:none; width:300px;box-shadow:  2px 0 3px 0 rgba(180,180,180,.4);z-index: 999;border: none;}
-	#photo{width:150px;height:200px;display: block;margin:0 auto;}
-	table{width:180px;margin-left:60px ;border-collapse: collapse;border-spacing: 0;}
-	tr{height:30px;border-top:1px dashed #c2bbb0; }
-	.hide{opacity:0;}
-	.hide:hover{opacity:1;}
-	.aim{border: none; }
-	.eduBg{position: relative;}
-	span{color:#4589c8;text-decoration: underline;}
-	.note{color:gray;font-size: 0.75em;text-decoration: none;}
-	.school{position: absolute;left: 300px;top:60px;width:60px;height:60px;}
-	.exps{margin-left: 40px;line-height: 30px;}
-	.about>p{line-height: 25px;width:700px;margin: 0 auto;}
-	.title{border-left: 1px solid #4589c8;border-bottom: 1px solid #4589c8;border-top: 1px solid #4589c8;font-size: 16px;height:36px;width: 175px;font-weight: 300;line-height: 36px;text-align: center;position:relative;}
-	.circle{border: 1px solid #4589c8;height:22px;width:22px;position:absolute;border-radius:11px; top:7px;left: -14px;background-color: white;}
-	.outBox{height:38px;width: 175px;overflow: hidden;margin-bottom: 10px;}
-	.contact{font-size: 14px;color:#a6937c;text-align: center;padding-top:14px;padding-bottom:14px;margin-top: -61px;border-top: 1px solid #a6937c;width: 100%;}
-	.ability p{
-		font-size: 1.2em;
-		margin-top: 1em;
-		margin-bottom: 0.5em;
-	}
-	</style>
+    <meta name=author content=陈庆润>
+    <meta name=description content=个人简历>
+    <meta charset="utf-8">
+    <title>个人简历</title>
+    <style type="text/css">
+        body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, button, p, blockquote, th, td {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #e1e0d9;
+            font-family: microsoft yahei;
+            font-size: 14px;
+        }
+
+        a {
+            color: #4d8775;
+            text-decoration: none;
+        }
+
+        .frame {
+            width: 800px;
+            margin: 0 auto;
+            position: relative;
+            background-color: white;
+            padding: 10px;
+            box-shadow: 2px 0 3px 0 rgba(180, 180, 180, .4);
+            margin-bottom: 80px;
+        }
+
+        .section {
+            border-top: 1px solid #4589c8;
+            margin-bottom: 10px;
+            padding: 10px 20px;
+        }
+
+        .personalInfo {
+            position: absolute;
+            right: 0;
+            top: 0;
+            background-color: white;
+            width: 210px;
+            z-index: 999;
+            border: 1px dashed #c2bbb0;
+            padding: 10px 10px;
+        }
+
+        #photo {
+            width: 150px;
+            height: 200px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        table {
+            width: 210px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        tr {
+            height: 40px;
+            border-top: 1px dashed #c2bbb0;
+        }
+
+        .aim {
+            border: none;
+        }
+
+        span {
+            color: #4589c8;
+            text-decoration: underline;
+        }
+
+        .about > p {
+            line-height: 25px;
+            width: 700px;
+            margin: 0 auto;
+        }
+
+        .title {
+            border-left: 1px solid #4589c8;
+            border-bottom: 1px solid #4589c8;
+            border-top: 1px solid #4589c8;
+            font-size: 16px;
+            height: 36px;
+            width: 175px;
+            font-weight: 300;
+            line-height: 36px;
+            text-align: center;
+            position: relative;
+        }
+
+        .circle {
+            border: 1px solid #4589c8;
+            height: 22px;
+            width: 22px;
+            position: absolute;
+            border-radius: 11px;
+            top: 7px;
+            left: -14px;
+            background-color: white;
+        }
+
+        .outBox {
+            height: 38px;
+            width: 175px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .ability {
+            position: relative;
+            height: 340px;
+        }
+
+        .ability p {
+            font-size: 1.2em;
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+            border-left: 5px solid #4589c8;
+            padding-left: 10px;
+        }
+
+        .ability ul {
+            margin-left: 40px;
+        }
+
+        .column-2 {
+            position: absolute;
+            left: 325px;
+            top: 48px;
+        }
+        .line {
+            border-bottom: 1px solid #4589c8;
+            width: 90%;
+            margin: 20px auto;
+        }
+        .patitle{
+            font-size: 1.2em;
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+            border-left: 5px solid #4589c8;
+            padding-left: 10px;
+        }
+        .project{
+            margin: 0 40px;
+        }
+        .ptitle{
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+            border-left: 2px solid #4589c8;
+            padding-left: 10px;
+        }
+        .pcontent {
+            margin-left: 12px;
+        }
+    </style>
 </head>
 <body>
 <div class="frame">
-<div class="section personalInfo">
-	<div class="outBox"><div class=title><div class="circle"></div>个人信息</div></div>
-	<img id="photo" src="pic\photo.jpg">
-	<table>
-		<tr><td>姓名</td><td>陈庆润</td></tr><tr><td>性别</td><td>男</td></tr>
-		<tr><td>年龄</td><td>20</td></tr><tr><td>民族</td><td>汉</td></tr>
-		<tr><td>籍贯</td><td>山东菏泽</td></tr><tr><td>身份证号</td><td>372901199412180012</td></tr>
-		<tr><td>手机</td><td>15172389519</td></tr><tr><td>邮箱</td><td>cqr648413045@163.com</td></tr>
-		<tr><td>英语</td><td>六级546</td></tr>
-	</table>
-</div>
-<div class="section aim">
-<div class="outBox"><div class=title><div class="circle"></div>应聘方向</div></div>
-	web前端开发
-</div>
-<div class="section eduBg">
-<div class="outBox"><div class=title><div class="circle"></div>学历</div></div>
-<p>武汉大学</p>
-<p>国际软件学院 软件工程专业</p><p>2012-2016</p>
-<img src="pic\whu.png" class="school">
-</div>
-<div class="section ability">
-	<div class="outBox"><div class=title><div class="circle"></div>习得技能</div></div>
-	<div style="margin-left:40px;"><p>专注学习<span class="note">I Learned/Praticed A Lot of</span>：</p>
-	<ul>
-		<li>前端基础<span class="note">Front-End Basic Technology</span>：<span class="skill">HTML</span> <span class="skill">CSS3</span> <span class="skill">JS</span></li>
-		<li class="skill">JS设计模式</li>
-		<li class="skill">模块化思想、组件化思想</li>
-		<li class="skill">PC、移动端兼容性，屏幕适配</li>
-		<li><span class="skill">ajax</span></li>
-	</ul>
-	<p>略知一二<span class="note">Somehow I Have Learned</span>：</p>
-	<ul>
-		<li class="skill">HTTP Protocal</li>
-                          <li class="skill">web socket</li>
-		<li class="skill">浏览器重排、重绘及渲染逻辑</li>
-		<li>后端技术<span class="note">Back-End Technology</span>：<span class="skill">Java (Spring、struts2)</span> <span class="skill">JSP</span> <span class="skill">node.js</span></li>
-		<li class="skill">SQL</li>
-	</ul>
-	</div>
-	
-</div>
-<div class="section practices">
-	<div class="outBox"><div class=title><div class="circle"></div>实践经历</div></div>
-	<ul class=exps>
-    <li class=exp>阿里2015年春季实习生，负责1688无线活动页面及宣传页面的开发</li>
-    <li class=exp>个人github主页:https://github.com/godluck</li>
-    <li class=exp>在线简历:http://godluck.github.io</li>
-    <li class=exp>HTML5播放器，可实现歌词制作、搜索与共享(目前仅适配移动端，PC端使用需调整页面大小并刷新:P):<a href="http://120.27.96.128/static/UI.html">http://120.27.96.128/static/UI.html</a></li>
-		<li class=exp>武汉大学自强学堂代码部前端方向成员</li>
-		<li class=exp>5miao网html5游戏开发大赛三等奖</li>
-		<li class=exp>HeySDK网站前端模板外包项目:www.heySDK.com</li>
-		
-		
-	</ul>
-</div>
-<div class="section about">
-	<div class="outBox"><div class=title><div class="circle"></div>关于我</div></div>
-	<p>
-		作为一个前端学习者，我大一大二的时间都用在基础学习上，曾对自己的发展产生迷茫；而从大三开始接触HTML5和NodeJS，我找到了一片全新的世界，发现了许多新技术，碰到了很多问题，在解决问题的同时也学到了很多处理问题的方法。<br>
-		作为一个coder，我通过各种项目锻炼自己的编码能力，也通过各种教程、代码学习好的JS编程思想和方法，以“解决问题”为目的，不断提高自己对前端技术的理解能力。
-	</p>
-</div>
+    <div class="section personalInfo">
+        <div class="outBox">
+            <div class=title>
+                <div class="circle"></div>
+                个人信息
+            </div>
+        </div>
+        <img id="photo" src="pic\photo.jpg">
+        <table>
+            <tr>
+                <td>姓名</td>
+                <td>陈庆润</td>
+            </tr>
+            <tr>
+                <td>性别</td>
+                <td>男</td>
+            </tr>
+            <tr>
+                <td>手机</td>
+                <td>15172389519</td>
+            </tr>
+            <tr>
+                <td>邮箱</td>
+                <td>cqr648413045@163.com</td>
+            </tr>
+            <tr>
+                <td>英语</td>
+                <td>六级546</td>
+            </tr>
+            <tr>
+                <td>教育</td>
+                <td>武汉大学<br>国际软件学院，本科</td>
+            </tr>
+        </table>
+    </div>
+    <div class="section aim">
+        <div class="outBox">
+            <div class=title>
+                <div class="circle"></div>
+                应聘方向
+            </div>
+        </div>
+        web前端开发
+    </div>
+    <div class="section ability">
+        <div class="outBox">
+            <div class=title>
+                <div class="circle"></div>
+                习得技能
+            </div>
+        </div>
+        <div class="skills">
+            <p>HTML：</p>
+            <ul>
+                <li>html5 语义化、多媒体标签、浏览器API</li>
+            </ul>
+            <p>CSS：</p>
+            <ul>
+                <li class="skill">基础布局、盒模型</li>
+                <li class="skill">CSS3动画</li>
+                <li class="skill">浏览器兼容性</li>
+            </ul>
+            <p>JS：</p>
+            <ul>
+                <li class="skill">语言基础：闭包、作用域链、继承模式等</li>
+                <li class="skill">应用技术：事件代理、原生ajax实现等</li>
+                <li class="skill">编程思想：设计模式、模块化思想</li>
+                <li class="skill">代码规范</li>
+            </ul>
+            <div class="column-2">
+                <p>库、框架、工具：</p>
+                <ul>
+                    <li class="skill">库：jQuery、fastclick</li>
+                    <li class="skill">工具：LESS、artTemplate</li>
+                    <li class="skill">框架(有所了解)：angular、vue</li>
+                </ul>
+                <p>浏览器相关：</p>
+                <ul>
+                    <li class="skill">加载机制</li>
+                    <li class="skill">重排、重绘</li>
+                    <li class="skill">HTTP协议</li>
+                </ul>
+                <p>其他技能基础：</p>
+                <ul>
+                    <li class="skill">JAVA</li>
+                    <li class="skill">Node.js</li>
+                    <li class="skill">SQL</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="section practices">
+        <div class="outBox">
+            <div class=title>
+                <div class="circle"></div>
+                实践经历
+            </div>
+        </div>
+        <div class="projects">
+            <div class="part">
+                <p class="patitle">阿里实习：</p>
+
+                <div class="project">
+                    <p class="ptitle">无线大促互动游戏：</p>
+
+                    <p class="pcontent">
+                        开发手机客户端中内嵌的html5互动游戏页面，通过CSS3动画和Canvas动画来实现游戏进程。
+                        <br>其中使用fastclick库屏蔽并模拟click事件解决移动端按键穿透的问题，
+                        <br>使用dpr+rem配合js计算的方式处理屏幕适配问题。</p>
+                </div>
+                <div class="project">
+                    <p class="ptitle">客户端宣传页面：
+                        <a target="_blank" href="http://3g.1688.com">3g.1688.com</a>，
+                        <a target="_blank" href="http://3g.1688.com/seller">3g.1688.com/seller</a>
+                    </p>
+
+                    <p class="pcontent">
+                        开发1688客户端的PC静态宣传页面，实现屏幕滚动与动画展示的两种结合方式。
+                        <br>其中使用fullpage库实现兼容至IE7的全屏切换效果，
+                        <br>使用CSS3动画实现各种动画效果。</p>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="part">
+                <p class="patitle">个人项目：</p>
+
+                <div class="project">
+                    <p class="ptitle">HTML5音乐播放器：<a target="_blank" href="http://120.27.96.128/static/UI.html">120.27.96.128/static/UI.html</a></p>
+
+                    <p class="pcontent">使用HTML5的audio标签及原生js实现一个完整的播放器，适配移动端，支持歌词逐字播放、制作、搜索与共享</p>
+                </div>
+                <div class="project">
+                    <p class="ptitle">HeySDK网站前端模板（外包）：<a target="_blank" href="http://www.heySDK.com">www.heySDK.com</a></p>
+
+                    <p class="pcontent">基于已有设计图还原页面，并处理不同屏幕设备显示效果。
+                        产品介绍页中使用js实现PC、移动端的全屏切换效果。</p>
+                </div>
+                <div class="project">
+                    <p class="ptitle">撑死瘦子游戏：<a target="_blank" href="http://godluck.github.io/bw/index.html">godluck.github.io/bw/index.html</a></p>
+
+                    <p class="pcontent">使用cocos2d-js框架实现的消除类游戏，主要工作量为编写游戏场景和逻辑</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
