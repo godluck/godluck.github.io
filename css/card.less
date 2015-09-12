@@ -1,0 +1,74 @@
+@import "animate";
+
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 360px;
+  margin: 0 auto;
+  perspective: 2000px;
+}
+
+.card {
+  margin: 0 auto;
+  width: 300px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.card-face, .card-page, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.card-face {
+  z-index: 100;
+  background-color: #0000ed;
+  transform-origin: bottom center;
+}
+
+.page-2 {
+  background-color: #009900;
+  top: 100%;
+}
+
+.page-3 {
+  z-index: 1;
+  background-color: #C6E746;
+  top: 200%;
+  transform-origin: top center;
+  .transform(rotateX(90deg) translateZ(-1px));
+  .animation(flip2, 2s, linear, 0s, 1, normal, both);
+}
+
+.card-back {
+  background-color: #aa0000;
+  top: 200%;
+  transform-origin: top center;
+  .transform(rotateX(180deg) translateZ(-2px));
+  .animation(flip1, 2s, linear, 0s, 1, normal, both);
+}
+
+.keyframes(flip1, {
+from {
+  .transform(rotateX(180deg) translateZ(-2px));
+}
+to {
+  .transform(rotateX(0deg) translateZ(-2px));
+}
+});
+
+.keyframes(flip2, {
+from {
+  .transform(rotateX(180deg) translateZ(-1px));
+}
+to {
+  .transform(rotateX(0deg) translateZ(-1px));
+}
+});
