@@ -40,12 +40,6 @@
 		a,a:hover,a:visited{
 			color: #74e22e;
 		}
-		a:before{
-			content:'+';
-		}
-		a:after{
-			content:'+';
-		}
 		#cmd{
 			background-color: #272822;
 
@@ -96,6 +90,25 @@
 		.page{
 			line-height: 1.5em;
 		}
+		.patitle{
+			font-size: 1.2em;
+			margin-top: 1em;
+			margin-bottom: 0.5em;
+			border-left: 5px solid #74e22e;
+			padding-left: 10px;
+		}
+		.project{
+			margin: 0 40px;
+		}
+		.ptitle{
+			margin-top: 1em;
+			margin-bottom: 0.5em;
+			border-left: 2px solid #74e22e;
+			padding-left: 10px;
+		}
+		.pcontent {
+			margin-left: 12px;
+		}
 	</style>
 </head>
 <body>
@@ -117,37 +130,91 @@
 		</section>
 		<section class="page" id="skill">
 			<h2>我掌握的技术？</h2>
-			<p>专注学习<span class="note">I Learned/Praticed A Lot of</span>：</p>
+			<p>HTML：</p>
 			<ul>
-				<li>前端基础<span class="note">Front-End Basic Technology</span>：<span>HTML5</span> <span>CSS3</span> <span>JS</span></li>
-				<li>Functional JavaScript Programming</li>
-				<li>Cross Browser CSS,JS Compatibility</li>
-				<li>Web Technology:<span>ajax</span></li>
+				<li>html5 语义化、多媒体标签、浏览器API</li>
 			</ul>
-			<p>略知一二<span class="note">Somehow I Have Learned</span>：</p>
+			<p>CSS：</p>
 			<ul>
-				<li>HTTP Protocal</li>
-				<li>Web Page Optimization of Loading and Displaying</li>
-				<li>后端技术<span class="note">Back-End Technology</span>：<span>Java Servlet</span> <span>JSP</span> <span>node.js</span></li>
-				<li>Basic DataBase Table Operation</li>
+				<li class="skill">基础布局、盒模型</li>
+				<li class="skill">CSS3动画</li>
+				<li class="skill">浏览器兼容性</li>
 			</ul>
-			<p>尚需学习<span class="note">I am Going to Learn</span>：</p>
+			<p>JS：</p>
 			<ul>
-				<li>Semantic HTML Tags</li>
-				<li>Fancy CSS3 Animation and Fallbacks</li>
-				<li>Polyfills of New ECMAScript Functions in older browsers</li>
-				<li>CSS Bugs in older browsers</li>
+				<li class="skill">语言基础：闭包、作用域链、继承模式等</li>
+				<li class="skill">应用技术：事件代理、原生ajax实现等</li>
+				<li class="skill">编程思想：设计模式、模块化思想</li>
+				<li class="skill">代码规范</li>
+			</ul>
+			<p>库、框架、工具：</p>
+			<ul>
+				<li class="skill">库：jQuery、fastclick</li>
+				<li class="skill">工具：LESS、artTemplate</li>
+				<li class="skill">框架(有所了解)：angular、vue</li>
+			</ul>
+			<p>浏览器相关：</p>
+			<ul>
+				<li class="skill">加载机制</li>
+				<li class="skill">重排、重绘</li>
+				<li class="skill">HTTP协议</li>
+			</ul>
+			<p>其他技能基础：</p>
+			<ul>
+				<li class="skill">JAVA</li>
+				<li class="skill">Node.js</li>
+				<li class="skill">SQL</li>
 			</ul>
 
 		</section>
 		<section class="page" id="project">
 			<h2>我写过的东西？</h2>
-			<p><a href="https://www.github.com/godluck" target="_new">去我的github看看</a></p>
-			<dl>
-				<dt><a href="https://www.github.com/godluck/multiplayer" target="_new">MultiPlayer</a></dt><dd>一个用于播放本地音乐、制作并分享歌词的web应用<span class="note">A web music player playing local music which can make and share lyrics</span> <a href="http://120.27.96.128/static/UI.html">view the site online</a><span class="note">please open the page with a phone-sized window</span></dd> 
-				<dt>HeySDK</dt><dd>一个商业网站的前端模板外包项目<span class="note">A front-end template used by a commercial website</span> <a href="www.heysdk.com">view the site online</a></dd>
-				<dt><a href="https://www.github.com/godluck/nekocoin" target="_new">国际软件学院官网</a></dt><dd>学院官网的一个demo（比赛用）<span class="note">A demo for my school's website (Used in Contest)</span></dd>
-			</dl>
+			<div class="projects">
+				<div class="part">
+					<p class="patitle">阿里实习：</p>
+
+					<div class="project">
+						<p class="ptitle">无线大促互动游戏：</p>
+
+						<p class="pcontent">
+							开发手机客户端中内嵌的html5互动游戏页面，通过CSS3动画和Canvas动画来实现游戏进程。
+							<br>其中使用fastclick库屏蔽并模拟click事件解决移动端按键穿透的问题，
+							<br>使用dpr+rem配合js计算的方式处理屏幕适配问题。</p>
+					</div>
+					<div class="project">
+						<p class="ptitle">客户端宣传页面：
+							<a target="_blank" href="http://3g.1688.com">3g.1688.com</a>，
+							<a target="_blank" href="http://3g.1688.com/seller">3g.1688.com/seller</a>
+						</p>
+
+						<p class="pcontent">
+							开发1688客户端的PC静态宣传页面，实现屏幕滚动与动画展示的两种结合方式。
+							<br>其中使用fullpage库实现兼容至IE7的全屏切换效果，
+							<br>使用CSS3动画实现各种动画效果。</p>
+					</div>
+				</div>
+				<div class="line"></div>
+				<div class="part">
+					<p class="patitle">个人项目：</p>
+
+					<div class="project">
+						<p class="ptitle">HTML5音乐播放器：<a target="_blank" href="http://120.27.96.128/static/UI.html">120.27.96.128/static/UI.html</a></p>
+
+						<p class="pcontent">使用HTML5的audio标签及原生js实现一个完整的播放器，适配移动端，支持歌词逐字播放、制作、搜索与共享</p>
+					</div>
+					<div class="project">
+						<p class="ptitle">HeySDK网站前端模板（外包）：<a target="_blank" href="http://www.heySDK.com">www.heySDK.com</a></p>
+
+						<p class="pcontent">基于已有设计图还原页面，并处理不同屏幕设备显示效果。
+							产品介绍页中使用js实现PC、移动端的全屏切换效果。</p>
+					</div>
+					<div class="project">
+						<p class="ptitle">撑死瘦子游戏：<a target="_blank" href="http://godluck.github.io/bw/index.html">godluck.github.io/bw/index.html</a></p>
+
+						<p class="pcontent">使用cocos2d-js框架实现的消除类游戏，主要工作量为编写游戏场景和逻辑</p>
+					</div>
+				</div>
+			</div>
 		</section>
 		<section class="page" id="menu">
 			<h2>菜单 <span class="note">Menu List</span>：</h2>
