@@ -362,6 +362,7 @@
             mob.type = mobType;
             mob.anchor.x = 0.5;
             mob.anchor.y = 0.5;
+            mob.scale.x = mob.scale.y = gameRatio;
             if (mob.type === 1) {
                 mob.position.x = Math.random() > 0.5 ? -17.5 * gameRatio : 17.5 * gameRatio;
             } else {
