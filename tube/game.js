@@ -362,21 +362,21 @@
             mob.type = mobType;
             mob.anchor.x = 0.5;
             mob.anchor.y = 0.5;
-            mob.scale.x = mob.scale.y = gameRatio;
             if (mob.type === 1) {
-                mob.position.x = Math.random() > 0.5 ? -17.5 * gameRatio : 17.5 * gameRatio;
+                mob.position.x = Math.random() > 0.5 ? -17.5 : 17.5;
             } else {
-                mob.position.x = (22.5 + 50 * Math.random() - 47.5) * gameRatio;
+                mob.position.x = (22.5 + 50 * Math.random() - 47.5);
             }
             mob.position.y = y;
             tube.sprite.addChild(mob);
             tube.mobs.push(mob);
+            console.log(mob.x+' '+mob.y+' '+mob.width+' '+mob.scale.x);
         }
     }
 
     function mobCrash(mobs, x, y, width) {
         for (var i in mobs) {
-            if (hitTestRectangle(mobs[i], {x: x, y: y, width: width, height: width})) {
+            if (hitTestRectangle(mobs[i], {x: x/gameRatio, y: y/gameRatio, width: width/gameRatio, height: width/gameRatio})) {
                 return false;
             }
         }
@@ -392,10 +392,10 @@
         hit = false;
 
         //Find the center points of each sprite
-        r1.centerX = r1.x + r1.width / 2;
-        r1.centerY = r1.y + r1.height / 2;
-        r2.centerX = r2.x + r2.width / 2;
-        r2.centerY = r2.y + r2.height / 2;
+        r1.centerX = r1.x;
+        r1.centerY = r1.y;
+        r2.centerX = r2.x;
+        r2.centerY = r2.y;
 
         //Find the half-widths and half-heights of each sprite
         r1.halfWidth = r1.width / 2;
@@ -446,7 +446,7 @@
             return x > -width / 2 + radio && x < width / 2 - radio && mobed;
         };
         this.mobY = function (num) {
-            return gameRatio * (180 * num + Math.random() * 100);
+            return (40 + 160 * num + Math.random() * 100);
         };
         this.mobs = [];
     }
@@ -528,7 +528,7 @@
             }
         };
         this.mobY = function (num) {
-            return gameRatio * (220 + 180 * num + Math.random() * 100)
+            return (260 + 160 * num + Math.random() * 100)
         };
         this.mobs = [];
     }
@@ -591,6 +591,7 @@
     function endGame() {
         end.visible = true;
         endInfo.text = '你拿到了' + Math.floor(Game.timer / 10) + '分\n_(:з」∠)_';
+        alert(75*gameRatio+' '+ball.width+' ')
     }
 
     function restart() {
