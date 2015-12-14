@@ -2,6 +2,9 @@
  * Created by cqr on 2015/11/30.
  */
 +function (w, d, P) {
+    yw.init({
+        gameId: '10002664'
+    });
     var windowWidth = d.documentElement.offsetWidth;
     var windowHeight = d.documentElement.offsetHeight - 2;
     var gameHeight = windowHeight;
@@ -642,6 +645,11 @@
     }
 
     function share() {
-
+        yw.openSocialShareMenu({
+            "text" : "",
+            "title": "玩玩丸丸吧"
+        }, function () {
+            //分享窗口关闭之后执行这里的代码,不管分享成功还是失败
+        })
     }
 }(window, document, PIXI);
