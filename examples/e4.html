@@ -35,7 +35,8 @@
 <script type="text/javascript" src="../js/velocity.min.js" inline></script>
 <script type="text/javascript" src="../js/tweene-velocity.min.js" inline></script>
 <script type="text/javascript">
-var p = $('.ball')
+setTimeout(function(){
+    var p = $('.ball')
 var t = Tweene.line()
 t.add(Tweene.to(p, {
     translateX: 200,
@@ -60,6 +61,7 @@ setTimeout(function() {
     p.html('>')
     t.play()
 }, 5000)
+},1000)
 </script>
 
 </html>
