@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>h5-bia活动模版</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta charset="utf-8">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <script type="text/javascript" compress="no-compress">
+    ! function() {
+        function a() {
+            if (parseInt(document.documentElement.clientWidth) > 720) {
+                document.documentElement.style.fontSize = 720 / 750 * 10 / 16 * 1000 + "%";
+            } else {
+                document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 10 / 16 * 1000 + "%";
+            }
+        }
+        var b = null;
+        window.addEventListener("resize", function() {
+            clearTimeout(b);
+            b = setTimeout(a, 300);
+        }, !1);
+        a();
+    }(window);
+    </script>
+<style type="text/css">body,button,dd,dl,form,h1,h2,h3,h4,h5,h6,input,ol,p,td,textarea,th,ul{ margin:0; padding:0; }
+iframe,img{ border:0 none; }
+table{ border-collapse:collapse; border-spacing:0; table-layout:fixed; }
+ol,ul{ list-style:none outside none; }
+h1,h2,h3,h4,h5,h6{ font-size:100%; font-weight:700; }
+em,strong{ font-style:normal; font-weight:700; }
+html{ font-family:PingFangSC-Light,helvetica,Helvetica Neue,STHeiTi,Microsoft YaHei,sans-serif !important; -webkit-text-size-adjust:100%; text-size-adjust:100%; font-size:366.211%; }
+body,input,select,textarea{ color:#000; }
+body,html{max-width:720px;margin:0 auto;}
+body{position:relative;font-size:14px;overflow-x:hidden;overflow-y:auto;}
+a,button{ cursor:pointer; text-decoration:none; }
+img[src=""]{ opacity:0; filter:alpha(opacity=0); }
+*{ -webkit-tap-highlight-color:transparent; }
+::-ms-clear,::-ms-reveal{ display:none; }
+input{ outline:none; border:0; }
+html{ font-size:14px; }
+@media screen and (min-width:300px){ html{ font-size:250%; } }
+@media screen and (min-width:320px){ html{ font-size:266.66667%; } }
+@media screen and (min-width:340px){ html{ font-size:283.33333%; } }
+@media screen and (min-width:360px){ html{ font-size:300%; } }
+@media screen and (min-width:375px){ html{ font-size:312.5%; } }
+@media screen and (min-width:380px){ html{ font-size:316.66667%; } }
+@media screen and (min-width:400px){ html{ font-size:333.33333%; } }
+@media screen and (min-width:414px){ html{ font-size:345%; } }
+@media screen and (min-width:440px){ html{ font-size:366.66667%; } }
+@media screen and (min-width:480px){ html{ font-size:400%; } }
+@media screen and (min-width:560px){ html{ font-size:466.66667%; } }
+@media screen and (min-width:640px){ html{ font-size:533.33333%; } }
+@media screen and (min-width:720px){ html{ font-size:600%; } }
+::-webkit-input-placeholder{ color:#aaa; }
+::-moz-placeholder{ color:#aaa; }
+:-ms-input-placeholder{ color:#aaa; }
+input:-moz-placeholder{ color:#aaa; }
+:not(input){ -webkit-user-select:none; }
+body,html{
+  width:100%;
+  height:100%;
+  overflow:hidden; }
+.circle{
+  border-radius:50%;
+  background-color:rgba(255,46,12,.1);
+  position:absolute;
+  -webkit-transform:translate(-50%,-50%);
+      -ms-transform:translate(-50%,-50%);
+          transform:translate(-50%,-50%); }
+canvas{
+  width:100%;
+  height:100%; }
+.anchor{
+  position:absolute;
+  width:.3rem;
+  height:.3rem;
+  border:1px solid #000; }
+.anchor-lt{
+  top:0;
+  left:0;
+  -webkit-transform:translate(-50%,-50%);
+      -ms-transform:translate(-50%,-50%);
+          transform:translate(-50%,-50%); }
+.anchor-rt{
+  top:0;
+  right:0;
+  -webkit-transform:translate(50%,-50%);
+      -ms-transform:translate(50%,-50%);
+          transform:translate(50%,-50%); }
+.anchor-lb{
+  bottom:0;
+  left:0;
+  -webkit-transform:translate(-50%,50%);
+      -ms-transform:translate(-50%,50%);
+          transform:translate(-50%,50%); }
+.anchor-rb{
+  bottom:0;
+  right:0;
+  -webkit-transform:translate(50%,50%);
+      -ms-transform:translate(50%,50%);
+          transform:translate(50%,50%); }
+.anchor-c{
+  top:50%; }
+.anchor-c,.anchor-r{
+  left:50%;
+  -webkit-transform:translate(-50%,-50%);
+      -ms-transform:translate(-50%,-50%);
+          transform:translate(-50%,-50%); }
+.anchor-r{
+  top:-.2rem; }
+.anchor-cfm{
+  margin-top:.6rem;
+  top:50%;
+  left:50%;
+  background-color:green; }
+.anchor-cfm,.editable{
+  -webkit-transform:translate(-50%,-50%);
+      -ms-transform:translate(-50%,-50%);
+          transform:translate(-50%,-50%); }
+.editable{
+  position:absolute;
+  border:1px solid rgba(0,0,0,.4); }
+</style></head>
+
+<body>
+    <!-- your code here -->
+    <!-- your code end -->
+<script type="text/javascript">/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 10);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _classCallCheck2 = __webpack_require__(1);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(2);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var Vec2 = function () {
+    function Vec2(x, y) {
+        (0, _classCallCheck3["default"])(this, Vec2);
+
+        this.x = x;
+        this.y = y;
+    }
+
+    (0, _createClass3["default"])(Vec2, [{
+        key: "sumWith",
+        value: function sumWith(v) {
+            this.x += v.x;
+            this.y += v.y;
+        }
+    }, {
+        key: "normalize",
+        value: function normalize() {
+            var length = Math.sqrt(this.x * this.x + this.y * this.y);
+            this.x = this.x / length;
+            this.y = this.y / length;
+            return this;
+        }
+    }, {
+        key: "length",
+        get: function get() {
+            return Math.sqrt(this.x * this.x + this.y * this.y);
+        }
+    }, {
+        key: "length2",
+        get: function get() {
+            return this.x * this.x + this.y * this.y;
+        }
+    }], [{
+        key: "sum",
+        value: function sum(v1, v2) {
+            return new Vec2(v1.x + v2.x, v1.y + v2.y);
+        }
+    }, {
+        key: "minus",
+        value: function minus(v1, v2) {
+            return new Vec2(v1.x - v2.x, v1.y - v2.y);
+        }
+    }, {
+        key: "dot",
+        value: function dot(v1, v2) {
+            return v1.x * v2.x + v1.y * v2.y;
+        }
+    }, {
+        key: "scale",
+        value: function scale(v, a) {
+            return new Vec2(v.x * a, v.y * a);
+        }
+    }, {
+        key: "rotate",
+        value: function rotate(v, d) {
+            return new Vec2(Math.cos(d) * v.x - Math.sin(d) * v.y, Math.sin(d) * v.x + Math.cos(d) * v.y);
+        }
+    }]);
+    return Vec2;
+}();
+
+exports["default"] = Vec2;
+module.exports = exports["default"];
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+exports["default"] = function (instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+};
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _defineProperty = __webpack_require__(12);
+
+var _defineProperty2 = _interopRequireDefault(_defineProperty);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+exports["default"] = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      (0, _defineProperty2["default"])(target, descriptor.key, descriptor);
+    }
+  }
+
+  return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) defineProperties(Constructor, staticProps);
+    return Constructor;
+  };
+}();
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Thank's IE8 for his funny defineProperty
+module.exports = !__webpack_require__(9)(function () {
+  return Object.defineProperty({}, 'a', { get: function () { return 7; } }).a != 7;
+});
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _vector = __webpack_require__(0);
+
+var _vector2 = _interopRequireDefault(_vector);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function squre(x) {
+    return Math.pow(x, 2);
+}
+
+function Circle(radius) {
+    return function (x, y) {
+        return Math.sqrt(squre(x) + squre(y)) - radius;
+    };
+}
+
+function Rectangle(width, height) {
+    return function (x, y) {
+        var dx = Math.abs(x) - width / 2;
+        var dy = Math.abs(y) - height / 2;
+        return Math.min(Math.max(dx, dy), 0) + Math.sqrt(squre(dx > 0 ? dx : 0) + squre(dy > 0 ? dy : 0));
+    };
+}
+
+function Pie(radian) {
+    return function (x, y) {
+        var c = Math.cos(radian / 2);
+        var s = Math.sin(radian / 2);
+        return Math.abs(x) * c + y * s;
+    };
+}
+
+function TrangleE(radius) {
+    return function (x, y) {
+        return Math.max(Math.abs(x) * 0.866025 + y / 2, -y) - radius / 2;
+    };
+}
+
+function TrangleN(width, height) {
+    return function (x, y) {
+        var n = new _vector2["default"](height, width / 2).normalize();
+        return Math.max(Math.abs(x) * n.x + y * n.y - height * n.y, -y);
+    };
+}
+
+function Torus(radius, radian, width) {
+    width /= 2;
+    radius -= width;
+    var p = Pie(radian);
+    var c = Circle(radius);
+    return substraction(p, function (x, y) {
+        return Math.abs(c(x, y)) - width;
+    });
+}
+
+function RoundedBox(width, height, radius) {
+    var w = width - radius;
+    var h = height - radius;
+    return function (x, y) {
+        var dx = Math.abs(x) - w;
+        var dy = Math.abs(y) - h;
+        return Math.min(Math.max(dx, dy), 0) + Math.sqrt(squre(dx > 0 ? dx : 0) + squre(dy > 0 ? dy : 0)) - radius;
+    };
+}
+
+function translate(dx, dy, o) {
+    return function (x, y) {
+        return o(x - dx, y - dy);
+    };
+}
+
+function rotate(r, o) {
+    return function (x, y) {
+        var _x = x * Math.cos(r) - y * Math.sin(r);
+        var _y = x * Math.sin(r) + y * Math.cos(r);
+        return o(_x, _y);
+    };
+}
+
+function union(o1, o2) {
+    return function (x, y) {
+        return Math.min(o1(x, y), o2(x, y));
+    };
+}
+
+function substraction(o1, o2) {
+    return function (x, y) {
+        return Math.max(-o1(x, y), o2(x, y));
+    };
+}
+
+function intersection(o1, o2) {
+    return function (x, y) {
+        return Math.max(o1(x, y), o2(x, y));
+    };
+}
+
+function smoothUnion(o1, o2, k) {
+    return function (x, y) {
+        var v1 = o1(x, y);
+        var v2 = o2(x, y);
+        var h = 0.5 + 0.5 * (v2 - v1) / k;
+        h = h > 1 ? 1 : h < 0 ? 0 : h;
+        return v1 * h + v2 * (1 - h) - k * h * (1 - h);
+    };
+}
+
+exports["default"] = {
+    Circle: Circle,
+    Rectangle: Rectangle,
+    Pie: Pie,
+    TrangleE: TrangleE,
+    TrangleN: TrangleN,
+    RoundedBox: RoundedBox,
+    Torus: Torus,
+    translate: translate,
+    rotate: rotate,
+    squre: squre,
+    union: union,
+    substraction: substraction,
+    intersection: intersection,
+    smoothUnion: smoothUnion
+};
+module.exports = exports['default'];
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports) {
+
+module.exports = function (it) {
+  return typeof it === 'object' ? it !== null : typeof it === 'function';
+};
+
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports) {
+
+// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
+var global = module.exports = typeof window != 'undefined' && window.Math == Math
+  ? window : typeof self != 'undefined' && self.Math == Math ? self
+  // eslint-disable-next-line no-new-func
+  : Function('return this')();
+if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports) {
+
+var core = module.exports = { version: '2.5.3' };
+if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var anObject = __webpack_require__(19);
+var IE8_DOM_DEFINE = __webpack_require__(20);
+var toPrimitive = __webpack_require__(22);
+var dP = Object.defineProperty;
+
+exports.f = __webpack_require__(3) ? Object.defineProperty : function defineProperty(O, P, Attributes) {
+  anObject(O);
+  P = toPrimitive(P, true);
+  anObject(Attributes);
+  if (IE8_DOM_DEFINE) try {
+    return dP(O, P, Attributes);
+  } catch (e) { /* empty */ }
+  if ('get' in Attributes || 'set' in Attributes) throw TypeError('Accessors not supported!');
+  if ('value' in Attributes) O[P] = Attributes.value;
+  return O;
+};
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports) {
+
+module.exports = function (exec) {
+  try {
+    return !!exec();
+  } catch (e) {
+    return true;
+  }
+};
+
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(11);
+
+var _df = __webpack_require__(4);
+
+var _df2 = _interopRequireDefault(_df);
+
+var _shape = __webpack_require__(24);
+
+var _shape2 = _interopRequireDefault(_shape);
+
+var _renderer = __webpack_require__(25);
+
+var _renderer2 = _interopRequireDefault(_renderer);
+
+var _scene = __webpack_require__(27);
+
+var _scene2 = _interopRequireDefault(_scene);
+
+var _vector = __webpack_require__(0);
+
+var _vector2 = _interopRequireDefault(_vector);
+
+var _editable = __webpack_require__(28);
+
+var _editable2 = _interopRequireDefault(_editable);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+if (false) require('./index.html');
+
+function init() {
+    var dw = document.documentElement.clientWidth;
+    var dh = document.documentElement.clientHeight;
+    var devicemotion = { x: 0, y: 0, z: 0 };
+    var width = 750;
+    var height = 750 / dw * dh;
+    var renderer = new _renderer2["default"](750, 750 / dw * dh);
+    document.body.appendChild(renderer.view);
+    var scene = new _scene2["default"]();
+    var c4 = _shape2["default"].Rectangle(width / 2, 10, width, 20, 0);
+    var c5 = _shape2["default"].Rectangle(width / 2, height - 10, width, 20, 0);
+    var c6 = _shape2["default"].Rectangle(10, height / 2, 20, height, 0);
+    var c7 = _shape2["default"].Rectangle(width - 10, height / 2, 20, height, 0);
+    scene.add(c4);
+    scene.add(c5);
+    scene.add(c6);
+    scene.add(c7);
+
+    var o1 = _shape2["default"].Circle(width / 2, height / 2, 300);
+    scene.add(o1);
+    var o2 = _shape2["default"].Circle(width / 2, height / 2, 295);
+    scene.remove(o2);
+    var o3 = _shape2["default"].Circle(width / 2, height / 2, 245 - 20);
+    scene.add(o3);
+    var o4 = _shape2["default"].Circle(width / 2, height / 2, 240 - 20);
+    scene.remove(o4);
+    var o5 = _shape2["default"].Circle(width / 2, height / 2, 190 - 40);
+    scene.add(o5);
+    var o6 = _shape2["default"].Circle(width / 2, height / 2, 185 - 40);
+    scene.remove(o6);
+
+    var r2 = _shape2["default"].Rectangle(width / 2, height / 2 - 240 + 20, 80, 90, 0);
+    scene.remove(r2);
+    var r3 = _shape2["default"].Rectangle(width / 2 - 185 + 40, height / 2, 90, 80, 0);
+    scene.remove(r3);
+    var r4 = _shape2["default"].Rectangle(width / 2 + 295, height / 2, 90, 80, 0);
+    scene.remove(r4);
+
+    var ball = {
+        acc: new _vector2["default"](0, 0),
+        vel: new _vector2["default"](0, 0),
+        pos: new _vector2["default"](width / 2, height / 2),
+        radius: 20
+    };
+    var e = 1e-3;
+    renderer.render(scene, 20, ball);
+
+    function frame() {
+        ball.acc.x = devicemotion.x / 5;
+        ball.acc.y = devicemotion.y / 5;
+        ball.vel.sumWith(ball.acc);
+
+        integratePosition(ball);
+        requestAnimationFrame(frame);
+    }
+
+    function integratePosition(ball, n) {
+        var d = scene.shape(ball.pos.x, ball.pos.y) - ball.radius;
+        var vel = ball.leftVel || ball.vel;
+        n = n || 0;
+        if (d > e && n < 10) {
+            if (d * d >= vel.length2) {
+                ball.pos.sumWith(vel);
+                ball.leftVel = null;
+            } else {
+                var step = _vector2["default"].scale(vel, Math.sqrt(d * d / vel.length2));
+                ball.leftVel = _vector2["default"].minus(vel, step);
+                ball.pos.sumWith(step);
+                integratePosition(ball, n + 1);
+            }
+        } else {
+            vel = ball.vel;
+
+            var normal = new _vector2["default"](scene.shape(ball.pos.x + e, ball.pos.y) - scene.shape(ball.pos.x - e, ball.pos.y), scene.shape(ball.pos.x, ball.pos.y + e) - scene.shape(ball.pos.x, ball.pos.y - e)).normalize();
+
+            var nx = _vector2["default"].scale(normal, -_vector2["default"].dot(normal, vel));
+            var ny = _vector2["default"].sum(vel, nx);
+            vel = _vector2["default"].sum(_vector2["default"].scale(nx, 0.7), _vector2["default"].scale(ny, 0.9));
+
+
+            ball.vel = vel;
+            ball.leftVel = null;
+            ball.pos.sumWith(ball.vel);
+            ball.pos.sumWith(_vector2["default"].scale(normal, 0.5 - d));
+        }
+    }
+
+    frame();
+    window.addEventListener('devicemotion', function (e) {
+        var x = e.accelerationIncludingGravity.x;
+        var y = -e.accelerationIncludingGravity.y;
+        var z = e.accelerationIncludingGravity.z;
+        devicemotion.x = x || 0;
+        devicemotion.y = y || 10;
+        devicemotion.z = z || 0;
+    });
+}
+
+init();
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(13), __esModule: true };
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(14);
+var $Object = __webpack_require__(7).Object;
+module.exports = function defineProperty(it, key, desc) {
+  return $Object.defineProperty(it, key, desc);
+};
+
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var $export = __webpack_require__(15);
+// 19.1.2.4 / 15.2.3.6 Object.defineProperty(O, P, Attributes)
+$export($export.S + $export.F * !__webpack_require__(3), 'Object', { defineProperty: __webpack_require__(8).f });
+
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var global = __webpack_require__(6);
+var core = __webpack_require__(7);
+var ctx = __webpack_require__(16);
+var hide = __webpack_require__(18);
+var PROTOTYPE = 'prototype';
+
+var $export = function (type, name, source) {
+  var IS_FORCED = type & $export.F;
+  var IS_GLOBAL = type & $export.G;
+  var IS_STATIC = type & $export.S;
+  var IS_PROTO = type & $export.P;
+  var IS_BIND = type & $export.B;
+  var IS_WRAP = type & $export.W;
+  var exports = IS_GLOBAL ? core : core[name] || (core[name] = {});
+  var expProto = exports[PROTOTYPE];
+  var target = IS_GLOBAL ? global : IS_STATIC ? global[name] : (global[name] || {})[PROTOTYPE];
+  var key, own, out;
+  if (IS_GLOBAL) source = name;
+  for (key in source) {
+    // contains in native
+    own = !IS_FORCED && target && target[key] !== undefined;
+    if (own && key in exports) continue;
+    // export native or passed
+    out = own ? target[key] : source[key];
+    // prevent global pollution for namespaces
+    exports[key] = IS_GLOBAL && typeof target[key] != 'function' ? source[key]
+    // bind timers to global for call from export context
+    : IS_BIND && own ? ctx(out, global)
+    // wrap global constructors for prevent change them in library
+    : IS_WRAP && target[key] == out ? (function (C) {
+      var F = function (a, b, c) {
+        if (this instanceof C) {
+          switch (arguments.length) {
+            case 0: return new C();
+            case 1: return new C(a);
+            case 2: return new C(a, b);
+          } return new C(a, b, c);
+        } return C.apply(this, arguments);
+      };
+      F[PROTOTYPE] = C[PROTOTYPE];
+      return F;
+    // make static versions for prototype methods
+    })(out) : IS_PROTO && typeof out == 'function' ? ctx(Function.call, out) : out;
+    // export proto methods to core.%CONSTRUCTOR%.methods.%NAME%
+    if (IS_PROTO) {
+      (exports.virtual || (exports.virtual = {}))[key] = out;
+      // export proto methods to core.%CONSTRUCTOR%.prototype.%NAME%
+      if (type & $export.R && expProto && !expProto[key]) hide(expProto, key, out);
+    }
+  }
+};
+// type bitmap
+$export.F = 1;   // forced
+$export.G = 2;   // global
+$export.S = 4;   // static
+$export.P = 8;   // proto
+$export.B = 16;  // bind
+$export.W = 32;  // wrap
+$export.U = 64;  // safe
+$export.R = 128; // real proto method for `library`
+module.exports = $export;
+
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// optional / simple context binding
+var aFunction = __webpack_require__(17);
+module.exports = function (fn, that, length) {
+  aFunction(fn);
+  if (that === undefined) return fn;
+  switch (length) {
+    case 1: return function (a) {
+      return fn.call(that, a);
+    };
+    case 2: return function (a, b) {
+      return fn.call(that, a, b);
+    };
+    case 3: return function (a, b, c) {
+      return fn.call(that, a, b, c);
+    };
+  }
+  return function (/* ...args */) {
+    return fn.apply(that, arguments);
+  };
+};
+
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports) {
+
+module.exports = function (it) {
+  if (typeof it != 'function') throw TypeError(it + ' is not a function!');
+  return it;
+};
+
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var dP = __webpack_require__(8);
+var createDesc = __webpack_require__(23);
+module.exports = __webpack_require__(3) ? function (object, key, value) {
+  return dP.f(object, key, createDesc(1, value));
+} : function (object, key, value) {
+  object[key] = value;
+  return object;
+};
+
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isObject = __webpack_require__(5);
+module.exports = function (it) {
+  if (!isObject(it)) throw TypeError(it + ' is not an object!');
+  return it;
+};
+
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = !__webpack_require__(3) && !__webpack_require__(9)(function () {
+  return Object.defineProperty(__webpack_require__(21)('div'), 'a', { get: function () { return 7; } }).a != 7;
+});
+
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isObject = __webpack_require__(5);
+var document = __webpack_require__(6).document;
+// typeof document.createElement is 'object' in old IE
+var is = isObject(document) && isObject(document.createElement);
+module.exports = function (it) {
+  return is ? document.createElement(it) : {};
+};
+
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 7.1.1 ToPrimitive(input [, PreferredType])
+var isObject = __webpack_require__(5);
+// instead of the ES6 spec version, we didn't implement @@toPrimitive case
+// and the second argument - flag - preferred type is a string
+module.exports = function (it, S) {
+  if (!isObject(it)) return it;
+  var fn, val;
+  if (S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it))) return val;
+  if (typeof (fn = it.valueOf) == 'function' && !isObject(val = fn.call(it))) return val;
+  if (!S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it))) return val;
+  throw TypeError("Can't convert object to primitive value");
+};
+
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports) {
+
+module.exports = function (bitmap, value) {
+  return {
+    enumerable: !(bitmap & 1),
+    configurable: !(bitmap & 2),
+    writable: !(bitmap & 4),
+    value: value
+  };
+};
+
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _df = __webpack_require__(4);
+
+var _df2 = _interopRequireDefault(_df);
+
+var _vector = __webpack_require__(0);
+
+var _vector2 = _interopRequireDefault(_vector);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function Circle(x, y, radius) {
+    var shape = _df2["default"].translate(x, y, _df2["default"].Circle(radius));
+    var x = x || 0;
+    var y = y || 0;
+    var rotate = 0;
+    var scaleX = 1;
+    var scaleY = 1;
+    return {
+        type: 'circle',
+        x: x,
+        y: y,
+        rotate: rotate,
+        scaleX: scaleX,
+        scaleY: scaleY,
+        shape: shape,
+        radius: radius
+    };
+}
+
+function Rectangle(x, y, width, height, rotateDegree) {
+    var shape = _df2["default"].translate(x, y, _df2["default"].rotate(rotateDegree, _df2["default"].Rectangle(width, height)));
+    var x = x || 0;
+    var y = y || 0;
+    var rotate = rotateDegree || 0;
+    var scaleX = 1;
+    var scaleY = 1;
+    return {
+        type: 'rectangle',
+        x: x,
+        y: y,
+        rotate: rotate,
+        scaleX: scaleX,
+        scaleY: scaleY,
+        shape: shape,
+        width: width,
+        height: height
+    };
+}
+
+function Pie(x, y, radian, rotateDegree) {
+    var shape = _df2["default"].translate(x, y, _df2["default"].rotate(rotateDegree, _df2["default"].Pie(radian)));
+    var x = x || 0;
+    var y = y || 0;
+    var rotate = rotateDegree || 0;
+    var scaleX = 1;
+    var scaleY = 1;
+    return {
+        type: 'pie',
+        x: x,
+        y: y,
+        rotate: rotate,
+        scaleX: scaleX,
+        scaleY: scaleY,
+        shape: shape,
+        radian: radian
+    };
+}
+
+function TrangleE(x, y, radius, rotateDegree) {
+    var shape = _df2["default"].translate(x, y, _df2["default"].rotate(rotateDegree, _df2["default"].TrangleE(radius)));
+    var x = x || 0;
+    var y = y || 0;
+    var rotate = rotateDegree || 0;
+    var scaleX = 1;
+    var scaleY = 1;
+    return {
+        type: 'trangleE',
+        x: x,
+        y: y,
+        rotate: rotate,
+        scaleX: scaleX,
+        scaleY: scaleY,
+        shape: shape,
+        radius: radius
+    };
+}
+
+function TrangleN(x, y, width, height, rotateDegree) {
+    var shape = _df2["default"].translate(x, y, _df2["default"].rotate(rotateDegree, _df2["default"].TrangleN(width, height)));
+    var x = x || 0;
+    var y = y || 0;
+    var rotate = rotateDegree || 0;
+    var scaleX = 1;
+    var scaleY = 1;
+    return {
+        type: 'trangleN',
+        x: x,
+        y: y,
+        rotate: rotate,
+        scaleX: scaleX,
+        scaleY: scaleY,
+        shape: shape,
+        width: width,
+        height: height
+    };
+}
+
+function Torus(x, y, radius, radian, width, rotateDegree) {
+    var shape = _df2["default"].translate(x, y, _df2["default"].rotate(rotateDegree, _df2["default"].Torus(radius, radian, width)));
+    var x = x || 0;
+    var y = y || 0;
+    var rotate = rotateDegree || 0;
+    var scaleX = 1;
+    var scaleY = 1;
+    return {
+        type: 'torus',
+        x: x,
+        y: y,
+        rotate: rotate,
+        scaleX: scaleX,
+        scaleY: scaleY,
+        shape: shape,
+        radius: radius,
+        width: width,
+        radian: radian
+    };
+}
+
+function RoundedBox(x, y, width, height, radius, rotateDegree) {
+    var shape = _df2["default"].translate(x, y, _df2["default"].rotate(rotateDegree, _df2["default"].RoundedBox(width, height, radius)));
+    var x = x || 0;
+    var y = y || 0;
+    var rotate = rotateDegree || 0;
+    var scaleX = 1;
+    var scaleY = 1;
+    return {
+        type: 'rbox',
+        x: x,
+        y: y,
+        rotate: rotate,
+        scaleX: scaleX,
+        scaleY: scaleY,
+        shape: shape,
+        height: height,
+        width: width,
+        radius: radius
+    };
+}
+exports["default"] = {
+    Circle: Circle,
+    Rectangle: Rectangle,
+    Pie: Pie,
+    TrangleE: TrangleE,
+    TrangleN: TrangleN,
+    Torus: Torus,
+    RoundedBox: RoundedBox
+};
+module.exports = exports['default'];
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _classCallCheck2 = __webpack_require__(1);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(2);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _shapeParser = __webpack_require__(26);
+
+var _shapeParser2 = _interopRequireDefault(_shapeParser);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var Renderer = function () {
+    function Renderer(width, height) {
+        (0, _classCallCheck3["default"])(this, Renderer);
+
+        this.view = document.createElement('canvas');
+        this.view.width = width || document.documentElement.clientWidth;
+        this.view.height = height || document.documentElement.clientHeight;
+
+        this.webgl = this.view.getContext('webgl');
+    }
+
+    (0, _createClass3["default"])(Renderer, [{
+        key: 'render',
+        value: function render(scene, size, ball) {
+            var self = this;
+            var gl = self.webgl;
+            var vs = '\n            attribute vec2 a_position;\n            uniform mat3 u_projection;\n            varying vec2 v_position;\n            varying vec2 v_color;\n            void main(){\n                gl_Position = vec4(u_projection * vec3(a_position, 1), 1);\n                v_position = a_position;\n                v_color = gl_Position.xy;\n            }\n        ';
+            var uniformDatas = scene.children.map(function (v) {
+                return (0, _shapeParser2["default"])(v);
+            });
+            var fs = '\n            precision highp float;\n            varying vec2 v_position;\n            varying vec2 v_color;\n            uniform vec2 u_ballPosition;\n\n            mat3 inverse(mat3 m) {\n                float a00 = m[0][0], a01 = m[0][1], a02 = m[0][2];\n                float a10 = m[1][0], a11 = m[1][1], a12 = m[1][2];\n                float a20 = m[2][0], a21 = m[2][1], a22 = m[2][2];\n\n                float b01 = a22 * a11 - a12 * a21;\n                float b11 = -a22 * a10 + a12 * a20;\n                float b21 = a21 * a10 - a11 * a20;\n\n                float det = a00 * b01 + a01 * b11 + a02 * b21;\n\n                return mat3(b01, (-a22 * a01 + a02 * a21), (a12 * a01 - a02 * a11),\n                            b11, (a22 * a00 - a02 * a20), (-a12 * a00 + a02 * a10),\n                            b21, (-a21 * a00 + a01 * a20), (a11 * a00 - a01 * a10)) / det;\n            }\n\n            float circle(vec2 p, float r){\n                return length(p) - r;\n            }\n\n            float rectangle(vec2 p, float width, float height){\n                vec2 d = abs(p) - vec2(width,height) / 2.0;\n                return min(max(d.x, d.y), 0.0) + length(max(d, 0.0));\n            }\n\n            float pie(vec2 p, float radian){\n                return abs(p).x * cos(radian / 2.0) + p.y * sin(radian / 2.0);\n            }\n\n            float trangleE(vec2 p, float r){\n                return max(abs(p).x * 0.866025 + p.y / 2.0, -p.y) - r / 2.0;\n            }\n\n            float trangleN(vec2 p, float width, float height){\n                vec2 n = normalize(vec2(height, width / 2.0));\n                return max(abs(p).x * n.x + p.y * n.y - height * n.y, -p.y);\n            }\n\n            float torus(vec2 p, float radius, float radian, float width){\n                width /= 2.0;\n                radius -= width;\n                return width;\n            }\n\n            float rbox(vec2 p, float width, float height, float r){\n                vec2 wh = vec2(width, height) - r;\n                vec2 d = abs(p) - wh;\n                return min(max(d.x, d.y), 0.0) + length(max(d, 0.0)) - r;\n            }\n\n            vec2 transform(vec2 p, mat3 m){\n                return (inverse(m) * vec3(p, 1)).xy;\n            }\n\n            float add(float o1, float o2){\n                return min(o1, o2);\n            }\n            float substraction(float o1, float o2){\n                return max(o1, -o2);\n            }\n            float intersection(float o1, float o2){\n                return max(o1, o2);\n            }\n            float smoothUnion(float o1, float o2, float k){\n                float h = clamp(0.5 + 0.5 * (o2 - o1) / k, 0.0, 1.0);\n                return mix(o2, o1, h) - k * h * (1.0 - h);\n            }\n            float dist(vec2 p){\n                return ' + self.addShape(scene.operationList, uniformDatas) + ';\n            }\n            void main(){\n                float d = dist(v_position);\n                if(length(v_position - u_ballPosition) < ' + size.toFixed(1) + '){\n                    gl_FragColor = vec4(1.,0.,0.,.5);\n                }else{\n                    if (d < ' + size.toFixed(1) + ' && d > 1.){\n                        gl_FragColor = vec4(0.,1.,0., 1.);\n                    }\n                    if (abs(d) < 1.){\n                        gl_FragColor = vec4(0.,0.,0.,1);\n                    }\n                    if (d < -1.0){\n                        gl_FragColor = vec4(v_color,0.5,1);\n                    }\n                    if (d > ' + size.toFixed(1) + '){\n                        gl_FragColor = vec4(0,0,0,0);\n                    }\n                }\n            }\n        ';
+
+            console.log(fs);
+            var vertexShader = self.createShader(gl.VERTEX_SHADER, vs);
+            var fragmentShader = self.createShader(gl.FRAGMENT_SHADER, fs);
+            var program = self.createProgram(vertexShader, fragmentShader);
+
+            var attributeLocation = gl.getAttribLocation(program, 'a_position');
+            var buffer = gl.createBuffer();
+            gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+
+            var positions = [0, 0, self.view.width, self.view.height, self.view.width, 0, 0, 0, 0, self.view.height, self.view.width, self.view.height];
+            gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positions), gl.STATIC_DRAW);
+
+            var uniformLocation = gl.getUniformLocation(program, 'u_projection');
+            var ballLocation = gl.getUniformLocation(program, 'u_ballPosition');
+
+            gl.viewport(0, 0, self.view.width, self.view.height);
+
+            gl.clearColor(0, 0, 0, 0);
+            gl.clear(gl.COLOR_BUFFER_BIT);
+            gl.useProgram(program);
+
+            gl.enableVertexAttribArray(attributeLocation);
+
+            gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+            var option = {
+                size: 2,
+                type: gl.FLOAT,
+                normalize: false,
+                stride: 0,
+                offset: 0
+            };
+            gl.vertexAttribPointer(attributeLocation, option.size, option.type, option.normalize, option.stride, option.offset);
+            var projection = [2 / self.view.width, 0, 0, 0, -2 / self.view.height, 0, -1, 1, 1];
+            gl.uniformMatrix3fv(uniformLocation, false, new Float32Array(projection));
+            frame();
+
+            function frame() {
+                gl.uniform2f(ballLocation, ball.pos.x, ball.pos.y);
+                gl.drawArrays(gl.TRIANGLES, 0, 6);
+                requestAnimationFrame(frame);
+            }
+        }
+    }, {
+        key: 'addShape',
+        value: function addShape(l, u) {
+            var code = l[0].shape.type + '(transform(p,mat3(' + u[0].matrix.toString() + ')),' + u[0].dataList.map(function (v) {
+                return v % 1 == 0 ? v.toFixed(1) : v;
+            }).join(',') + ')';
+            for (var i = 1; i < l.length; i++) {
+                var data = l[i].shape.type + '(transform(p,mat3(' + u[i].matrix.toString() + ')),' + u[i].dataList.map(function (v) {
+                    return v % 1 == 0 ? v.toFixed(1) : v;
+                }).join(',') + ')';
+                code = l[i].type + '(' + code + ',' + data + ')';
+            }
+            return code;
+        }
+    }, {
+        key: 'createShader',
+        value: function createShader(type, source) {
+            var gl = this.webgl;
+            var shader = gl.createShader(type);
+            gl.shaderSource(shader, source);
+            gl.compileShader(shader);
+            var success = gl.getShaderParameter(shader, gl.COMPILE_STATUS);
+            if (success) {
+                return shader;
+            }
+            console.log(gl.getShaderInfoLog(shader));
+            gl.deleteShader(shader);
+        }
+    }, {
+        key: 'createProgram',
+        value: function createProgram(vs, fs) {
+            var gl = this.webgl;
+            var program = gl.createProgram();
+            gl.attachShader(program, vs);
+            gl.attachShader(program, fs);
+            gl.linkProgram(program);
+            var success = gl.getProgramParameter(program, gl.LINK_STATUS);
+            if (success) {
+                return program;
+            }
+            console.log(gl.getProgramInfoLog(program));
+            gl.deleteProgram(program);
+        }
+    }, {
+        key: 'render2',
+        value: function render2(scene, size) {
+            var self = this;
+            self.ctx.clearRect(0, 0, self.view.width, self.view.height);
+            var imageData = self.ctx.getImageData(0, 0, self.view.width, self.view.height);
+            var data = imageData.data;
+
+
+            for (var i = 0; i < self.view.width; i++) {
+                for (var j = 0; j < self.view.height; j++) {
+                    var indexs = [(j * this.view.width + i) * 4 + 0, (j * this.view.width + i) * 4 + 1, (j * this.view.width + i) * 4 + 2, (j * this.view.width + i) * 4 + 3];
+                    var d = scene.shape(i, j);
+                    if (d <= (size || 0)) {
+                        if (d > 0) {
+                            data[indexs[0]] = 0;
+                            data[indexs[1]] = 255;
+                            data[indexs[2]] = 0;
+                            data[indexs[3]] = 255;
+                        } else {
+                            data[indexs[0]] = 0;
+                            data[indexs[1]] = 0;
+                            data[indexs[2]] = 0;
+                            data[indexs[3]] = 255;
+                        }
+                    }
+                }
+            }
+            self.ctx.putImageData(imageData, 0, 0);
+            var data = self.view.toDataURL();
+            document.body.style.backgroundImage = 'url(' + data + ')';
+            document.body.style.backgroundSize = 'contain';
+            self.ctx.clearRect(0, 0, self.view.width, self.view.height);
+        }
+    }, {
+        key: 'renderLine',
+        value: function renderLine(i, data, scene) {
+            for (var m = i; m >= 0; m--) {
+                for (var n = 0; n <= i; n++) {
+                    if (m >= this.view.height || n >= this.view.width) continue;
+                    var indexs = [(m * this.view.width + n) * 4 + 0, (m * this.view.width + n) * 4 + 1, (m * this.view.width + n) * 4 + 2, (m * this.view.width + n) * 4 + 3];
+                    if (scene.shape(m, n) <= 1) {
+                        data[indexs[0]] = 255;
+                        data[indexs[1]] = 0;
+                        data[indexs[2]] = 0;
+                        data[indexs[3]] = 255;
+                    }
+                }
+            }
+        }
+    }]);
+    return Renderer;
+}();
+
+exports["default"] = Renderer;
+module.exports = exports['default'];
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var preIndex = 0;
+
+function parseData(shape) {
+    preIndex++;
+    var matrix = getMatrix(shape.x, shape.y, shape.rotate, shape.scaleX, shape.scaleY);
+    var data = { type: shape.type };
+    var dataList = [];
+    switch (shape.type) {
+        case 'circle':
+        case 'triangleE':
+            data.radius = shape.radius;
+            dataList.push(data.radius);
+            break;
+        case 'rectangle':
+        case 'triangleN':
+            data.width = shape.width;
+            data.height = shape.height;
+            dataList.push(data.width);
+            dataList.push(data.height);
+            break;
+        case 'pie':
+            data.radian = shape.radian;
+            dataList.push(data.radian);
+            break;
+        case 'torus':
+            data.radius1 = shape.radius1;
+            data.radian = shape.radian;
+            data.radius2 = shape.radius2;
+            dataList.push(data.radius1);
+            dataList.push(data.radian);
+            dataList.push(data.radius2);
+            break;
+        case 'rbox':
+            data.width = shape.width;
+            data.height = shape.height;
+            data.radius = shape.radius;
+            dataList.push(data.width);
+            dataList.push(data.height);
+            dataList.push(data.radius);
+            break;
+    }
+    return {
+        matrix: matrix,
+        dataList: dataList,
+        data: data
+    };
+}
+
+function getMatrix(translateX, translateY, rotateRadian, scaleX, scaleY) {
+    var scaleMatrix = [scaleX, 0, 0, 0, scaleY, 0, 0, 0, 1];
+    var rotateMatrix = [Math.cos(rotateRadian), -Math.sin(rotateRadian), 0, Math.sin(rotateRadian), Math.cos(rotateRadian), 0, 0, 0, 1];
+    var translateMatrix = [1, 0, 0, 0, 1, 0, translateX, translateY, 1];
+    return multiplyMat3(multiplyMat3(scaleMatrix, rotateMatrix), translateMatrix);
+}
+
+function toStringMat3(m) {
+    return m.map(function (v, i) {
+        return i % 3 == 0 ? '\n' + v : v;
+    }).join(',');
+}
+
+function multiplyMat3(m1, m2) {
+    var result = [];
+
+    var a11 = m1[0],
+        a12 = m1[1],
+        a13 = m1[2];
+    var a21 = m1[3],
+        a22 = m1[4],
+        a23 = m1[5];
+    var a31 = m1[6],
+        a32 = m1[7],
+        a33 = m1[8];
+
+    var b11 = m2[0],
+        b12 = m2[1],
+        b13 = m2[2];
+    var b21 = m2[3],
+        b22 = m2[4],
+        b23 = m2[5];
+    var b31 = m2[6],
+        b32 = m2[7],
+        b33 = m2[8];
+
+    result[0] = a11 * b11 + a12 * b21 + a13 * b31;
+    result[1] = a11 * b12 + a12 * b22 + a13 * b32;
+    result[2] = a11 * b13 + a12 * b23 + a13 * b33;
+
+    result[3] = a21 * b11 + a22 * b21 + a23 * b31;
+    result[4] = a21 * b12 + a22 * b22 + a23 * b32;
+    result[5] = a21 * b13 + a22 * b23 + a23 * b33;
+
+    result[6] = a31 * b11 + a32 * b21 + a33 * b31;
+    result[7] = a31 * b12 + a32 * b22 + a33 * b32;
+    result[8] = a31 * b13 + a32 * b23 + a33 * b33;
+    result.toString = parseMat;
+    return result;
+}
+function parseMat() {
+    var self = this.map(function (v) {
+        return v & 1 == 0 ? v.toFixed(1) : v;
+    });
+    console.log(self);
+    return self.join(',');
+}
+
+exports["default"] = parseData;
+module.exports = exports['default'];
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _classCallCheck2 = __webpack_require__(1);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(2);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _df = __webpack_require__(4);
+
+var _df2 = _interopRequireDefault(_df);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var Scene = function () {
+    function Scene() {
+        (0, _classCallCheck3["default"])(this, Scene);
+
+        this.children = [];
+        this.operationList = [];
+    }
+
+    (0, _createClass3["default"])(Scene, [{
+        key: 'addChild',
+        value: function addChild(v) {
+            this.children.push(v);
+            if (this.shape) {
+                this.shape = _df2["default"].union(this.shape, v.shape);
+            } else {
+                this.shape = v.shape;
+            }
+            this.operationList.push({
+                type: 'add',
+                shape: v
+            });
+        }
+    }, {
+        key: 'add',
+        value: function add(v) {
+            this.children.push(v);
+            if (this.shape) {
+                this.shape = _df2["default"].union(this.shape, v.shape);
+            } else {
+                this.shape = v.shape;
+            }
+            this.operationList.push({
+                type: 'add',
+                shape: v
+            });
+        }
+    }, {
+        key: 'remove',
+        value: function remove(v) {
+            this.children.push(v);
+            if (this.shape) {
+                this.shape = _df2["default"].substraction(v.shape, this.shape);
+            } else {
+                this.shape = v.shape;
+            }
+            this.operationList.push({
+                type: 'substraction',
+                shape: v
+            });
+        }
+    }, {
+        key: 'keep',
+        value: function keep(v) {
+            this.children.push(v);
+            if (this.shape) {
+                this.shape = _df2["default"].intersection(this.shape, v.shape);
+            } else {
+                this.shape = v.shape;
+            }
+            this.operationList.push({
+                type: 'intersection',
+                shape: v
+            });
+        }
+    }, {
+        key: 'smooth',
+        value: function smooth(v, k) {
+            this.children.push(v);
+            if (this.shape) {
+                this.shape = _df2["default"].smoothUnion(this.shape, v.shape, k);
+            } else {
+                this.shape = v.shape;
+            }
+            this.operationList.push({
+                type: 'smoothUnion',
+                shape: v,
+                data: k
+            });
+        }
+    }]);
+    return Scene;
+}();
+
+exports["default"] = Scene;
+module.exports = exports['default'];
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _classCallCheck2 = __webpack_require__(1);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(2);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _vector = __webpack_require__(0);
+
+var _vector2 = _interopRequireDefault(_vector);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var Editable = function () {
+    function Editable(x, y, width, height, degree, type, onconfirm) {
+        (0, _classCallCheck3["default"])(this, Editable);
+
+        this.position = new _vector2["default"](x, y);
+        this.width = width || 100;
+        this.height = height || 100;
+        this.type = type || 'Circle';
+        this.ele = this.build(onconfirm);
+        this.degree = degree || 0;
+
+        this.state = 0;
+        document.body.appendChild(this.ele);
+    }
+
+    (0, _createClass3["default"])(Editable, [{
+        key: 'build',
+        value: function build(onconfirm) {
+            var renderer = document.createElement('div');
+            var anchors = [document.createElement('div'), document.createElement('div'), document.createElement('div'), document.createElement('div'), document.createElement('div'), document.createElement('div'), document.createElement('div')];
+            anchors.forEach(function (v) {
+                return renderer.appendChild(v);
+            });
+            renderer.className = 'editable';
+            anchors[0].className = 'anchor anchor-lt';
+            anchors[1].className = 'anchor anchor-rt';
+            anchors[2].className = 'anchor anchor-lb';
+            anchors[3].className = 'anchor anchor-rb';
+            anchors[4].className = 'anchor anchor-c';
+            anchors[5].className = 'anchor anchor-r';
+            anchors[6].className = 'anchor anchor-cfm';
+
+            renderer.style.width = this.width / 100 + 'rem';
+            renderer.style.height = this.height / 100 + 'rem';
+            renderer.style.top = this.position.y / 100 + 'rem';
+            renderer.style.left = this.position.x / 100 + 'rem';
+            this.bindEvents(renderer, anchors, onconfirm);
+            return renderer;
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            switch (this.type) {
+                case 'Rectangle':
+                    this.ele.style.width = this.width / 100 + 'rem';
+                    this.ele.style.height = this.height / 100 + 'rem';
+                    this.ele.style.backgroundColor = '#f00';
+                    break;
+                case 'Circle':
+                    this.width = this.height = Math.min(this.width, this.height);
+                    this.ele.style.width = this.width / 100 + 'rem';
+                    this.ele.style.height = this.height / 100 + 'rem';
+                    this.ele.style.borderRadius = '50%';
+                    this.ele.style.backgroundColor = '#f00';
+                    break;
+            }
+            this.ele.style.top = this.position.y / 100 + 'rem';
+            this.ele.style.left = this.position.x / 100 + 'rem';
+            this.ele.style.transform = 'translate(-50%,-50%) rotate(' + this.degree + 'deg)';
+        }
+    }, {
+        key: 'bindEvents',
+        value: function bindEvents(renderer, anchors, onconfirm) {
+            var self = this;
+            var ratio = 750 / document.documentElement.clientWidth;
+            var startPoint = new _vector2["default"](0, 0);
+            anchors[0].addEventListener('touchstart', function (e) {
+                self.state = 1;
+                startPoint.x = e.changedTouches[0].pageX * ratio;
+                startPoint.y = e.changedTouches[0].pageY * ratio;
+            });
+            anchors[0].addEventListener('touchmove', function (e) {
+                if (self.state != 1) return;
+                var dx = e.changedTouches[0].pageX * ratio - startPoint.x;
+                var dy = e.changedTouches[0].pageY * ratio - startPoint.y;
+                startPoint.x = e.changedTouches[0].pageX * ratio;
+                startPoint.y = e.changedTouches[0].pageY * ratio;
+                var d = _vector2["default"].rotate(new _vector2["default"](-dx, -dy), -self.degree / 180 * Math.PI);
+                self.width += d.x * 2;
+                self.height += d.y * 2;
+                self.render();
+            });
+            anchors[1].addEventListener('touchstart', function (e) {
+                self.state = 1;
+                startPoint.x = e.changedTouches[0].pageX * ratio;
+                startPoint.y = e.changedTouches[0].pageY * ratio;
+            });
+            anchors[1].addEventListener('touchmove', function (e) {
+                if (self.state != 1) return;
+                var dx = e.changedTouches[0].pageX * ratio - startPoint.x;
+                var dy = e.changedTouches[0].pageY * ratio - startPoint.y;
+                startPoint.x = e.changedTouches[0].pageX * ratio;
+                startPoint.y = e.changedTouches[0].pageY * ratio;
+                var d = _vector2["default"].rotate(new _vector2["default"](dx, -dy), self.degree / 180 * Math.PI);
+                self.width += d.x * 2;
+                self.height += d.y * 2;
+                self.render();
+            });
+            anchors[2].addEventListener('touchstart', function (e) {
+                self.state = 1;
+                startPoint.x = e.changedTouches[0].pageX * ratio;
+                startPoint.y = e.changedTouches[0].pageY * ratio;
+            });
+            anchors[2].addEventListener('touchmove', function (e) {
+                if (self.state != 1) return;
+                var dx = e.changedTouches[0].pageX * ratio - startPoint.x;
+                var dy = e.changedTouches[0].pageY * ratio - startPoint.y;
+                startPoint.x = e.changedTouches[0].pageX * ratio;
+                startPoint.y = e.changedTouches[0].pageY * ratio;
+                var d = _vector2["default"].rotate(new _vector2["default"](-dx, dy), self.degree / 180 * Math.PI);
+                self.width += d.x * 2;
+                self.height += d.y * 2;
+                self.render();
+            });
+            anchors[3].addEventListener('touchstart', function (e) {
+                self.state = 1;
+                startPoint.x = e.changedTouches[0].pageX * ratio;
+                startPoint.y = e.changedTouches[0].pageY * ratio;
+            });
+            anchors[3].addEventListener('touchmove', function (e) {
+                if (self.state != 1) return;
+                var dx = e.changedTouches[0].pageX * ratio - startPoint.x;
+                var dy = e.changedTouches[0].pageY * ratio - startPoint.y;
+                startPoint.x = e.changedTouches[0].pageX * ratio;
+                startPoint.y = e.changedTouches[0].pageY * ratio;
+                var d = _vector2["default"].rotate(new _vector2["default"](dx, dy), -self.degree / 180 * Math.PI);
+                self.width += d.x * 2;
+                self.height += d.y * 2;
+                self.render();
+            });
+            anchors[4].addEventListener('touchstart', function (e) {
+                self.state = 3;
+            });
+            anchors[4].addEventListener('touchmove', function (e) {
+                if (self.state != 3) return;
+                var dx = e.changedTouches[0].pageX * ratio;
+                var dy = e.changedTouches[0].pageY * ratio;
+                self.position.x = dx;
+                self.position.y = dy;
+                self.render();
+            });
+            anchors[5].addEventListener('touchstart', function (e) {
+                self.state = 2;
+                startPoint.x = e.changedTouches[0].pageX * ratio;
+                startPoint.y = e.changedTouches[0].pageY * ratio;
+            });
+            anchors[5].addEventListener('touchmove', function (e) {
+                if (self.state != 2) return;
+                var dx = e.changedTouches[0].pageX * ratio;
+                var dy = e.changedTouches[0].pageY * ratio;
+                var degree = getdegree([self.position.x, self.position.y], [dx, dy], [startPoint.x, startPoint.y]);
+                startPoint.x = e.changedTouches[0].pageX * ratio;
+                startPoint.y = e.changedTouches[0].pageY * ratio;
+                self.degree -= degree;
+                self.render();
+            });
+            anchors[6].addEventListener('click', function () {
+                onconfirm(self);
+            });
+        }
+    }]);
+    return Editable;
+}();
+
+function getdegree(c, a, b) {
+    var v1 = [a[0] - c[0], a[1] - c[1]],
+        v2 = [b[0] - c[0], b[1] - c[1]],
+        xp = v1[0] * v2[0] + v1[1] * v2[1],
+        m1 = Math.sqrt(v1[0] * v1[0] + v1[1] * v1[1]),
+        m2 = Math.sqrt(v2[0] * v2[0] + v2[1] * v2[1]),
+        p = m1 * m2,
+        cos = xp / p,
+        cp = v1[0] * v2[1] - v2[0] * v1[1];
+    return Math.acos(cos) / Math.PI * 180 * cp / Math.abs(cp);
+}
+exports["default"] = Editable;
+module.exports = exports['default'];
+
+/***/ })
+/******/ ]);</script></body>
+
+</html>
