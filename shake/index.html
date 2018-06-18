@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+<html style="font-size:15.625vw">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <title>shake test</title>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <script type="text/javascript">
+    ! function() {
+        function e() {
+            parseInt(document.documentElement.clientWidth) > 640 ? document.documentElement.style.fontSize = "625%" : document.documentElement.style.fontSize = document.documentElement.clientWidth / 640 * 10 / 16 * 1e3 + "%"
+        }
+        var t = null;
+        window.addEventListener("resize", function() {
+            clearTimeout(t), t = setTimeout(e, 300)
+        }, !1), e()
+    }(window)
+    window.noCart = true;
+    window.noJump = 1;
+    window.noTopbtn = 1;
+    window.onerror = function(msg, url, line, col) {
+        // alert(msg + '-' + line + '_' + col)
+    }
+    </script>
+    <style type="text/css">
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-y: hidden;
+        font-size: initial;
+    }
+    
+    * {
+        box-sizing: border-box;
+    }
+    
+    img {
+        border: none;
+    }
+    
+    ul {
+        list-style: none;
+    }
+    
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    .g-main {
+        width: 100%;
+        min-height: 100%;
+        background-color: #fcfcfc;
+        overflow: auto;
+        position: relative;
+    }
+    
+    .page {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 100%;
+    }
+    
+    .start {
+        font-size: .3rem;
+        color: #333;
+        transition: all .5s linear;
+        margin-bottom: .3rem;
+    }
+    
+    .shake {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin: 0 auto;
+        transition: all .5s linear;
+        transform-origin: 50% 100%;
+        position: relative;
+    }
+    
+    .shine {
+        position: absolute;
+        top: -1rem;
+        left: -1rem;
+        width: 3.5rem;
+        height: 3.5rem;
+        /*display: none;*/
+    }
+    
+    @keyframes shaking {
+        0%,
+        50%,
+        100% {
+            transform: rotateZ(0);
+        }
+        25% {
+            transform: rotateZ(20deg);
+        }
+        75% {
+            transform: rotateZ(-20deg);
+        }
+    }
+    
+    .animate {
+        animation: shaking .3s linear infinite;
+    }
+    
+    .on .start {
+        color: #fcfcfc;
+    }
+    
+    .on .shake {
+        transform: scale(1);
+    }
+    
+    .on path {
+        stroke: #1296db;
+        fill: #1296db;
+    }
+    
+    svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    
+    path {
+        stroke: #333;
+        fill: #333;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <a href="javascript:;" class="start">点击开始摇一摇</a>
+        <div class="shake">
+            <svg viewBox="0 0 1024 1024">
+                <path d="M849 974 296 974C254 974 220 940 220 899L220 24 195 49 748 49C790 49 824 83 824 124L824 877C824 890 835 902 849 902 863 902 874 890 874 877L874 124C874 56 818 0 748 0L195 0 170 0 170 24 170 899C170 968 227 1024 296 1024L849 1024C863 1024 874 1012 874 999 874 985 863 974 849 974L849 974Z" p-id="11253" stroke-width="10"></path>
+                <path d="M325 178C325 165 336 154 349 154L686 154C699 154 710 165 710 178L710 752C710 765 700 776 686 776L349 776C336 776 325 765 325 752L325 178 325 178ZM277 178 277 752C277 792 309 824 349 824L686 824C726 824 758 792 758 752L758 178C758 138 726 106 686 106L349 106C309 106 277 138 277 178L277 178Z" p-id="11254" stroke-width="10"></path>
+                <path d="M522 949C550 949 572 926 572 899 572 871 550 849 522 849 494 849 472 871 472 899 472 926 494 949 522 949L522 949ZM522 899C522 899 522 899 522 899 522 899 522 899 522 899 522 899 522 899 522 899 522 899 522 899 522 899L522 899Z" p-id="11255" stroke-width="10"></path>
+            </svg>
+            <div class="shine">
+                <svg viewBox="-20 -20 840 840">
+                    <path stroke-width="30" stroke-linecap="round" />
+                </svg>
+            </div>
+        </div>
+    </div>
+    <script src="http://mimg.127.net/pub/common/js/jquery.min.js" inline></script>
+    <script type="text/javascript">
+    function shakeEnd() {
+        $('.shake').removeClass('animate')
+        shaking = false;
+        unbindShake()
+        shine(function() {
+            $('.page').removeClass('on')
+            $('.shine').hide()
+        })
+    }
+
+    function shakeStart() {
+        $('.shake').addClass('animate')
+    }
+
+    function bindShake() {
+        $('.page').addClass('on')
+        var shakeDebounce, started = false;
+        $(window).on('devicemotion', function(e) {
+            var event = e.originalEvent;
+            var x = event.accelerationIncludingGravity.x
+            var y = event.accelerationIncludingGravity.y
+            var z = event.accelerationIncludingGravity.z
+            var acc = Math.sqrt(x * x + y * y + z * z);
+            if (acc > 40) {
+                if (shakeDebounce) {
+                    clearTimeout(shakeDebounce)
+                }!started && shakeStart()
+                started = true;
+                shakeDebounce = setTimeout(function() {
+                    started = false;
+                    shakeEnd()
+                }, 600)
+            }
+        })
+    }
+
+    function unbindShake() {
+        $(window).off('devicemotion')
+    }
+
+    function shine(end) {
+        $('.shine').show()
+        strokeAnimation($('.shine path'), 300, end)
+    }
+
+    function strokeAnimation(ele, time, end) {
+        ele.attr('d', createBurst(circlePoints(400, 30))).attr('stroke-dasharray', '200 200')
+        var length = 200
+        var start = Date.now()
+        var frame = function() {
+            var now = Date.now()
+            var percent = (now - start) / time
+            percent = percent > 1 ? 1 : percent
+            percent = Math.sin(percent * Math.PI / 2)
+            ele.attr('stroke-dashoffset', length * percent * 2 - length)
+            if (percent != 1) {
+                requestAnimationFrame(frame)
+            } else {
+                end && end()
+            }
+        }
+        frame()
+    }
+    var shaking = false;
+    $('.page').on('click', function(e) {
+        !shaking && bindShake()
+        shaking = true;
+    })
+
+    function circlePoints(r, stepDegree) {
+        var outter = [];
+        var inner = []
+        for (var d = 0; d < 360; d += stepDegree) {
+            var x = Math.sin(d / 180 * Math.PI) * r;
+            var y = Math.cos(d / 180 * Math.PI) * r;
+            var xs = x / 2;
+            var ys = y / 2;
+            outter.push([x + r, y + r])
+            inner.push([xs + r, ys + r])
+        }
+        return {
+            o: outter,
+            i: inner
+        }
+    }
+
+    function createBurst(points) {
+        var pathStr = ''
+        for (var i = 0; i < points.o.length; i++) {
+            pathStr += 'M' + points.o[i][0] + ',' + points.o[i][1] + 'L' + points.i[i][0] + ',' + points.i[i][1]
+        }
+        return pathStr
+    }
+    </script>
+</body>
+
+</html>

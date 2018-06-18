@@ -1,284 +1,303 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta name=author content=陈庆润>
     <meta name=description content=个人简历>
     <meta charset="utf-8">
     <title>个人简历</title>
     <style type="text/css">
-        body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, button, p, blockquote, th, td {
-            margin: 0;
-            padding: 0;
-        }
+    body,
+    div,
+    dl,
+    dt,
+    dd,
+    ul,
+    ol,
+    li,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    pre,
+    code,
+    form,
+    fieldset,
+    legend,
+    button,
+    p,
+    blockquote,
+    th,
+    td {
+        margin: 0;
+        padding: 0;
+    }
 
-        body {
-            background-color: #e1e0d9;
-            font-family: microsoft yahei;
-            font-size: 14px;
-        }
+    body {
+        background-color: #e1e0d9;
+        font-family: microsoft yahei;
+        font-size: 14px;
+    }
 
-        a {
-            color: #4d8775;
-            text-decoration: none;
-        }
+    a {
+        color: #4d8775;
+        text-decoration: none;
+    }
 
-        .frame {
-            width: 800px;
-            margin: 80px auto;
-            position: relative;
-            background-color: white;
-            padding: 10px;
-            box-shadow: 2px 0 3px 0 rgba(180, 180, 180, .4);
-        }
+    .frame {
+        width: 800px;
+        margin: 80px auto;
+        position: relative;
+        background-color: white;
+        padding: 10px;
+        box-shadow: 2px 0 3px 0 rgba(180, 180, 180, .4);
+    }
 
-        .section {
-            border-top: 1px solid #4589c8;
-            margin-bottom: 10px;
-            padding: 10px 20px;
-        }
+    .section {
+        border-top: 1px solid #4589c8;
+        margin-bottom: 10px;
+        padding: 10px 20px;
+    }
 
-        .personalInfo {
-            position: absolute;
-            right: 0;
-            top: 0;
-            background-color: white;
-            width: 210px;
-            z-index: 999;
-            border: 1px dashed #c2bbb0;
-            padding: 10px 10px;
-        }
+    .personalInfo {
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-color: white;
+        width: 210px;
+        z-index: 999;
+        border: 1px dashed #c2bbb0;
+        padding: 10px 10px;
+    }
 
-        #photo {
-            width: 150px;
-            height: 200px;
-            display: block;
-            margin: 0 auto;
-        }
+    #photo {
+        width: 150px;
+        height: 200px;
+        display: block;
+        margin: 0 auto;
+    }
 
-        table {
-            width: 210px;
-            margin: 0 auto;
-            border-collapse: collapse;
-            border-spacing: 0;
-        }
+    table {
+        width: 210px;
+        margin: 0 auto;
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
 
-        tr {
-            height: 40px;
-            border-top: 1px dashed #c2bbb0;
-        }
+    tr {
+        height: 40px;
+        border-top: 1px dashed #c2bbb0;
+    }
 
-        .aim {
-            border: none;
-        }
+    .aim {
+        border: none;
+    }
 
-        span {
-            color: #4589c8;
-            text-decoration: underline;
-        }
+    span {
+        color: #4589c8;
+        text-decoration: underline;
+    }
 
-        .about > p {
-            line-height: 25px;
-            width: 700px;
-            margin: 0 auto;
-        }
+    .about>p {
+        line-height: 25px;
+        width: 700px;
+        margin: 0 auto;
+    }
 
-        .title {
-            border-left: 1px solid #4589c8;
-            border-bottom: 1px solid #4589c8;
-            border-top: 1px solid #4589c8;
-            font-size: 16px;
-            height: 36px;
-            width: 175px;
-            font-weight: 300;
-            line-height: 36px;
-            text-align: center;
-            position: relative;
-        }
+    .title {
+        border-left: 1px solid #4589c8;
+        border-bottom: 1px solid #4589c8;
+        border-top: 1px solid #4589c8;
+        font-size: 16px;
+        height: 36px;
+        width: 175px;
+        font-weight: 300;
+        line-height: 36px;
+        text-align: center;
+        position: relative;
+    }
 
-        .circle {
-            border: 1px solid #4589c8;
-            height: 22px;
-            width: 22px;
-            position: absolute;
-            border-radius: 11px;
-            top: 7px;
-            left: -14px;
-            background-color: white;
-        }
+    .circle {
+        border: 1px solid #4589c8;
+        height: 22px;
+        width: 22px;
+        position: absolute;
+        border-radius: 11px;
+        top: 7px;
+        left: -14px;
+        background-color: white;
+    }
 
-        .outBox {
-            height: 38px;
-            width: 175px;
-            overflow: hidden;
-            margin-bottom: 10px;
-        }
+    .outBox {
+        height: 38px;
+        width: 175px;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
 
-        .ability {
-            position: relative;
-            height: 340px;
-        }
+    .ability {
+        position: relative;
+        height: 340px;
+    }
 
-        .ability p {
-            font-size: 1.2em;
-            margin-top: 1em;
-            margin-bottom: 0.5em;
-            border-left: 5px solid #4589c8;
-            padding-left: 10px;
-        }
+    .ability p {
+        font-size: 1.2em;
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+        border-left: 5px solid #4589c8;
+        padding-left: 10px;
+    }
 
-        .ability ul {
-            margin-left: 40px;
-        }
+    .ability ul {
+        margin-left: 40px;
+    }
 
-        .column-2 {
-            position: absolute;
-            left: 325px;
-            top: 48px;
-        }
-        .line {
-            border-bottom: 1px solid #4589c8;
-            width: 90%;
-            margin: 20px auto;
-        }
-        .patitle{
-            font-size: 1.2em;
-            margin-top: 1em;
-            margin-bottom: 0.5em;
-            border-left: 5px solid #4589c8;
-            padding-left: 10px;
-        }
-        .project{
-            margin: 0 40px;
-        }
-        .ptitle{
-            margin-top: 1em;
-            margin-bottom: 0.5em;
-            border-left: 2px solid #4589c8;
-            padding-left: 10px;
-        }
-        .pcontent {
-            margin-left: 12px;
-        }
+    .column-2 {
+        position: absolute;
+        left: 325px;
+        top: 48px;
+    }
+
+    .line {
+        border-bottom: 1px solid #4589c8;
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .patitle {
+        font-size: 1.2em;
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+        border-left: 5px solid #4589c8;
+        padding-left: 10px;
+    }
+
+    .project {
+        margin: 0 40px;
+    }
+
+    .ptitle {
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+        border-left: 2px solid #4589c8;
+        padding-left: 10px;
+    }
+
+    .pcontent {
+        margin-left: 12px;
+    }
     </style>
 </head>
+
 <body>
-<div class="frame">
-    <div class="section personalInfo">
-        <div class="outBox">
-            <div class=title>
-                <div class="circle"></div>
-                个人信息
+    <div class="frame">
+        <div class="section personalInfo">
+            <div class="outBox">
+                <div class=title>
+                    <div class="circle"></div>
+                    个人信息
+                </div>
             </div>
+            <img id="photo" src="pic\photo.jpg">
+            <table>
+                <tr>
+                    <td>姓名</td>
+                    <td>陈庆润</td>
+                </tr>
+                <tr>
+                    <td>性别</td>
+                    <td>男</td>
+                </tr>
+                <tr>
+                    <td>手机</td>
+                    <td>18814813341</td>
+                </tr>
+                <tr>
+                    <td>邮箱</td>
+                    <td>cqr648413045@163.com</td>
+                </tr>
+                <tr>
+                    <td>英语</td>
+                    <td>六级546</td>
+                </tr>
+                <tr>
+                    <td>教育</td>
+                    <td>武汉大学
+                        <br>国际软件学院，本科</td>
+                </tr>
+            </table>
         </div>
-        <img id="photo" src="pic\photo.jpg">
-        <table>
-            <tr>
-                <td>姓名</td>
-                <td>陈庆润</td>
-            </tr>
-            <tr>
-                <td>性别</td>
-                <td>男</td>
-            </tr>
-            <tr>
-                <td>手机</td>
-                <td>15172389519</td>
-            </tr>
-            <tr>
-                <td>邮箱</td>
-                <td>cqr648413045@163.com</td>
-            </tr>
-            <tr>
-                <td>英语</td>
-                <td>六级546</td>
-            </tr>
-            <tr>
-                <td>教育</td>
-                <td>武汉大学<br>国际软件学院，本科</td>
-            </tr>
-        </table>
-    </div>
-    <div class="section aim">
-        <div class="outBox">
-            <div class=title>
-                <div class="circle"></div>
-                应聘方向
+        <div class="section aim">
+            <div class="outBox">
+                <div class=title>
+                    <div class="circle"></div>
+                    应聘方向
+                </div>
             </div>
+            web前端开发
         </div>
-        web前端开发
-    </div>
-    <div class="section ability">
-        <div class="outBox">
-            <div class=title>
-                <div class="circle"></div>
-                习得技能
+        <div class="section ability">
+            <div class="outBox">
+                <div class=title>
+                    <div class="circle"></div>
+                    习得技能
+                </div>
             </div>
-        </div>
-        <div class="skills">
-            <p>HTML：</p>
-            <ul>
-                <li>多媒体标签、浏览器API</li>
-            </ul>
-            <p>CSS：</p>
-            <ul>
-                <li class="skill">基础布局、盒模型</li>
-                <li class="skill">较复杂的CSS3动画</li>
-            </ul>
-            <p>JS：</p>
-            <ul>
-                <li class="skill">语言基础：闭包、作用域链、继承模式等</li>
-                <li class="skill">应用技术：事件代理、原生ajax实现等</li>
-                <li class="skill">编程思想：设计模式、模块化思想</li>
-                <li class="skill">代码规范</li>
-            </ul>
-            <div class="column-2">
+            <div class="skills">
+                <p>HTML</p>
+                <p>CSS</p>
+                <p>JS</p>
                 <p>库、框架、工具：</p>
                 <ul>
-                    <li class="skill">库：GSAP、Three.js、create.js</li>
-                    <li class="skill">工具：LESS、gulp、git</li>
+                    <li class="skill">库：GSAP、Three.js、create.js、pixi.js</li>
+                    <li class="skill">工具：SASS/LESS、gulp/webpack基础、git</li>
+                    <li class="skill">框架：熟悉原生js&jQuery、稍有了解VUE/React</li>
                 </ul>
-                <p>浏览器相关：</p>
-                <ul>
-                    <li class="skill">HTTP协议</li>
-                    <li class="skill">WebGL/GLSL</li>
-                    <li class="skill">音视频多媒体</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="section practices">
-        <div class="outBox">
-            <div class=title>
-                <div class="circle"></div>
-                工作经历
-            </div>
-        </div>
-        <div class="projects">
-            <div class="part">
-                <p class="patitle">网易</p>
-
-                <div class="project">
-                    <p class="ptitle">日常运营活动开发</p>
-
-                    <p class="pcontent">
-                        日常运营活动页面开发，输出可维护性高的运营页面</p>
-                </div>
-                <div class="project">
-                    <p class="ptitle">互动类H5页面开发
-                    </p>
-
-                    <p class="pcontent">负责页面特殊互动效果调研、开发；负责互动展示类H5页面的开发</p>
-                    <p class="pcontent"> - 手势操作-转轮电话</p>
-                    <p class="pcontent"> - 摇一摇</p>
-                    <p class="pcontent"> - SVG描线动画</p>
-                    <p class="pcontent"> - 3D全景图（立方体映射、球映射）</p>
-                    <p class="pcontent"> - 简单的3D旋转交互</p>
-                    <p class="pcontent"> - 3D粒子动画</p>
-                    <p class="pcontent"> - Raymarching</p>
-                    <p class="pcontent"> - 等</p>
+                <div class="column-2">
+                    <p>浏览器相关：</p>
+                    <ul>
+                        <li class="skill">HTTP协议</li>
+                        <li class="skill">Canvas2D/WebGL/GLSL</li>
+                        <li class="skill">WebAudio</li>
+                        <li class="skill">Audio\Video</li>
+                        <li class="skill">SVG</li>
+                    </ul>
                 </div>
             </div>
-            <!-- <div class="line"></div>
+        </div>
+        <div class="section practices">
+            <div class="outBox">
+                <div class=title>
+                    <div class="circle"></div>
+                    工作经历
+                </div>
+            </div>
+            <div class="projects">
+                <div class="part">
+                    <p class="patitle">网易</p>
+                    <div class="project">
+                        <p class="ptitle">日常运营活动开发</p>
+                        <p class="pcontent">
+                            日常运营活动页面开发，输出可维护性高的运营页面</p>
+                            开发大促中的交互活动和传播活动，包括红包雨、答题红包等</p>
+                    </div>
+                    <div class="project">
+                        <p class="ptitle">互动类H5页面开发
+                        </p>
+                        <p class="pcontent">负责页面特殊互动效果调研、开发；负责互动展示类H5页面的开发</p>
+                        <p class="pcontent"> - 手势操作-转轮电话 <a target="_blank" href="https://godluck.github.io/turntable/demo.html">link></a></p>
+                        <p class="pcontent"> - 摇一摇 <a target="_blank" href="https://godluck.github.io/shake/index.html">link></a></p>
+                        <p class="pcontent"> - SVG描线动画 <a target="_blank" href="https://m.you.163.com/act/pub/FpGss18IvU.html">link></a></p>
+                        <p class="pcontent"> - 3D全景图（立方体映射、球映射） <a target="_blank" href="https://m.you.163.com/act/pub/mor2hvktMO.html">link></a></p>
+                        <p class="pcontent"> - 3D粒子动画 <a target="_blank" href="https://godluck.github.io/3dpartical/index.html">link></a></p>
+                        <p class="pcontent"> - Raymarching和简易的SDF碰撞检测系统 <a target="_blank" href="https://godluck.github.io/ball.html">link></a>ball</p>
+                        <p class="pcontent"> - 简易的韦尔莱积分粒子碰撞系统 <a target="_blank" href="https://godluck.github.io/simplePhysics/index.html">link></a></p>
+                        <p class="pcontent"> - 等</p>
+                    </div>
+                </div>
+                <!-- <div class="line"></div>
             <div class="part">
                 <p class="patitle">新旧知识</p>
 
@@ -299,8 +318,9 @@
                     <p class="pcontent">使用cocos2d-js框架实现的消除类游戏，主要工作量为编写游戏场景和逻辑</p>
                 </div>
             </div> -->
+            </div>
         </div>
     </div>
-</div>
 </body>
+
 </html>
