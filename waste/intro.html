@@ -67,7 +67,7 @@
         top: 0;
         background-color: white;
         width: 210px;
-        z-index: 999;
+        z-index: 9;
         border: 1px dashed #c2bbb0;
         padding: 10px 10px;
     }
@@ -188,6 +188,27 @@
     .pcontent {
         margin-left: 12px;
     }
+
+    .code-wrapper {
+        position: fixed;
+        background-color: rgba(0, 0, 0, .5);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+        z-index: 100;
+    }
+
+    canvas {
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -170px 0 0 -170px;
+        border: 20px solid #fff;
+    }
     </style>
 </head>
 
@@ -281,19 +302,19 @@
                         <p class="ptitle">日常运营活动开发</p>
                         <p class="pcontent">
                             日常运营活动页面开发，输出可维护性高的运营页面</p>
-                            开发大促中的交互活动和传播活动，包括红包雨、答题红包等</p>
+                        开发大促中的交互活动和传播活动，包括红包雨、答题红包等</p>
                     </div>
                     <div class="project">
                         <p class="ptitle">互动类H5页面开发
                         </p>
                         <p class="pcontent">负责页面特殊互动效果调研、开发；负责互动展示类H5页面的开发</p>
-                        <p class="pcontent"> - 手势操作-转轮电话 <a target="_blank" href="https://godluck.github.io/turntable/demo.html">link></a></p>
-                        <p class="pcontent"> - 摇一摇 <a target="_blank" href="https://godluck.github.io/shake/index.html">link></a></p>
+                        <p class="pcontent"> - 手势操作-转轮电话 <a class="qrcode" target="_blank" href="https://godluck.github.io/turntable/demo.html">link></a></p>
+                        <p class="pcontent"> - 摇一摇 <a class="qrcode" target="_blank" href="https://godluck.github.io/shake/index.html">link></a></p>
                         <p class="pcontent"> - SVG描线动画 <a target="_blank" href="https://m.you.163.com/act/pub/FpGss18IvU.html">link></a></p>
-                        <p class="pcontent"> - 3D全景图（立方体映射、球映射） <a target="_blank" href="https://m.you.163.com/act/pub/mor2hvktMO.html">link></a></p>
+                        <p class="pcontent"> - 3D全景图（立方体映射、球映射） <a class="qrcode" target="_blank" href="https://m.you.163.com/act/pub/mor2hvktMO.html">link></a></p>
                         <p class="pcontent"> - 3D粒子动画 <a target="_blank" href="https://godluck.github.io/3dpartical/index.html">link></a></p>
-                        <p class="pcontent"> - Raymarching和简易的SDF碰撞检测系统 <a target="_blank" href="https://godluck.github.io/ball.html">link></a>ball</p>
-                        <p class="pcontent"> - 简易的韦尔莱积分粒子碰撞系统 <a target="_blank" href="https://godluck.github.io/simplePhysics/index.html">link></a></p>
+                        <p class="pcontent"> - Raymarching和简易的SDF碰撞检测系统 <a class="qrcode" target="_blank" href="https://godluck.github.io/ball.html">link></a>ball</p>
+                        <p class="pcontent"> - 简易的韦尔莱积分粒子碰撞系统 <a class="qrcode" target="_blank" href="https://godluck.github.io/simplePhysics/index.html">link></a></p>
                         <p class="pcontent"> - 等</p>
                     </div>
                 </div>
@@ -320,7 +341,26 @@
             </div> -->
             </div>
         </div>
+        <div class="code-wrapper"></div>
     </div>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/qrcode.js"></script>
+    <script type="text/javascript" src="js/jquery.qrcode.js"></script>
+    <script type="text/javascript">
+    var hasTouch = false
+    $('.qrcode').on('touchstart', function() {
+        hasTouch = true
+    })
+    $('.qrcode').on('click', function() {
+        if (!hasTouch) {
+            $('.code-wrapper').show().qrcode($(this).attr('href'))
+            return false
+        }
+    })
+    $('.code-wrapper').on('click', function() {
+        $(this).hide()
+    })
+    </script>
 </body>
 
 </html>
