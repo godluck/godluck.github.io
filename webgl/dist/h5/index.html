@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>band</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta charset="utf-8">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <link rel="shortcut icon" href="https://mimg.127.net/pub/common/favicon/yanxuan/favicon.ico">
+    <script type="text/javascript" compress="no-compress">
+    ! function() {
+        function a() {
+            document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 10 / 16 * 1000 + "%";
+        }
+        var b = null;
+        window.addEventListener("resize", function() {
+            clearTimeout(b);
+            b = setTimeout(a, 300);
+        }, !1);
+        a();
+    }(window);
+    </script>
+<style type="text/css">body,button,dd,dl,form,h1,h2,h3,h4,h5,h6,input,ol,p,td,textarea,th,ul{ margin:0; padding:0; }
+iframe,img{ border:0 none; }
+table{ border-collapse:collapse; border-spacing:0; table-layout:fixed; }
+ol,ul{ list-style:none outside none; }
+h1,h2,h3,h4,h5,h6{ font-size:100%; font-weight:700; }
+em,strong{ font-style:normal; font-weight:700; }
+html{ font-family:PingFangSC-Light,helvetica,Helvetica Neue,STHeiTi,Microsoft YaHei,sans-serif !important; -webkit-text-size-adjust:100%; text-size-adjust:100%; font-size:366.211%; }
+body,input,select,textarea{ color:#000; }
+body,html{max-width:720px;}
+body{position:relative;font-size:14px;overflow-x:hidden;overflow-y:auto;}
+a,button{ cursor:pointer; text-decoration:none; }
+img[src=""]{ opacity:0; filter:alpha(opacity=0); }
+::-ms-clear,::-ms-reveal{ display:none; }
+input{ outline:none; border:0; }
+html{ font-size:14px; }
+@media screen and (min-width:300px){ html{ font-size:250%; } }
+@media screen and (min-width:320px){ html{ font-size:266.66667%; } }
+@media screen and (min-width:340px){ html{ font-size:283.33333%; } }
+@media screen and (min-width:360px){ html{ font-size:300%; } }
+@media screen and (min-width:375px){ html{ font-size:312.5%; } }
+@media screen and (min-width:380px){ html{ font-size:316.66667%; } }
+@media screen and (min-width:400px){ html{ font-size:333.33333%; } }
+@media screen and (min-width:414px){ html{ font-size:345%; } }
+@media screen and (min-width:440px){ html{ font-size:366.66667%; } }
+@media screen and (min-width:480px){ html{ font-size:400%; } }
+@media screen and (min-width:560px){ html{ font-size:466.66667%; } }
+@media screen and (min-width:640px){ html{ font-size:533.33333%; } }
+@media screen and (min-width:720px){ html{ font-size:600%; } }
+::-webkit-input-placeholder{ color:#aaa; }
+::-moz-placeholder{ color:#aaa; }
+:-ms-input-placeholder{ color:#aaa; }
+input:-moz-placeholder{ color:#aaa; }
+*,:not(input){ -webkit-user-select:none; }
+*{
+  margin:0;
+  padding:0;
+  font-family:PingFangSC-Regular,Microsoft Yahei,Helvetica,Arial,\\5b8b\4f53,sans-serif;
+  -webkit-box-sizing:border-box;
+          box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent;
+  -webkit-touch-callout:none;
+  -webkit-overflow-scrolling:touch; }
+input,textarea{
+  -webkit-user-select:text; }
+body,html{
+  width:100%;
+  font-size:medium;
+  margin:0 auto;
+  height:100%;
+  overflow:hidden;
+  position:relative; }
+img{
+  border:none; }
+ul{
+  list-style:none; }
+a{
+  text-decoration:none;
+  color:inherit; }
+canvas{
+  width:100%;
+  height:100%; }
+.btn{
+  position:fixed;
+  bottom:2rem;
+  left:50%;
+  -webkit-transform:translate(-50%);
+      -ms-transform:translate(-50%);
+          transform:translate(-50%);
+  display:none;
+  width:4em;
+  font-size:.24rem;
+  height:2em;
+  line-height:2em; }
+.lines{
+  width:100%;
+  position:absolute;
+  top:0;
+  left:0; }
+.lines .line{
+    background-color:#000; }
+.label,.lines .line{
+    width:100%;
+    height:2px;
+    position:absolute;
+    left:0; }
+.label{
+  background-color:rgba(255,0,0,.5);
+  top:50%; }
+</style></head>
+
+<body>
+    <!-- your code here -->
+    <canvas class="painter"></canvas>
+    <!-- your code end -->
+    <script type="text/javascript" src="https://mimg.127.net/pub/common/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="https://mimg.127.net/pub/common/js/pixi-4.5.1.min.js"></script>
+<script type="text/javascript">/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(1);
+
+var dw = document.documentElement.clientWidth;
+var dh = document.documentElement.clientHeight;
+var dpr = window.devicePixelRatio || 2;
+var cw = dpr * dw;
+var ch = dpr * dh;
+if (false) {
+    require('./index.html');
+    setTimeout(init, 300);
+} else {
+    init();
+}
+
+function init() {
+    var img = new Image();
+    img.src = __webpack_require__(2);
+    img.onload = function () {
+        initWebGL(img);
+    };
+}
+
+function initWebGL(img) {
+    var canvas = $('.painter')[0];
+    canvas.width = cw;
+    canvas.height = ch;
+    var webgl = canvas.getContext('webgl');
+
+    var attributes = [{
+        name: 'a_position',
+        ptype: 'vec3',
+        value: [0, 0, cw, 0, 0, cw, cw, 0, cw, cw, 0, cw],
+        size: 2,
+        type: webgl.FLOAT,
+        normalize: false,
+        stride: 0,
+        offset: 0
+    }, {
+        name: 'a_uv',
+        ptype: 'vec2',
+        value: [0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1],
+        size: 2,
+        type: webgl.FLOAT,
+        normalize: false,
+        stride: 0,
+        offset: 0
+    }];
+    var uniforms = [{
+        name: 'u_resolution',
+        ptype: 'vec2',
+        value: [cw, ch]
+    }, {
+        name: 'u_textureSize',
+        ptype: 'vec2',
+        value: [img.width, img.height]
+    }, {
+        name: 'u_texture',
+        ptype: 'sampler2D',
+        value: img,
+        methodName: 'texImage2D'
+    }, {
+        name: 'u_hValue',
+        ptype: 'float',
+        value: 0
+    }];
+    var vs = createShader(webgl, webgl.VERTEX_SHADER, buildVertexShader(attributes, uniforms));
+    var fs = createShader(webgl, webgl.FRAGMENT_SHADER, buildFragmentShader());
+    var program = createProgram(webgl, vs, fs);
+
+    attachAttributes(webgl, program, attributes);
+    setUpViewport(webgl, cw, ch);
+    clear(webgl);
+    activateProgram(webgl, program);
+    activateAttributes(webgl, attributes);
+    attachUniforms(webgl, program, uniforms);
+
+    var max = 100;
+    var f = 0;
+    frame();
+
+    function frame() {
+        requestAnimationFrame(frame);
+        f++;
+        uniforms[3].value = f % max / max;
+        webgl.uniform1f(uniforms[3].position, uniforms[3].value);
+        drawTriangles(webgl, 0, attributes[0].value.length / attributes[0].size);
+    }
+}
+
+function createShader(webgl, type, source) {
+    var shader = webgl.createShader(type);
+    webgl.shaderSource(shader, source);
+    webgl.compileShader(shader);
+    var success = webgl.getShaderParameter(shader, webgl.COMPILE_STATUS);
+    if (success) {
+        return shader;
+    }
+    console.log('shader' + '\n' + webgl.getShaderInfoLog(shader));
+    webgl.deleteShader(shader);
+}
+
+function createProgram(webgl, vs, fs) {
+    var program = webgl.createProgram();
+    webgl.attachShader(program, vs);
+    webgl.attachShader(program, fs);
+    webgl.linkProgram(program);
+    var success = webgl.getProgramParameter(program, webgl.LINK_STATUS);
+    if (success) {
+        return program;
+    }
+    console.log('program' + '\n' + webgl.getProgramInfoLog(program));
+    webgl.deleteProgram(program);
+}
+
+function buildVertexShader(as, us) {
+    return '\n        attribute vec4 a_position;\n        attribute vec2 a_uv;\n        uniform vec2 u_resolution;\n        varying vec3 v_color;\n        varying vec2 v_uv;\n        void main(){\n            gl_Position = vec4(vec2(a_position.xy / u_resolution * 2. - 1.) * vec2(1.,-1.), 0, 1);\n            v_color = gl_Position.xyz * 0.5 + 0.5;\n            v_uv = a_uv;\n        }\n    ';
+}
+
+function buildFragmentShader() {
+    return '\n        precision highp float;\n\n        vec3 rgb2hsv(vec3 c){\n            vec4 K = vec4(0.0, -1.0 / 3.0, 2.0 / 3.0, -1.0);\n            vec4 p = mix(vec4(c.bg, K.wz), vec4(c.gb, K.xy), step(c.b, c.g));\n            vec4 q = mix(vec4(p.xyw, c.r), vec4(c.r, p.yzx), step(p.x, c.r));\n\n            float d = q.x - min(q.w, q.y);\n            float e = 1.0e-10;\n            return vec3(abs(q.z + (q.w - q.y) / (6.0 * d + e)), d / (q.x + e), q.x);\n        }\n        vec3 hsv2rgb(vec3 c){\n            vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);\n            vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);\n            return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);\n        }\n        uniform sampler2D u_texture;\n        uniform vec2 u_textureSize;\n        uniform float u_hValue;\n        varying vec3 v_color;\n        varying vec2 v_uv;\n        void main(){\n            vec2 p = 1. / u_textureSize;\n            vec4 color = texture2D(u_texture,v_uv);\n            vec3 hsv = rgb2hsv(color.xyz);\n            if(hsv.x > u_hValue){\n                hsv.x = u_hValue;\n            }\n            vec3 color2 = hsv2rgb(hsv);\n            gl_FragColor = vec4(color2,color.w);\n            // gl_FragColor = (texture2D(u_texture,v_uv) + texture2D(u_texture,v_uv + p * 2.) +texture2D(u_texture,v_uv - p * 2.) +texture2D(u_texture,v_uv + p * vec2(2.,-2.)) +texture2D(u_texture,v_uv + p * vec2(-2.,2.))) / 5.;\n            //vec4(v_color,1);\n        }\n    ';
+}
+
+function activateProgram(webgl, pro) {
+    webgl.useProgram(pro);
+}
+
+function attachAttributes(webgl, program, attributes) {
+    attributes.forEach(function (v) {
+        var attributeLocation = webgl.getAttribLocation(program, v.name);
+        v.position = attributeLocation;
+        var buffer = webgl.createBuffer();
+        v.buffer = buffer;
+        webgl.bindBuffer(webgl.ARRAY_BUFFER, buffer);
+        webgl.bufferData(webgl.ARRAY_BUFFER, new Float32Array(v.value), webgl.STATIC_DRAW);
+    });
+}
+
+function activateAttributes(webgl, attributes) {
+    attributes.forEach(function (v) {
+        webgl.enableVertexAttribArray(v.position);
+        webgl.bindBuffer(webgl.ARRAY_BUFFER, v.buffer);
+        webgl.vertexAttribPointer(v.position, v.size, v.type, v.normalize, v.stride, v.offset);
+    });
+}
+
+function attachUniforms(webgl, program, uniforms) {
+    uniforms.forEach(function (v) {
+        var uniformLocation = v.position || webgl.getUniformLocation(program, v.name);
+        v.position = uniformLocation;
+        switch (v.ptype) {
+            case 'float':
+                webgl.uniform1f(uniformLocation, v.value);
+                break;
+            case 'vec2':
+                webgl.uniform2fv(uniformLocation, v.value);
+                break;
+            case 'sampler2D':
+                var texture = webgl.createTexture();
+                webgl.bindTexture(webgl.TEXTURE_2D, texture);
+                webgl.texParameteri(webgl.TEXTURE_2D, webgl.TEXTURE_WRAP_S, webgl.CLAMP_TO_EDGE);
+                webgl.texParameteri(webgl.TEXTURE_2D, webgl.TEXTURE_WRAP_T, webgl.CLAMP_TO_EDGE);
+                webgl.texParameteri(webgl.TEXTURE_2D, webgl.TEXTURE_MIN_FILTER, webgl.NEAREST);
+                webgl.texParameteri(webgl.TEXTURE_2D, webgl.TEXTURE_MAG_FILTER, webgl.NEAREST);
+                webgl.texImage2D(webgl.TEXTURE_2D, 0, webgl.RGBA, webgl.RGBA, webgl.UNSIGNED_BYTE, v.value);
+                break;
+        }
+    });
+}
+
+function setUpViewport(webgl, width, height) {
+    webgl.viewport(0, 0, width, height);
+}
+
+function clear(webgl) {
+    webgl.clearColor(0, 0, 0, 0);
+    webgl.clear(webgl.COLOR_BUFFER_BIT);
+}
+
+function drawTriangles(webgl, offset, iteration) {
+    var primitiveType = webgl.TRIANGLES;
+    webgl.drawArrays(primitiveType, offset, iteration);
+}
+
+function buildTextures(webgl) {
+    var texture = webgl.createTexture();
+    webgl.bindTexture(webgl.TEXTURE_2D, texture);
+
+    webgl.texParameteri(webgl.TEXTURE_2D, webgl.TEXTURE_WRAP_S, webgl.CLAMP_TO_EDGE);
+    webgl.texParameteri(webgl.TEXTURE_2D, webgl.TEXTURE_WRAP_T, webgl.CLAMP_TO_EDGE);
+    webgl.texParameteri(webgl.TEXTURE_2D, webgl.TEXTURE_MIN_FILTER, webgl.NEAREST);
+    webgl.texParameteri(webgl.TEXTURE_2D, webgl.TEXTURE_MAG_FILTER, webgl.NEAREST);
+    return texture;
+}
+
+function setFramebuffer(webgl, framebuffer, width, height) {}
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAABkAAD/4QMvaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzEzOCA3OS4xNTk4MjQsIDIwMTYvMDkvMTQtMDE6MDk6MDEgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE3IChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpENDRGRkUxRUE0MjYxMUU4QjZFNzlEOUI1MzZFMTEzNyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpENDRGRkUxRkE0MjYxMUU4QjZFNzlEOUI1MzZFMTEzNyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkQ0NEZGRTFDQTQyNjExRThCNkU3OUQ5QjUzNkUxMTM3IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkQ0NEZGRTFEQTQyNjExRThCNkU3OUQ5QjUzNkUxMTM3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+/+4ADkFkb2JlAGTAAAAAAf/bAIQAAQEBAQEBAQEBAQEBAQEB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"
+
+/***/ })
+/******/ ]);</script></body>
+
+</html>
