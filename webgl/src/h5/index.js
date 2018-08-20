@@ -14,7 +14,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 function init() {
     var img = new Image()
-    img.src = require('./img/hue.jpg')
+    img.src = require('./img/hue.png')
     img.onload = function() {
         initWebGL(img)
     }
