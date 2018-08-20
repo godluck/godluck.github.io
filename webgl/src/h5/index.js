@@ -31,11 +31,11 @@ function initWebGL(img) {
         ptype: 'vec3',
         value: [
             0, 0,
-            cw, 0,
-            0, cw,
-            cw, 0,
-            cw, cw,
-            0, cw
+            img.width, 0,
+            0, img.height,
+            img.width, 0,
+            img.width, img.height,
+            0, img.height
         ],
         size: 2,
         type: webgl.FLOAT,

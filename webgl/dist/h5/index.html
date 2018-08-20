@@ -76,7 +76,8 @@ body,html{
   margin:0 auto;
   height:100%;
   overflow:hidden;
-  position:relative; }
+  position:relative;
+  max-width:none; }
 img{
   border:none; }
 ul{
@@ -225,7 +226,7 @@ function initWebGL(img) {
     var attributes = [{
         name: 'a_position',
         ptype: 'vec3',
-        value: [0, 0, cw, 0, 0, cw, cw, 0, cw, cw, 0, cw],
+        value: [0, 0, img.width, 0, 0, img.height, img.width, 0, img.width, img.height, 0, img.height],
         size: 2,
         type: webgl.FLOAT,
         normalize: false,
