@@ -14,7 +14,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 function init() {
     var img = new Image()
-    img.src = require('./img/hue.png')
+    img.src = require('./img/coupon.jpg')
     img.onload = function() {
         initWebGL(img)
     }
@@ -80,6 +80,10 @@ function initWebGL(img) {
         name: 'u_hValue',
         ptype: 'float',
         value: 0
+    }, {
+        name: 'u_sValue',
+        ptype: 'float',
+        value: 1
     }]
     var vs = createShader(webgl, webgl.VERTEX_SHADER, buildVertexShader(attributes, uniforms))
     var fs = createShader(webgl, webgl.FRAGMENT_SHADER, buildFragmentShader())
@@ -107,15 +111,27 @@ function initWebGL(img) {
     // frameBuffers.push(f2)
     // webgl.bindFramebuffer(webgl.FRAMEBUFFER, f2)
     // webgl.framebufferTexture2D(webgl.FRAMEBUFFER, webgl.COLOR_ATTACHMENT0, webgl.TEXTURE_2D, t2, 0)
-    var max = 100
+    var max = 600
     var f = 0
     frame()
 
     function frame() {
         requestAnimationFrame(frame)
         f++
-        uniforms[3].value = (f % max) / max
-        webgl.uniform1f(uniforms[3].position, uniforms[3].value)
+        switch (Math.floor(f / max) % 2) {
+            case 0:
+                uniforms[3].value = (f % max) / max
+                webgl.uniform1f(uniforms[3].position, uniforms[3].value)
+                uniforms[4].value = 1
+                webgl.uniform1f(uniforms[4].position, uniforms[4].value)
+                break;
+            case 1:
+                uniforms[3].value = 1
+                webgl.uniform1f(uniforms[3].position, uniforms[3].value)
+                uniforms[4].value = 1 - (f % max) / max
+                webgl.uniform1f(uniforms[4].position, uniforms[4].value)
+                break;
+        }
         drawTriangles(webgl, 0, attributes[0].value.length / attributes[0].size)
     }
 }
@@ -181,6 +197,7 @@ function buildFragmentShader() {
         uniform sampler2D u_texture;
         uniform vec2 u_textureSize;
         uniform float u_hValue;
+        uniform float u_sValue;
         varying vec3 v_color;
         varying vec2 v_uv;
         void main(){
@@ -190,6 +207,12 @@ function buildFragmentShader() {
             if(hsv.x > u_hValue){
                 hsv.x = u_hValue;
             }
+            if(hsv.y < u_sValue){
+                hsv.y = u_sValue;
+            }
+            // if(hsv.z > u_hValue){
+                // hsv.z = u_hValue;
+            // }
             vec3 color2 = hsv2rgb(hsv);
             gl_FragColor = vec4(color2,color.w);
             // gl_FragColor = (texture2D(u_texture,v_uv) + texture2D(u_texture,v_uv + p * 2.) +texture2D(u_texture,v_uv - p * 2.) +texture2D(u_texture,v_uv + p * vec2(2.,-2.)) +texture2D(u_texture,v_uv + p * vec2(-2.,2.))) / 5.;

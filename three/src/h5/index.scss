@@ -1,0 +1,80 @@
+@import url("./lib/base.scss");
+* {
+    margin: 0;
+    padding: 0;
+    font-family: PingFangSC-Regular, "Microsoft Yahei", Helvetica, Arial, "\5b8b\4f53", sans-serif;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+input,
+textarea {
+    -webkit-user-select: text;
+}
+
+html {}
+
+html,
+body {
+    width: 100%;
+    font-size: initial;
+    margin: 0 auto;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    max-width: none;
+}
+
+img {
+    border: none;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.btn {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: none;
+    width: 4em;
+    font-size: .24rem;
+    height: 2em;
+    line-height: 2em;
+}
+.lines{
+    width: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    .line{
+        width: 100%;
+        height: 2px;
+        background-color: #000;
+        position: absolute;
+        left: 0;
+    }
+}
+.label{
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255,0,0,.5);
+    position: absolute;
+    top:50%;
+    left: 0;
+}

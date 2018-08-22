@@ -1,0 +1,1136 @@
+{   
+    "getSimpleProjectOnlineList.do": {
+        "code": 200,
+        "result": [
+            {
+                "id": 1,
+                "name": "project1"
+            },
+            {
+                "id": 2,
+                "name": "project2"
+            }
+        ]
+    },
+    "getActInfo2.do": {
+        "code":203,
+        "content":null,
+        "msg":"ALREADY OFFILNE"
+    },
+    "getActInfo.do": {
+        "code":202,
+        "content":null,
+        "msg":"ALREADY OFFILNE"
+    },
+    "checkPacketStatus.do": {
+        "code":203,
+        "content":null,
+        "msg":"ALREADY OFFILNE"
+    },
+    "queryItems.do": {
+        "code": 200,
+        "msg": "SUCCESS",
+        "result": {
+            "total": 252,
+            "goodsList": [
+                {
+                    "id": "1006051",
+                    "title": "2条装 皇室御用超柔毛巾",
+                    "salesRank": 1,
+                    "amountRank": 1,
+                    "simpleDesc": "至柔至软，热销50万条",
+                    "primaryPicUrl": "https://yanxuan.nosdn.127.net/ad5a317216f9da495b144070ecf1f957.png",
+                    "yxPrimaryPicUrl": "https://yanxuan.nosdn.127.net/ad5a317216f9da495b144070ecf1f957.png",
+                    "scenePicUrl": "https://yanxuan.nosdn.127.net/a450de610de9c6bb1b8444e06b174345.jpg",
+                    "scenePicUrlList": [
+                        "https://yanxuan.nosdn.127.net/a450de610de9c6bb1b8444e06b174345.jpg",
+                        "https://yanxuan.nosdn.127.net/b19f7515c1dd124b3d96485668496eca.jpg",
+                        "https://yanxuan.nosdn.127.net/cb8e4c84770b5642ea893418d019eea1.jpg",
+                        "https://yanxuan.nosdn.127.net/660767193e17f4a29548935347fb2d1a.jpg"
+                    ],
+                    "primarySkuId": "1006120",
+                    "primarySellVolume": 1,
+                    "primaryPurchaseAttribute": 0,
+                    "retailPrice": "44.9",
+                    "yxRetailPrice": "59.0",
+                    "unitPrice": "59",
+                    "offPrice": "44.9",
+                    "newItemFlag": false,
+                    "isPreSell": true,
+                    "sellVolume": 1,
+                    "maker": "内野制造商",
+                    "underShelf": false,
+                    "extend": {
+                        "maker": "内野制造商"
+                    },
+                    "status": 2,
+                    "skuList": [
+                        {
+                            "skuId": 1006120,
+                            "isPrimary": true,
+                            "purchaseAttribute": 0,
+                            "price": 44.9,
+                            "counterPrice": 59,
+                            "name": "颜色:烟灰+灰色",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/e12c7e19e727d346da443dcfa06ff0a5.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        },
+                        {
+                            "skuId": 1006121,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 44.9,
+                            "counterPrice": 59,
+                            "name": "颜色:咖色+蓝色",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/66a19e9fe5861d6a3031c35349786db6.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        },
+                        {
+                            "skuId": 1006122,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 44.9,
+                            "counterPrice": 59,
+                            "name": "颜色:白色+粉色",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/1cf85fe52afaaaa72b9c14755e3f5da7.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        },
+                        {
+                            "skuId": 1006123,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 44.9,
+                            "counterPrice": 59,
+                            "name": "颜色:红紫+浅紫",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/326511c9084f53dc87fec362689bccfb.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        }
+                    ],
+                    "categoryList": [
+                        {
+                            "id": 1013001,
+                            "superCategoryId": 0,
+                            "showIndex": 5,
+                            "name": "洗护",
+                            "frontName": "",
+                            "frontDesc": "亲肤之物，严选天然",
+                            "bannerUrl": "http://yanxuan.nosdn.127.net/ef8c49f8c92d1f86eb76dec0b5bc7cef.jpg",
+                            "iconUrl": "http://yanxuan.nosdn.127.net/9fe068776b6b1fca13053d68e9c0a83f.png",
+                            "level": "L1",
+                            "subCateList": []
+                        },
+                        {
+                            "id": 1008001,
+                            "superCategoryId": 1013001,
+                            "showIndex": 1,
+                            "name": "毛巾",
+                            "frontName": "日本皇室专供，内野制造商出品",
+                            "frontDesc": "精选长绒棉，出口日本品质标准",
+                            "bannerUrl": "http://yanxuan.nosdn.127.net/44ad9a739380aa6b7cf956fb2a06e7a7.png",
+                            "iconUrl": "\"null\"",
+                            "level": "L2",
+                            "subCateList": []
+                        }
+                    ],
+                    "notSoldOutGoods": {
+                        "skuId": 1006120,
+                        "isPrimary": true,
+                        "purchaseAttribute": 0,
+                        "price": 44.9,
+                        "counterPrice": 59,
+                        "name": "颜色:烟灰+灰色",
+                        "imgUrl": "https://yanxuan.nosdn.127.net/e12c7e19e727d346da443dcfa06ff0a5.png",
+                        "isPreSell": false,
+                        "sellVolume": 1
+                    },
+                    "colorNum": 8,
+                    "commentCount": 25490,
+                    "commentWithPicCount": 790,
+                    "groupIndex": 10
+                },
+                {
+                    "id": "1009012",
+                    "title": "可水洗舒柔丝羽绒枕",
+                    "salesRank": 3,
+                    "amountRank": 3,
+                    "simpleDesc": "超细纤维，蓬松轻盈回弹",
+                    "primaryPicUrl": "https://yanxuan.nosdn.127.net/a196b367f23ccfd8205b6da647c62b84.png",
+                    "yxPrimaryPicUrl": "https://yanxuan.nosdn.127.net/d120da9bb16549dc9893bea1ab522fe5.png",
+                    "scenePicUrl": "https://yanxuan.nosdn.127.net/a542edfc6acfb3dab205047a90f94e77.jpg",
+                    "scenePicUrlList": [
+                        "https://yanxuan.nosdn.127.net/a542edfc6acfb3dab205047a90f94e77.jpg",
+                        "https://yanxuan.nosdn.127.net/3f450b99d7afaa968a6d3943da660d60.jpg",
+                        "https://yanxuan.nosdn.127.net/36fcf9e9e20b3eb948535df5d675cb3d.jpg",
+                        "https://yanxuan.nosdn.127.net/d5daaf28e81b6172358a18a008737fea.jpg"
+                    ],
+                    "primarySkuId": "1008022",
+                    "retailPrice": "39.9",
+                    "yxRetailPrice": "59.0",
+                    "unitPrice": "59",
+                    "offPrice": "39.9",
+                    "newItemFlag": false,
+                    "isPreSell": true,
+                    "sellVolume": 1,
+                    "maker": "",
+                    "underShelf": false,
+                    "extend": "",
+                    "status": 2,
+                    "skuList": [
+                        {
+                            "skuId": 1235015,
+                            "isPrimary": true,
+                            "purchaseAttribute": 0,
+                            "price": 39.9,
+                            "counterPrice": 59,
+                            "name": "规格:升级款舒柔枕",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/fb0de30ab423322df3ab3c65f10e51a1.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        }
+                    ],
+                    "categoryList": [
+                        {
+                            "id": 1005000,
+                            "superCategoryId": 0,
+                            "showIndex": 1,
+                            "name": "居家",
+                            "frontName": "",
+                            "frontDesc": "回家，放松身心",
+                            "bannerUrl": "http://yanxuan.nosdn.127.net/92357337378cce650797444bc107b0f7.jpg",
+                            "iconUrl": "http://yanxuan.nosdn.127.net/a45c2c262a476fea0b9fc684fed91ef5.png",
+                            "level": "L1",
+                            "subCateList": []
+                        },
+                        {
+                            "id": 1008008,
+                            "superCategoryId": 1005000,
+                            "showIndex": 2,
+                            "name": "被枕",
+                            "frontName": "守护你的睡眠时光",
+                            "frontDesc": "选用优质材料，确保好芯",
+                            "bannerUrl": "http://yanxuan.nosdn.127.net/927bc33f7ae2895dd6c11cf91f5e3228.png",
+                            "iconUrl": "\"null\"",
+                            "level": "L2",
+                            "subCateList": []
+                        }
+                    ],
+                    "notSoldOutGoods": {
+                        "skuId": 1235015,
+                        "isPrimary": true,
+                        "purchaseAttribute": 0,
+                        "price": 39.9,
+                        "counterPrice": 59,
+                        "name": "规格:升级款舒柔枕",
+                        "imgUrl": "https://yanxuan.nosdn.127.net/fb0de30ab423322df3ab3c65f10e51a1.png",
+                        "isPreSell": false,
+                        "sellVolume": 1
+                    },
+                    "colorNum": 0,
+                    "commentCount": 9794,
+                    "commentWithPicCount": 378,
+                    "groupIndex": 8
+                },
+                {
+                    "id": "1046003",
+                    "title": "原色无漂白化妆棉",
+                    "salesRank": 2,
+                    "amountRank": 2,
+                    "simpleDesc": "天然原色，轻柔呵护肌肤",
+                    "primaryPicUrl": "https://yanxuan.nosdn.127.net/afd5906fc2c8f6751279eadf12f7f181.png",
+                    "yxPrimaryPicUrl": "https://yanxuan.nosdn.127.net/afd5906fc2c8f6751279eadf12f7f181.png",
+                    "scenePicUrl": "https://yanxuan.nosdn.127.net/6603bca371f76c06b968a5f91e5d5852.jpg",
+                    "scenePicUrlList": [
+                        "https://yanxuan.nosdn.127.net/6603bca371f76c06b968a5f91e5d5852.jpg",
+                        "https://yanxuan.nosdn.127.net/3e6957c143c8d2dbc293aeedad384347.jpg",
+                        "https://yanxuan.nosdn.127.net/514bc99f436404ba57ee0c75fd5dd2f6.jpg",
+                        "https://yanxuan.nosdn.127.net/235e81f32582e7758216f5d3deba4b6e.jpg"
+                    ],
+                    "primarySkuId": "1044003",
+                    "primarySellVolume": 1,
+                    "primaryPurchaseAttribute": 0,
+                    "retailPrice": "13.9",
+                    "yxRetailPrice": "19.0",
+                    "unitPrice": "19",
+                    "offPrice": "13.9",
+                    "newItemFlag": false,
+                    "isPreSell": true,
+                    "sellVolume": 1,
+                    "maker": "",
+                    "underShelf": false,
+                    "extend": "",
+                    "status": 2,
+                    "skuList": [
+                        {
+                            "skuId": 1044003,
+                            "isPrimary": true,
+                            "purchaseAttribute": 0,
+                            "price": 13.9,
+                            "counterPrice": 19,
+                            "name": "规格:180片化妆棉",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/afd5906fc2c8f6751279eadf12f7f181.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        },
+                        {
+                            "skuId": 1208012,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 19,
+                            "counterPrice": 19,
+                            "name": "规格:180片化妆棉+吸油面纸（麻纸）",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/afd5906fc2c8f6751279eadf12f7f181.png",
+                            "isPreSell": false,
+                            "sellVolume": 0
+                        }
+                    ],
+                    "categoryList": [
+                        {
+                            "id": 1013001,
+                            "superCategoryId": 0,
+                            "showIndex": 5,
+                            "name": "洗护",
+                            "frontName": "",
+                            "frontDesc": "亲肤之物，严选天然",
+                            "bannerUrl": "http://yanxuan.nosdn.127.net/ef8c49f8c92d1f86eb76dec0b5bc7cef.jpg",
+                            "iconUrl": "http://yanxuan.nosdn.127.net/9fe068776b6b1fca13053d68e9c0a83f.png",
+                            "level": "L1",
+                            "subCateList": []
+                        },
+                        {
+                            "id": 1013002,
+                            "superCategoryId": 1013001,
+                            "showIndex": 7,
+                            "name": "美妆",
+                            "frontName": "为你的面容添色",
+                            "frontDesc": "竹宝堂、资生堂等制造商出品",
+                            "bannerUrl": "http://yanxuan.nosdn.127.net/aa49c088f74a1c318f1765cc2703495a.png",
+                            "iconUrl": "\"null\"",
+                            "level": "L2",
+                            "subCateList": []
+                        }
+                    ],
+                    "notSoldOutGoods": {
+                        "skuId": 1044003,
+                        "isPrimary": true,
+                        "purchaseAttribute": 0,
+                        "price": 13.9,
+                        "counterPrice": 19,
+                        "name": "规格:180片化妆棉",
+                        "imgUrl": "https://yanxuan.nosdn.127.net/afd5906fc2c8f6751279eadf12f7f181.png",
+                        "isPreSell": false,
+                        "sellVolume": 1
+                    },
+                    "colorNum": 0,
+                    "commentCount": 5145,
+                    "commentWithPicCount": 247,
+                    "groupIndex": 10
+                },
+                {
+                    "id": "1031003",
+                    "title": "按压式真空储物罐 长盖",
+                    "salesRank": 2,
+                    "amountRank": 2,
+                    "simpleDesc": "3倍延长保鲜期，减少浪费",
+                    "primaryPicUrl": "https://yanxuan.nosdn.127.net/57af91506d31351187e89547f0cddb5e.png",
+                    "yxPrimaryPicUrl": "https://yanxuan.nosdn.127.net/57af91506d31351187e89547f0cddb5e.png",
+                    "scenePicUrl": "https://yanxuan.nosdn.127.net/5126d3d6870807101ebdcdb892ce97ac.jpg",
+                    "scenePicUrlList": [
+                        "https://yanxuan.nosdn.127.net/5126d3d6870807101ebdcdb892ce97ac.jpg",
+                        "https://yanxuan.nosdn.127.net/36d7814148c1f90dc3b5a22aa3e458b9.jpg",
+                        "https://yanxuan.nosdn.127.net/0d5f85039cfcf105aa952a94eadd14ac.jpg",
+                        "https://yanxuan.nosdn.127.net/edb45a77609813fb42f08f2e4f4cb988.jpg"
+                    ],
+                    "primarySkuId": "1030003",
+                    "primarySellVolume": 1,
+                    "primaryPurchaseAttribute": 0,
+                    "retailPrice": "39.0",
+                    "yxRetailPrice": "58.0",
+                    "unitPrice": "58",
+                    "offPrice": "39",
+                    "newItemFlag": false,
+                    "isPreSell": true,
+                    "sellVolume": 1,
+                    "maker": "",
+                    "underShelf": false,
+                    "extend": "",
+                    "status": 2,
+                    "skuList": [
+                        {
+                            "skuId": 1030003,
+                            "isPrimary": true,
+                            "purchaseAttribute": 0,
+                            "price": 43.9,
+                            "counterPrice": 65,
+                            "name": "颜色/容量:黑盖 1L",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/53c11d80bf34b514433d3a02b031ecbd.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        },
+                        {
+                            "skuId": 1030004,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 70,
+                            "counterPrice": 70,
+                            "name": "颜色/容量:黑盖 2L",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/288e78c1c900955603504ac2ed5b05a7.jpg",
+                            "isPreSell": false,
+                            "sellVolume": 0
+                        },
+                        {
+                            "skuId": 1030007,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 39,
+                            "counterPrice": 58,
+                            "name": "颜色/容量:白盖 1L",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/6dd0aedb092bb682f696fbeb65f9f289.jpg",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        },
+                        {
+                            "skuId": 1030008,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 43.9,
+                            "counterPrice": 65,
+                            "name": "颜色/容量:白盖 2L",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/d0de9c59dde131000e553bbbb8402c81.jpg",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        }
+                    ],
+                    "categoryList": [
+                        {
+                            "id": 1005001,
+                            "superCategoryId": 0,
+                            "showIndex": 2,
+                            "name": "餐厨",
+                            "frontName": "",
+                            "frontDesc": "厨房",
+                            "bannerUrl": "http://yanxuan.nosdn.127.net/f4ff8b3d5b0767d4e578575c1fd6b921.jpg",
+                            "iconUrl": "http://yanxuan.nosdn.127.net/ad8b00d084cb7d0958998edb5fee9c0a.png",
+                            "level": "L1",
+                            "subCateList": []
+                        },
+                        {
+                            "id": 1008011,
+                            "superCategoryId": 1005001,
+                            "showIndex": 6,
+                            "name": "清洁保鲜",
+                            "frontName": "真空保鲜，美味不限时",
+                            "frontDesc": "让厨房整洁又新鲜，防尘防潮",
+                            "bannerUrl": "http://yanxuan.nosdn.127.net/dc4d6c35b9f4abb42d2eeaf345710589.png",
+                            "iconUrl": "\"null\"",
+                            "level": "L2",
+                            "subCateList": []
+                        }
+                    ],
+                    "notSoldOutGoods": {
+                        "skuId": 1030003,
+                        "isPrimary": true,
+                        "purchaseAttribute": 0,
+                        "price": 43.9,
+                        "counterPrice": 65,
+                        "name": "颜色/容量:黑盖 1L",
+                        "imgUrl": "https://yanxuan.nosdn.127.net/53c11d80bf34b514433d3a02b031ecbd.png",
+                        "isPreSell": false,
+                        "sellVolume": 1
+                    },
+                    "colorNum": 0,
+                    "commentCount": 2853,
+                    "commentWithPicCount": 207,
+                    "groupIndex": 3
+                },
+                {
+                    "id": "1038003",
+                    "title": "清新茶花果冻鞋",
+                    "salesRank": 2,
+                    "amountRank": 2,
+                    "simpleDesc": "清透颜色，感受脚尖的优雅",
+                    "primaryPicUrl": "https://yanxuan.nosdn.127.net/f9bcbe9fbe2a3c288258d68894440f8b.png",
+                    "yxPrimaryPicUrl": "https://yanxuan.nosdn.127.net/f9bcbe9fbe2a3c288258d68894440f8b.png",
+                    "scenePicUrl": "https://yanxuan.nosdn.127.net/c063760e74a258cd1f843112383624ff.jpg",
+                    "scenePicUrlList": [
+                        "https://yanxuan.nosdn.127.net/c063760e74a258cd1f843112383624ff.jpg",
+                        "https://yanxuan.nosdn.127.net/4f6b3c30b206d1db023e2d419e1580eb.jpg",
+                        "https://yanxuan.nosdn.127.net/13ab837eb5a5acb11592baa1693fdd35.jpg",
+                        "https://yanxuan.nosdn.127.net/24c84d7f33a2640dbd0bebfe2a60c392.jpg"
+                    ],
+                    "primarySkuId": "1037006",
+                    "primarySellVolume": 1,
+                    "primaryPurchaseAttribute": 0,
+                    "retailPrice": "59.0",
+                    "yxRetailPrice": "59.0",
+                    "unitPrice": "59",
+                    "offPrice": "12.9",
+                    "newItemFlag": false,
+                    "isPreSell": true,
+                    "sellVolume": 1,
+                    "maker": "",
+                    "underShelf": false,
+                    "extend": {
+                        "isMobile": "1"
+                    },
+                    "status": 2,
+                    "skuList": [
+                        {
+                            "skuId": 1037006,
+                            "isPrimary": true,
+                            "purchaseAttribute": 0,
+                            "price": 59,
+                            "counterPrice": 0,
+                            "name": "鞋码:36码;颜色:薄荷绿",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/b5f3f40c6b1d210bc8f22d322bc439d7.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        },
+                        {
+                            "skuId": 1037007,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 59,
+                            "counterPrice": 0,
+                            "name": "鞋码:36码;颜色:清新白",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/8beafe154b5c187097f20eeafde5fd98.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        },
+                        {
+                            "skuId": 1037008,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 59,
+                            "counterPrice": 0,
+                            "name": "鞋码:36码;颜色:优雅黑",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/d51665d828de6e9acfe8fce2c39bf6e3.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        },
+                        {
+                            "skuId": 1037009,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 59,
+                            "counterPrice": 0,
+                            "name": "鞋码:36码;颜色:少女粉",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/ff72a45f3b034eaf351d73eb9fe57bfe.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        },
+                        {
+                            "skuId": 1037010,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 59,
+                            "counterPrice": 0,
+                            "name": "鞋码:37码;颜色:薄荷绿",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/b5f3f40c6b1d210bc8f22d322bc439d7.png",
+                            "isPreSell": false,
+                            "sellVolume": 2
+                        },
+                        {
+                            "skuId": 1037011,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 59,
+                            "counterPrice": 0,
+                            "name": "鞋码:37码;颜色:清新白",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/8beafe154b5c187097f20eeafde5fd98.png",
+                            "isPreSell": false,
+                            "sellVolume": 0
+                        },
+                        {
+                            "skuId": 1037012,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 59,
+                            "counterPrice": 0,
+                            "name": "鞋码:37码;颜色:优雅黑",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/d51665d828de6e9acfe8fce2c39bf6e3.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        },
+                        {
+                            "skuId": 1037013,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 59,
+                            "counterPrice": 0,
+                            "name": "鞋码:37码;颜色:少女粉",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/ff72a45f3b034eaf351d73eb9fe57bfe.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        },
+                        {
+                            "skuId": 1037014,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 59,
+                            "counterPrice": 0,
+                            "name": "鞋码:38码;颜色:薄荷绿",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/b5f3f40c6b1d210bc8f22d322bc439d7.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        },
+                        {
+                            "skuId": 1037015,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 59,
+                            "counterPrice": 0,
+                            "name": "鞋码:38码;颜色:清新白",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/8beafe154b5c187097f20eeafde5fd98.png",
+                            "isPreSell": false,
+                            "sellVolume": 2
+                        },
+                        {
+                            "skuId": 1037016,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 59,
+                            "counterPrice": 0,
+                            "name": "鞋码:38码;颜色:优雅黑",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/d51665d828de6e9acfe8fce2c39bf6e3.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        },
+                        {
+                            "skuId": 1037017,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 59,
+                            "counterPrice": 0,
+                            "name": "鞋码:38码;颜色:少女粉",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/ff72a45f3b034eaf351d73eb9fe57bfe.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        },
+                        {
+                            "skuId": 1037018,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 59,
+                            "counterPrice": 0,
+                            "name": "鞋码:35码;颜色:薄荷绿",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/b5f3f40c6b1d210bc8f22d322bc439d7.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        },
+                        {
+                            "skuId": 1037019,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 59,
+                            "counterPrice": 0,
+                            "name": "鞋码:35码;颜色:清新白",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/8beafe154b5c187097f20eeafde5fd98.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        },
+                        {
+                            "skuId": 1037020,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 59,
+                            "counterPrice": 0,
+                            "name": "鞋码:35码;颜色:优雅黑",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/d51665d828de6e9acfe8fce2c39bf6e3.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        },
+                        {
+                            "skuId": 1037021,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 59,
+                            "counterPrice": 0,
+                            "name": "鞋码:35码;颜色:少女粉",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/ff72a45f3b034eaf351d73eb9fe57bfe.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        }
+                    ],
+                    "categoryList": [
+                        {
+                            "id": 1008000,
+                            "superCategoryId": 0,
+                            "showIndex": 3,
+                            "name": "配件",
+                            "frontName": "",
+                            "frontDesc": "配角，亦是主角",
+                            "bannerUrl": "http://yanxuan.nosdn.127.net/cad5aba2bc52d3b8adfd0232c9814de2.jpg",
+                            "iconUrl": "http://yanxuan.nosdn.127.net/11abb11c4cfdee59abfb6d16caca4c6a.png",
+                            "level": "L1",
+                            "subCateList": []
+                        },
+                        {
+                            "id": 1008010,
+                            "superCategoryId": 1008000,
+                            "showIndex": 7,
+                            "name": "拖鞋",
+                            "frontName": "穿上拖鞋，回到自我",
+                            "frontDesc": "人体工学设计，放松双脚",
+                            "bannerUrl": "http://yanxuan.nosdn.127.net/1121696544ed9b0c2a70e82f1088fa0e.png",
+                            "iconUrl": "\"null\"",
+                            "level": "L2",
+                            "subCateList": []
+                        }
+                    ],
+                    "notSoldOutGoods": {
+                        "skuId": 1037006,
+                        "isPrimary": true,
+                        "purchaseAttribute": 0,
+                        "price": 59,
+                        "counterPrice": 0,
+                        "name": "鞋码:36码;颜色:薄荷绿",
+                        "imgUrl": "https://yanxuan.nosdn.127.net/b5f3f40c6b1d210bc8f22d322bc439d7.png",
+                        "isPreSell": false,
+                        "sellVolume": 1
+                    },
+                    "colorNum": 4,
+                    "commentCount": 5968,
+                    "commentWithPicCount": 439,
+                    "groupIndex": 1
+                },
+                {
+                    "id": "1023016",
+                    "title": "2条装 女式超细莫代尔内裤",
+                    "salesRank": 1,
+                    "amountRank": 1,
+                    "simpleDesc": "莫代尔纤维清爽更细腻",
+                    "primaryPicUrl": "https://yanxuan.nosdn.127.net/551bb9e503426e5f5f54d6827bbdbb93.png",
+                    "yxPrimaryPicUrl": "https://yanxuan.nosdn.127.net/551bb9e503426e5f5f54d6827bbdbb93.png",
+                    "scenePicUrl": "https://yanxuan.nosdn.127.net/d2504b083859be7b7f528277d88ab7a9.jpg",
+                    "scenePicUrlList": [
+                        "https://yanxuan.nosdn.127.net/d2504b083859be7b7f528277d88ab7a9.jpg",
+                        "https://yanxuan.nosdn.127.net/7b15564e7023d4b46d2eca26097a0c99.jpg",
+                        "https://yanxuan.nosdn.127.net/7635e2d9b8adeda0708b3239e59fafdb.jpg",
+                        "https://yanxuan.nosdn.127.net/3c8dbcfae5a20e76c9cd91e209728166.jpg"
+                    ],
+                    "primarySkuId": "1023028",
+                    "retailPrice": "54.9",
+                    "yxRetailPrice": "79.0",
+                    "unitPrice": "79",
+                    "offPrice": "54.9",
+                    "newItemFlag": false,
+                    "isPreSell": true,
+                    "sellVolume": 1,
+                    "maker": "爱慕制造商",
+                    "underShelf": false,
+                    "extend": {
+                        "maker": "爱慕制造商"
+                    },
+                    "status": 2,
+                    "skuList": [
+                        {
+                            "skuId": 1022036,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 79,
+                            "counterPrice": 79,
+                            "name": "尺码:S;颜色:黑色+灰色（2条）",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/26e871f359e137f2ed4dbbbcbcf99501.png",
+                            "isPreSell": false,
+                            "sellVolume": 2
+                        },
+                        {
+                            "skuId": 1022038,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 79,
+                            "counterPrice": 79,
+                            "name": "尺码:M;颜色:黑色+灰色（2条）",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/26e871f359e137f2ed4dbbbcbcf99501.png",
+                            "isPreSell": false,
+                            "sellVolume": 2
+                        },
+                        {
+                            "skuId": 1023027,
+                            "isPrimary": true,
+                            "purchaseAttribute": 0,
+                            "price": 54.9,
+                            "counterPrice": 79,
+                            "name": "尺码:S;颜色:肤色+黑色（2条）",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/d2c8246e4091d35fb86843a11f9f3ba9.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        },
+                        {
+                            "skuId": 1023029,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 54.9,
+                            "counterPrice": 79,
+                            "name": "尺码:M;颜色:肤色+黑色（2条）",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/d2c8246e4091d35fb86843a11f9f3ba9.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        },
+                        {
+                            "skuId": 1087103,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 79,
+                            "counterPrice": 79,
+                            "name": "尺码:S;颜色:灰色+蓝灰（2条）",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/a5818028a3d6bc6b52c056a4720b25c3.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        },
+                        {
+                            "skuId": 1087104,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 79,
+                            "counterPrice": 79,
+                            "name": "尺码:S;颜色:黑色+雅粉（2条）",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/d896be9a4583542fddbf2f9283fd8f38.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        },
+                        {
+                            "skuId": 1087105,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 79,
+                            "counterPrice": 79,
+                            "name": "尺码:S;颜色:黑色+蓝灰（2条）",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/05d875999158f52543566b4974edbb2f.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        },
+                        {
+                            "skuId": 1087107,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 79,
+                            "counterPrice": 79,
+                            "name": "尺码:M;颜色:灰色+蓝灰（2条）",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/a5818028a3d6bc6b52c056a4720b25c3.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        },
+                        {
+                            "skuId": 1087108,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 79,
+                            "counterPrice": 79,
+                            "name": "尺码:M;颜色:黑色+雅粉（2条）",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/d896be9a4583542fddbf2f9283fd8f38.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        },
+                        {
+                            "skuId": 1087109,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 79,
+                            "counterPrice": 79,
+                            "name": "尺码:M;颜色:黑色+蓝灰（2条）",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/05d875999158f52543566b4974edbb2f.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        }
+                    ],
+                    "categoryList": [
+                        {
+                            "id": 1010000,
+                            "superCategoryId": 0,
+                            "showIndex": 4,
+                            "name": "服装",
+                            "frontName": "",
+                            "frontDesc": "贴身的，要亲肤",
+                            "bannerUrl": "http://yanxuan.nosdn.127.net/003e1d1289f4f290506ac2aedbd09d35.jpg",
+                            "iconUrl": "http://yanxuan.nosdn.127.net/28a685c96f91584e7e4876f1397767db.png",
+                            "level": "L1",
+                            "subCateList": []
+                        },
+                        {
+                            "id": 1010002,
+                            "superCategoryId": 1010000,
+                            "showIndex": 3,
+                            "name": "内裤",
+                            "frontName": "来自李维斯、爱慕等制造商",
+                            "frontDesc": "透气洁净，环保染制",
+                            "bannerUrl": "http://yanxuan.nosdn.127.net/364269344ed69adafe1b70ab7998fc50.png",
+                            "iconUrl": "\"null\"",
+                            "level": "L2",
+                            "subCateList": []
+                        }
+                    ],
+                    "notSoldOutGoods": {
+                        "skuId": 1022036,
+                        "isPrimary": false,
+                        "purchaseAttribute": 0,
+                        "price": 79,
+                        "counterPrice": 79,
+                        "name": "尺码:S;颜色:黑色+灰色（2条）",
+                        "imgUrl": "https://yanxuan.nosdn.127.net/26e871f359e137f2ed4dbbbcbcf99501.png",
+                        "isPreSell": false,
+                        "sellVolume": 2
+                    },
+                    "colorNum": 5,
+                    "commentCount": 11318,
+                    "commentWithPicCount": 235,
+                    "groupIndex": 6
+                },
+                {
+                    "id": "1023022",
+                    "title": "日式木质皂盒",
+                    "salesRank": 5,
+                    "amountRank": 5,
+                    "simpleDesc": "优质原料，强韧抗摔",
+                    "primaryPicUrl": "https://yanxuan.nosdn.127.net/766beea4a2c5ea2300565ea6bec848ff.png",
+                    "yxPrimaryPicUrl": "https://yanxuan.nosdn.127.net/766beea4a2c5ea2300565ea6bec848ff.png",
+                    "scenePicUrl": "https://yanxuan.nosdn.127.net/d1d6c65f14185ce487e09b7880b603c8.jpg",
+                    "scenePicUrlList": [
+                        "https://yanxuan.nosdn.127.net/d1d6c65f14185ce487e09b7880b603c8.jpg",
+                        "https://yanxuan.nosdn.127.net/55b7ad9c9e7efb94ff12df60f4bce52e.jpg",
+                        "https://yanxuan.nosdn.127.net/fa72593dfe8d1c97945b3801ccfc686b.jpg",
+                        "https://yanxuan.nosdn.127.net/9b84d3c4808edf2e23b3ab010ec43ae5.jpg"
+                    ],
+                    "primarySkuId": "1022052",
+                    "primarySellVolume": 1,
+                    "primaryPurchaseAttribute": 0,
+                    "retailPrice": "9.9",
+                    "yxRetailPrice": "14.9",
+                    "unitPrice": "14.9",
+                    "offPrice": "9.9",
+                    "newItemFlag": false,
+                    "isPreSell": true,
+                    "sellVolume": 1,
+                    "maker": "日本KEYUCA制造商",
+                    "underShelf": false,
+                    "extend": {
+                        "maker": "日本KEYUCA制造商"
+                    },
+                    "status": 2,
+                    "skuList": [
+                        {
+                            "skuId": 1022051,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 9.9,
+                            "counterPrice": 14.9,
+                            "name": "形状:椭圆",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/117455907236c734d5ffbff1c56a5bff.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        },
+                        {
+                            "skuId": 1022052,
+                            "isPrimary": true,
+                            "purchaseAttribute": 0,
+                            "price": 9.9,
+                            "counterPrice": 14.9,
+                            "name": "形状:镂空",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/19dd885694bcabcf194e73de8cf4bb17.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        },
+                        {
+                            "skuId": 1022053,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 9.9,
+                            "counterPrice": 14.9,
+                            "name": "形状:矩形",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/63e0cda3ee14240b465345978968ed18.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        }
+                    ],
+                    "categoryList": [
+                        {
+                            "id": 1013001,
+                            "superCategoryId": 0,
+                            "showIndex": 5,
+                            "name": "洗护",
+                            "frontName": "",
+                            "frontDesc": "亲肤之物，严选天然",
+                            "bannerUrl": "http://yanxuan.nosdn.127.net/ef8c49f8c92d1f86eb76dec0b5bc7cef.jpg",
+                            "iconUrl": "http://yanxuan.nosdn.127.net/9fe068776b6b1fca13053d68e9c0a83f.png",
+                            "level": "L1",
+                            "subCateList": []
+                        },
+                        {
+                            "id": 1020002,
+                            "superCategoryId": 1013001,
+                            "showIndex": 10,
+                            "name": "浴室用具",
+                            "frontName": "小工具成就美好浴室",
+                            "frontDesc": "环保材料，耐用不发霉",
+                            "bannerUrl": "http://yanxuan.nosdn.127.net/50b8792c3190a920f0c8323a0a534735.png",
+                            "iconUrl": null,
+                            "level": "L2",
+                            "subCateList": []
+                        }
+                    ],
+                    "notSoldOutGoods": {
+                        "skuId": 1022052,
+                        "isPrimary": true,
+                        "purchaseAttribute": 0,
+                        "price": 9.9,
+                        "counterPrice": 14.9,
+                        "name": "形状:镂空",
+                        "imgUrl": "https://yanxuan.nosdn.127.net/19dd885694bcabcf194e73de8cf4bb17.png",
+                        "isPreSell": false,
+                        "sellVolume": 1
+                    },
+                    "colorNum": 0,
+                    "commentCount": 7904,
+                    "commentWithPicCount": 391,
+                    "groupIndex": 3
+                },
+                {
+                    "id": "1060007",
+                    "title": "炻瓷储藏罐",
+                    "salesRank": 3,
+                    "amountRank": 3,
+                    "simpleDesc": "安全密封，坚韧耐摔",
+                    "primaryPicUrl": "https://yanxuan.nosdn.127.net/5d7c2fea29b7bd505543f73795fb224b.png",
+                    "yxPrimaryPicUrl": "https://yanxuan.nosdn.127.net/5d7c2fea29b7bd505543f73795fb224b.png",
+                    "scenePicUrl": "https://yanxuan.nosdn.127.net/88f57440c3fe9d1dd2830794fabd6025.jpg",
+                    "scenePicUrlList": [
+                        "https://yanxuan.nosdn.127.net/88f57440c3fe9d1dd2830794fabd6025.jpg",
+                        "https://yanxuan.nosdn.127.net/8af3c9b586d612c04e45e026c60c56de.jpg",
+                        "https://yanxuan.nosdn.127.net/c5ddc4ee57bb93719de79b2b8866cef3.jpg",
+                        "https://yanxuan.nosdn.127.net/454178522ecaa1936d2edaabb7ac7fec.jpg"
+                    ],
+                    "primarySkuId": "1060020",
+                    "primarySellVolume": 1,
+                    "primaryPurchaseAttribute": 0,
+                    "retailPrice": "13.9",
+                    "yxRetailPrice": "19.0",
+                    "unitPrice": "39",
+                    "offPrice": "27.9",
+                    "newItemFlag": false,
+                    "isPreSell": true,
+                    "sellVolume": 1,
+                    "maker": "WMF制造商",
+                    "underShelf": false,
+                    "extend": {
+                        "maker": "WMF制造商"
+                    },
+                    "status": 2,
+                    "skuList": [
+                        {
+                            "skuId": 1060020,
+                            "isPrimary": true,
+                            "purchaseAttribute": 0,
+                            "price": 13.9,
+                            "counterPrice": 19,
+                            "name": "尺寸颜色:D7.5 x H7.5cm哑黑",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/5d7c2fea29b7bd505543f73795fb224b.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        },
+                        {
+                            "skuId": 1060021,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 13.9,
+                            "counterPrice": 19,
+                            "name": "尺寸颜色:D7.5 x H7.5cm米磁",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/5d7c2fea29b7bd505543f73795fb224b.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        },
+                        {
+                            "skuId": 1060022,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 19.9,
+                            "counterPrice": 29,
+                            "name": "尺寸颜色:D10.5xH14cm哑黑",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/5d7c2fea29b7bd505543f73795fb224b.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        },
+                        {
+                            "skuId": 1060023,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 19.9,
+                            "counterPrice": 29,
+                            "name": "尺寸颜色:D10.5xH14cm米磁",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/5d7c2fea29b7bd505543f73795fb224b.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        },
+                        {
+                            "skuId": 1060024,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 27.9,
+                            "counterPrice": 39,
+                            "name": "尺寸颜色:D10.5xH20cm哑黑",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/5d7c2fea29b7bd505543f73795fb224b.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        },
+                        {
+                            "skuId": 1060025,
+                            "isPrimary": false,
+                            "purchaseAttribute": 0,
+                            "price": 27.9,
+                            "counterPrice": 39,
+                            "name": "尺寸颜色:D10.5xH20cm米磁",
+                            "imgUrl": "https://yanxuan.nosdn.127.net/5d7c2fea29b7bd505543f73795fb224b.png",
+                            "isPreSell": false,
+                            "sellVolume": 1
+                        }
+                    ],
+                    "categoryList": [
+                        {
+                            "id": 1005001,
+                            "superCategoryId": 0,
+                            "showIndex": 2,
+                            "name": "餐厨",
+                            "frontName": "",
+                            "frontDesc": "厨房",
+                            "bannerUrl": "http://yanxuan.nosdn.127.net/f4ff8b3d5b0767d4e578575c1fd6b921.jpg",
+                            "iconUrl": "http://yanxuan.nosdn.127.net/ad8b00d084cb7d0958998edb5fee9c0a.png",
+                            "level": "L1",
+                            "subCateList": []
+                        },
+                        {
+                            "id": 1008011,
+                            "superCategoryId": 1005001,
+                            "showIndex": 6,
+                            "name": "清洁保鲜",
+                            "frontName": "真空保鲜，美味不限时",
+                            "frontDesc": "让厨房整洁又新鲜，防尘防潮",
+                            "bannerUrl": "http://yanxuan.nosdn.127.net/dc4d6c35b9f4abb42d2eeaf345710589.png",
+                            "iconUrl": null,
+                            "level": "L2",
+                            "subCateList": []
+                        }
+                    ],
+                    "notSoldOutGoods": {
+                        "skuId": 1060020,
+                        "isPrimary": true,
+                        "purchaseAttribute": 0,
+                        "price": 13.9,
+                        "counterPrice": 19,
+                        "name": "尺寸颜色:D7.5 x H7.5cm哑黑",
+                        "imgUrl": "https://yanxuan.nosdn.127.net/5d7c2fea29b7bd505543f73795fb224b.png",
+                        "isPreSell": false,
+                        "sellVolume": 1
+                    },
+                    "colorNum": 0,
+                    "commentCount": 4138,
+                    "commentWithPicCount": 342,
+                    "groupIndex": 3
+                }
+            ],
+            "now": 1497924879902
+        }
+    }
+}

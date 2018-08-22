@@ -106,7 +106,7 @@ function generateMaze(map) {
         //     index = 0
         // }
         // return target
-        return Math.random() > 0 ? stack[stack.length - 1] : stack[Math.floor(Math.random() * stack.length)]
+        return Math.random() > 0.1 ? stack[stack.length - 1] : stack[Math.floor(Math.random() * stack.length)]
     }
 
     function removeCellFromStack(stack, target) {
