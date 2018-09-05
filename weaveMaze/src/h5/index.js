@@ -78,7 +78,7 @@ function getRenderer() {
         var _dy = height * 0.6 / 2
         var cx = x * width + width
         var cy = y * height + height
-        ctx.fillStyle = getColor(target.belongTo.id, getSetCount())
+        ctx.fillStyle = '#fff'//getColor(target.belongTo.id, getSetCount())
         if (target.isCross && direction == 0) return;
         if (target.isCross && direction == 2) return;
         switch (direction) {
@@ -102,10 +102,10 @@ function getRenderer() {
         var dx = width * 0.7 / 2
         var cx = x * width + width
         var cy = y * height + height
-        ctx.fillStyle = getColor(id, getSetCount())
+        ctx.fillStyle = '#fff'//getColor(id, getSetCount())
         graphic.fillRect(cx - dx, cy - dy, dx * 2, dy * 2)
         ctx.fillStyle = '#000'
-        graphic.fillText(id, cx - dx, cy + dy - 3)
+        // graphic.fillText(id, cx - dx, cy + dy - 3)
     }
 
     function renderBorderAt(graphic, x, y, direction, width, height) {
@@ -241,21 +241,21 @@ function mazeWalker(m, i, j) {
     var records = []
     var stack = []
 
-    function step() {
-        var c = m.getCell(cur.x, cur.y)
-        if (c.isCross) {
-            c.connections.forEach((v, i) => {
-                if(i == )
-                if (!v) {
-                    stack.push({ from: c, to: i })
-                }
-            })
-        } else {
-            c.connections.forEach((v, i) => {
-                if (!v) {
-                    stack.push({ from: c, to: i })
-                }
-            })
-        }
-    }
+    // function step() {
+    //     var c = m.getCell(cur.x, cur.y)
+    //     if (c.isCross) {
+    //         c.connections.forEach((v, i) => {
+    //             if(i == )
+    //             if (!v) {
+    //                 stack.push({ from: c, to: i })
+    //             }
+    //         })
+    //     } else {
+    //         c.connections.forEach((v, i) => {
+    //             if (!v) {
+    //                 stack.push({ from: c, to: i })
+    //             }
+    //         })
+    //     }
+    // }
 }

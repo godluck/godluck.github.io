@@ -8,3 +8,4 @@ rgb2hsv.js
 vconsole.min.js
 zipLoader.js
 GPUComputationRenderer.js
+OrbitControls.js
