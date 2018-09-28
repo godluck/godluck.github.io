@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: PingFangSC-Regular, "Microsoft Yahei", Helvetica, Arial, "\5b8b\4f53", sans-serif;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+input {
+    -webkit-user-select: text;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 640px;
+    background: #fcfcfc;
+    font-size: initial;
+    margin: 0 auto;
+    height: 100%;
+}
+
+img {
+    border: none;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+@keyframes curveX{
+    from{
+        left: 0;
+    }
+    to{
+        left: 500px;
+    }
+}
+@keyframes curveY{
+    from{
+        top:0;
+    }
+    50%{
+        top:500px;
+    }
+    to{
+        top:0;
+    }
+}
+.test{
+    width: 100px;
+    height: 100px;
+    background-color: #000;
+    position: absolute;
+    top:0;
+    left: 0;
+    animation: curveX ease-in-out 4s,curveY ease-in-out 4s;
+}

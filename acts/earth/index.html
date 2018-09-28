@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html style="font-size:15.625vw">
+
+<head>
+    <title></title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta charset="utf-8">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <link rel="shortcut icon" href="https://mimg.127.net/pub/common/favicon/yanxuan/favicon.ico">
+    <script type="text/javascript" compress="no-compress">
+    var meta = document.createElement('meta')
+    meta.name = 'viewport'
+    meta.content = 'width=device-width, initial-scale=' + 1 / (window.devicePixelRatio || 1) + ', maximum-scale=1.0, user-scalable=0'
+    document.head.appendChild(meta);
+    ! function() {
+        function a() {
+            document.documentElement.style.fontSize = document.documentElement.clientWidth / 640 * 10 / 16 * 1000 + "%";
+        }
+        var b = null;
+        window.addEventListener("resize", function() {
+            clearTimeout(b);
+            b = setTimeout(a, 300);
+        }, !1);
+        a();
+    }(window);
+    
+    </script>
+    <link rel="stylesheet" type="text/css" href="index.css" inline>
+</head>
+
+<body>
+    <div class="g-main">
+        <canvas class="e-earth" width="1200" height="1200"></canvas>
+        <img class="e-shadow">
+        <div class="log l-1"></div>
+        <div class="log l-2"></div>
+    </div>
+<script type="text/javascript">
+   window.shareConfig = {
+        img: 'http://vip.163.com/webapp/static/images/share.jpg',
+        wbpic : 'http://vip.163.com/webapp/static/images/share.jpg',
+        url: location.href,
+        desc: "提供56项友好实用的独家服务，只为打造最好用的高端商务邮箱。",
+        title: '网易VIP高端邮箱，国内最好用的商务收费邮箱',
+        timeline_title: '网易VIP高端邮箱，国内最好用的商务收费邮箱',
+        wContent : '提供56项友好实用的独家服务，只为打造最好用的高端商务邮箱。',
+        topicId : '23712738912',   // 严选侧的用于统计的topicID
+        // shareList只支持有钱／邮箱大师
+        shareList : ['wxFriend','wxTimeline','weibo','QQFriend','QQZone','yxFriend','yxTimeline','message','copy','mail'],
+        callback: function(successOrNot, shareToWhichSNS) { 
+            // successOrNot, shareToWhichSNS 适用于严选／邮箱大师app
+            // - successOrNot, 0 失败，1 成功
+            // - shareToWhichSNS，// 0 微信好友，1 微信朋友圈， 2 新浪微博， 3易信好友，4 易信朋友圈，5 QQ空间，6 qq朋友，7，短信，8，复制, 9.邮件
+            // alert(1);
+            //location.href = location.href
+        }
+    };
+</script>
+    <script src="../js/jquery-3.2.0.min.js" inline></script>
+    <script type="text/javascript" src="http://mimg.127.net/pub/common/js/PSC_YX_C_normal.js"></script>
+    <script type="text/javascript" src="http://mimg.127.net/pub/common/js/share.1.0.2.js"></script>
+    <script type="text/javascript" src="index.js" inline></script>
+</body>
+
+</html>
